@@ -8,13 +8,17 @@
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./fixtures": {
+      "types": "./dist/fixtures.d.ts",
+      "default": "./dist/fixtures.js"
     }
   },
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "test": "node --test test/contracts.test.mjs"
+    "test": "node --test test/contracts.test.mjs test/fixtures.test.mjs"
   },
   "keywords": [],
   "author": "",
