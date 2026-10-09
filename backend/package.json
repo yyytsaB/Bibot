@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "validate:content": "tsx scripts/validate-content.ts",
     "test:content": "tsx --test test/validate-content.test.ts",
-    "test": "npm run test:content"
+    "test:f4": "tsx --test test/transport.test.ts test/pipeline.test.ts",
+    "test": "npm run test:content && npm run test:f4"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +18,8 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.3.0",
-    "shared": "file:../shared"
+    "shared": "file:../shared",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
