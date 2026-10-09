@@ -1,0 +1,362 @@
+[
+  {
+    "id": "q1-p",
+    "subject_id": "critical-thinking",
+    "text": "A paint tray is overturned beside fresh blue marks on the floor. Sam concludes that a spill from the tray best explains the marks, although Sam did not witness it.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "C",
+    "concept_ids": [
+      "induction",
+      "abduction"
+    ],
+    "verified_explanation": "The spill is a proposed explanation for the marks.",
+    "follow_up_ids": [],
+    "concept_pair": [
+      "induction",
+      "abduction"
+    ]
+  },
+  {
+    "id": "q1-e",
+    "subject_id": "critical-thinking",
+    "text": "A zipper on a pencil case is open, and pencils are scattered directly below it. Ari concludes that the pencils probably fell from that case, while acknowledging they could have been placed there.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "C",
+    "concept_ids": [
+      "induction",
+      "abduction"
+    ],
+    "verified_explanation": "Ari explains the arrangement by proposing what happened.",
+    "follow_up_ids": [],
+    "concept_pair": [
+      "induction",
+      "abduction"
+    ]
+  },
+  {
+    "id": "q2-p",
+    "subject_id": "critical-thinking",
+    "text": "During eight rehearsal sessions, a group finished setting up its equipment within fifteen minutes. The group predicts that its next setup will probably take less than fifteen minutes too.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "A",
+    "concept_ids": [
+      "induction",
+      "abduction"
+    ],
+    "verified_explanation": "Earlier setup times support a new prediction.",
+    "follow_up_ids": [],
+    "concept_pair": [
+      "induction",
+      "abduction"
+    ]
+  },
+  {
+    "id": "q2-e",
+    "subject_id": "critical-thinking",
+    "text": "A student samples thirty pages from a long booklet and finds a diagram on twenty-four. The student estimates that most pages in the entire booklet contain diagrams.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "A",
+    "concept_ids": [
+      "induction",
+      "abduction"
+    ],
+    "verified_explanation": "A sample supports an estimate about the whole booklet.",
+    "follow_up_ids": [],
+    "concept_pair": [
+      "induction",
+      "abduction"
+    ]
+  },
+  {
+    "id": "q3-p",
+    "subject_id": "critical-thinking",
+    "text": "Assume every item in Box R is a triangle, and tile T is in Box R. Therefore, tile T is a triangle.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "B",
+    "concept_ids": [
+      "deduction",
+      "induction"
+    ],
+    "verified_explanation": "Tile T falls under the given rule.",
+    "follow_up_ids": [],
+    "concept_pair": [
+      "deduction",
+      "induction"
+    ]
+  },
+  {
+    "id": "q3-e",
+    "subject_id": "critical-thinking",
+    "text": "Assume every participant in Workshop L received a ticket, and Niko participated in Workshop L. Therefore, Niko received a ticket.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "B",
+    "concept_ids": [
+      "deduction",
+      "induction"
+    ],
+    "verified_explanation": "The premises include Niko among ticket recipients.",
+    "follow_up_ids": [],
+    "concept_pair": [
+      "deduction",
+      "induction"
+    ]
+  },
+  {
+    "id": "q4-p",
+    "subject_id": "critical-thinking",
+    "text": "A desk lamp goes dark, and its plug is found loose beside the socket. Pat considers disconnection the most plausible explanation, although a faulty bulb remains possible.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "C",
+    "concept_ids": [
+      "abduction",
+      "deduction"
+    ],
+    "verified_explanation": "Pat weighs possible causes of the darkness.",
+    "follow_up_ids": [],
+    "concept_pair": [
+      "abduction",
+      "deduction"
+    ]
+  },
+  {
+    "id": "q4-e",
+    "subject_id": "critical-thinking",
+    "text": "A paper model is found flattened beside a fallen stack of books. Dani concludes that the falling books most likely crushed it, while acknowledging nobody saw the event.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "C",
+    "concept_ids": [
+      "abduction",
+      "deduction"
+    ],
+    "verified_explanation": "Dani proposes an account of the damage.",
+    "follow_up_ids": [],
+    "concept_pair": [
+      "abduction",
+      "deduction"
+    ]
+  },
+  {
+    "id": "q5-p",
+    "subject_id": "critical-thinking",
+    "text": "Twenty markers sampled from a large shipment all worked. Kai predicts that another randomly selected marker from the shipment will probably work.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "A",
+    "concept_ids": [
+      "induction",
+      "deduction"
+    ],
+    "verified_explanation": "Sample results support a prediction about an untested marker.",
+    "follow_up_ids": [],
+    "concept_pair": [
+      "induction",
+      "deduction"
+    ]
+  },
+  {
+    "id": "q5-e",
+    "subject_id": "critical-thinking",
+    "text": "A bakery sold out of rolls before noon on the last six Saturdays. Its manager predicts another sellout before noon next Saturday.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "A",
+    "concept_ids": [
+      "induction",
+      "deduction"
+    ],
+    "verified_explanation": "Previous Saturdays supply a pattern for prediction.",
+    "follow_up_ids": [],
+    "concept_pair": [
+      "induction",
+      "deduction"
+    ]
+  },
+  {
+    "id": "q6-p",
+    "subject_id": "critical-thinking",
+    "text": "Assume a token is in either a red envelope or a green envelope, with no other possible location. It is not in the red envelope. Therefore, it is in the green envelope.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "B",
+    "concept_ids": [
+      "deduction",
+      "abduction"
+    ],
+    "verified_explanation": "The exhaustive alternatives force the remaining location.",
+    "follow_up_ids": [],
+    "concept_pair": [
+      "deduction",
+      "abduction"
+    ]
+  },
+  {
+    "id": "q6-e",
+    "subject_id": "critical-thinking",
+    "text": "Assume a form was submitted either online or on paper, and no other submission method is possible. It was not submitted online. Therefore, it was submitted on paper.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "B",
+    "concept_ids": [
+      "deduction",
+      "abduction"
+    ],
+    "verified_explanation": "Removing one exhaustive alternative determines the other.",
+    "follow_up_ids": [],
+    "concept_pair": [
+      "deduction",
+      "abduction"
+    ]
+  }
+]

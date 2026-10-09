@@ -71,6 +71,15 @@
 - Author: <fill>.
 - Reviewer: <fill>, a different person who checks every item against a cited source.
 - Coding agents only format and validate the human-written content.
+
+### Approved authorship exception — one batch only
+- Batch: `critical-thinking-c1-reviewed-2026-10-09`; D1-D3, Q1-Q6, Q1-P/Q1-E through Q6-P/Q6-E, and synthetic test explanations T01-T15 from the approved draft.
+- Author: Codex (AI), not a human author. Human reviewer: Karl Andrei; review date: 2026-10-09.
+- The project owner confirmed Karl's source review and independently peer-reviewed and approved this batch; owner confirmation was supplied on 2026-10-10. No owner name or signature is inferred.
+- Approved as written with the Q6 exhaustive-alternatives and Q1/Q4 abductive-background-knowledge notes retained. Required wording edits: none.
+- Preserve item-level source mappings, actual review evidence, truthful AI provenance, and owner approval in `data/content-metadata.json` when formatting F2 practice content. T01-T15 are reviewed synthetic examples; F3 formatting and model evaluation remain separate work.
+- This exception permits formatting and validation of this specific batch. It authorizes no future AI-authored practice or evaluation content. All other content, review, scope, and dependency requirements remain in force.
+
 - Minimum demo content:
   - Concepts induction, deduction, and abduction.
   - 6-8 questions.

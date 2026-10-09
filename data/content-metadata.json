@@ -1,0 +1,894 @@
+{
+  "batch_id": "critical-thinking-c1-reviewed-2026-10-09",
+  "authorship_exception": {
+    "author": "Codex (AI)",
+    "human_reviewer": "Karl Andrei",
+    "owner_approval": {
+      "role": "project owner",
+      "approved": true,
+      "peer_reviewed": true,
+      "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+      "confirmation_date": "2026-10-10",
+      "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+    },
+    "approved_source_item_ids": [
+      "D1",
+      "D2",
+      "D3",
+      "Q1",
+      "Q1-P",
+      "Q1-E",
+      "Q2",
+      "Q2-P",
+      "Q2-E",
+      "Q3",
+      "Q3-P",
+      "Q3-E",
+      "Q4",
+      "Q4-P",
+      "Q4-E",
+      "Q5",
+      "Q5-P",
+      "Q5-E",
+      "Q6",
+      "Q6-P",
+      "Q6-E"
+    ],
+    "extends_to_future_content": false
+  },
+  "follow_up_convention": {
+    "first": "primary",
+    "second": "extra",
+    "terminal_follow_ups": true
+  },
+  "records": {
+    "induction": {
+      "item_id": "induction",
+      "source_item_id": "D1",
+      "sources": [
+        {
+          "tag": "S1",
+          "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+          "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "ca7b2729a69467a2cdd2ad13cdbb438d2a9713a7a4176db6acfe3dcc5ae5805c",
+      "review_notes": []
+    },
+    "deduction": {
+      "item_id": "deduction",
+      "source_item_id": "D2",
+      "sources": [
+        {
+          "tag": "S1",
+          "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+          "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "b40d60d7020df7be53741e04dce3a6e6950f8943ad0ea3f1695d20067ee7d62a",
+      "review_notes": []
+    },
+    "abduction": {
+      "item_id": "abduction",
+      "source_item_id": "D3",
+      "sources": [
+        {
+          "tag": "S2",
+          "citation": "Igor Douven, Stanford Encyclopedia of Philosophy, Abduction, section 1.1",
+          "url": "https://plato.stanford.edu/entries/abduction/#DedIndAbd"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "5126a562ab267dd34d2d66bb27b21f5f390f6463556e81715d2ae7b07cca5cbd",
+      "review_notes": []
+    },
+    "q1": {
+      "item_id": "q1",
+      "source_item_id": "Q1",
+      "sources": [
+        {
+          "tag": "S2",
+          "citation": "Igor Douven, Stanford Encyclopedia of Philosophy, Abduction, section 1.1",
+          "url": "https://plato.stanford.edu/entries/abduction/#DedIndAbd"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "d46ff8d6ba90552fdd2ff07f7ae7cadaf8eed18c22879a94811a9a3c3d886220",
+      "review_notes": [
+        "Preserve exhaustive-alternative premises in Q6, Q6-P, Q6-E. Mutual exclusivity is not necessary for the valid disjunctive syllogism; no wording edits were requested.",
+        "For Q1/Q4, abduction can use general background knowledge; classify the explanatory inference rather than the mere presence of observations or background generalizations."
+      ]
+    },
+    "q2": {
+      "item_id": "q2",
+      "source_item_id": "Q2",
+      "sources": [
+        {
+          "tag": "S1",
+          "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+          "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "27bb4adef7892bbea2ce448b83f9613a1b4023147baf8e467d3cf7cd5ee0ceb5",
+      "review_notes": []
+    },
+    "q3": {
+      "item_id": "q3",
+      "source_item_id": "Q3",
+      "sources": [
+        {
+          "tag": "S1",
+          "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+          "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "ec8bf351f0365cb768df672a892d8e939e3591e2f440e2d9ee23b85cb755be6c",
+      "review_notes": []
+    },
+    "q4": {
+      "item_id": "q4",
+      "source_item_id": "Q4",
+      "sources": [
+        {
+          "tag": "S2",
+          "citation": "Igor Douven, Stanford Encyclopedia of Philosophy, Abduction, section 1.1",
+          "url": "https://plato.stanford.edu/entries/abduction/#DedIndAbd"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "635dadf9a2528119cc8518339fd54bc4429d7a1cca1ee866e5c7101abcedf031",
+      "review_notes": [
+        "Preserve exhaustive-alternative premises in Q6, Q6-P, Q6-E. Mutual exclusivity is not necessary for the valid disjunctive syllogism; no wording edits were requested.",
+        "For Q1/Q4, abduction can use general background knowledge; classify the explanatory inference rather than the mere presence of observations or background generalizations."
+      ]
+    },
+    "q5": {
+      "item_id": "q5",
+      "source_item_id": "Q5",
+      "sources": [
+        {
+          "tag": "S1",
+          "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+          "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "afdbdfad6fe175db225de9c12851edf74dd9bd1ec9f5198572c1eeaea6795419",
+      "review_notes": []
+    },
+    "q6": {
+      "item_id": "q6",
+      "source_item_id": "Q6",
+      "sources": [
+        {
+          "tag": "S1",
+          "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+          "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "7e967dc879b7669d7df6a9e77ff08fe7a0cb5856743f4081610f596fd9ab82c4",
+      "review_notes": [
+        "Preserve exhaustive-alternative premises in Q6, Q6-P, Q6-E. Mutual exclusivity is not necessary for the valid disjunctive syllogism; no wording edits were requested.",
+        "For Q1/Q4, abduction can use general background knowledge; classify the explanatory inference rather than the mere presence of observations or background generalizations."
+      ]
+    },
+    "q1-p": {
+      "item_id": "q1-p",
+      "source_item_id": "Q1-P",
+      "sources": [
+        {
+          "tag": "S2",
+          "citation": "Igor Douven, Stanford Encyclopedia of Philosophy, Abduction, section 1.1",
+          "url": "https://plato.stanford.edu/entries/abduction/#DedIndAbd"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "99f3241c930a985296d4cd28aff3ea431937c71f21cab2c88953b1c82478f1be",
+      "review_notes": [
+        "Preserve exhaustive-alternative premises in Q6, Q6-P, Q6-E. Mutual exclusivity is not necessary for the valid disjunctive syllogism; no wording edits were requested.",
+        "For Q1/Q4, abduction can use general background knowledge; classify the explanatory inference rather than the mere presence of observations or background generalizations."
+      ]
+    },
+    "q1-e": {
+      "item_id": "q1-e",
+      "source_item_id": "Q1-E",
+      "sources": [
+        {
+          "tag": "S2",
+          "citation": "Igor Douven, Stanford Encyclopedia of Philosophy, Abduction, section 1.1",
+          "url": "https://plato.stanford.edu/entries/abduction/#DedIndAbd"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "61e5350bd34a0c020d3c88e5183a6e052688b62ae048c380dff3ee13e454a6ef",
+      "review_notes": [
+        "Preserve exhaustive-alternative premises in Q6, Q6-P, Q6-E. Mutual exclusivity is not necessary for the valid disjunctive syllogism; no wording edits were requested.",
+        "For Q1/Q4, abduction can use general background knowledge; classify the explanatory inference rather than the mere presence of observations or background generalizations."
+      ]
+    },
+    "q2-p": {
+      "item_id": "q2-p",
+      "source_item_id": "Q2-P",
+      "sources": [
+        {
+          "tag": "S1",
+          "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+          "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "f2b5f74c1b49d83e8337dd1adf3b3f7eb86cd214e7f63e7fa34f40027b656f85",
+      "review_notes": []
+    },
+    "q2-e": {
+      "item_id": "q2-e",
+      "source_item_id": "Q2-E",
+      "sources": [
+        {
+          "tag": "S1",
+          "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+          "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "8a35605cdddc6adb048140c5a09b3c4111590ec4fe192c2273df9a9f82b07caa",
+      "review_notes": []
+    },
+    "q3-p": {
+      "item_id": "q3-p",
+      "source_item_id": "Q3-P",
+      "sources": [
+        {
+          "tag": "S1",
+          "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+          "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "3f13e5bb7986518ce69d6dba7fb596c3bf825dfdfde37b2c4adad81b4ba1091b",
+      "review_notes": []
+    },
+    "q3-e": {
+      "item_id": "q3-e",
+      "source_item_id": "Q3-E",
+      "sources": [
+        {
+          "tag": "S1",
+          "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+          "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "2fc989dfabdf6e8f2e2c4ed5e4697ac51637bb4679af048cebb3b8a1bf824b76",
+      "review_notes": []
+    },
+    "q4-p": {
+      "item_id": "q4-p",
+      "source_item_id": "Q4-P",
+      "sources": [
+        {
+          "tag": "S2",
+          "citation": "Igor Douven, Stanford Encyclopedia of Philosophy, Abduction, section 1.1",
+          "url": "https://plato.stanford.edu/entries/abduction/#DedIndAbd"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "9f85442fa233e1c0b1756e66e0aaaad766b6b72cba34cef4b020a4d219846f26",
+      "review_notes": [
+        "Preserve exhaustive-alternative premises in Q6, Q6-P, Q6-E. Mutual exclusivity is not necessary for the valid disjunctive syllogism; no wording edits were requested.",
+        "For Q1/Q4, abduction can use general background knowledge; classify the explanatory inference rather than the mere presence of observations or background generalizations."
+      ]
+    },
+    "q4-e": {
+      "item_id": "q4-e",
+      "source_item_id": "Q4-E",
+      "sources": [
+        {
+          "tag": "S2",
+          "citation": "Igor Douven, Stanford Encyclopedia of Philosophy, Abduction, section 1.1",
+          "url": "https://plato.stanford.edu/entries/abduction/#DedIndAbd"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "2c014fa91d03175154231b294a5aec281e677c48acb8ca4cd6bdaeb08aa2d8b0",
+      "review_notes": [
+        "Preserve exhaustive-alternative premises in Q6, Q6-P, Q6-E. Mutual exclusivity is not necessary for the valid disjunctive syllogism; no wording edits were requested.",
+        "For Q1/Q4, abduction can use general background knowledge; classify the explanatory inference rather than the mere presence of observations or background generalizations."
+      ]
+    },
+    "q5-p": {
+      "item_id": "q5-p",
+      "source_item_id": "Q5-P",
+      "sources": [
+        {
+          "tag": "S1",
+          "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+          "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "7df56327bde2ec99f1f4e321e285a82f406f00ebe241a8058d530655cba6e353",
+      "review_notes": []
+    },
+    "q5-e": {
+      "item_id": "q5-e",
+      "source_item_id": "Q5-E",
+      "sources": [
+        {
+          "tag": "S1",
+          "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+          "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "9c7425efb9c3e09e3e36bbd43a00bf006ee4939728eea270e58598622ecfcf03",
+      "review_notes": []
+    },
+    "q6-p": {
+      "item_id": "q6-p",
+      "source_item_id": "Q6-P",
+      "sources": [
+        {
+          "tag": "S1",
+          "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+          "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "63b02c4c7c8693333a3b62c4cdcd26ebbfd19cb77d74ea70f329d6882a1d724d",
+      "review_notes": [
+        "Preserve exhaustive-alternative premises in Q6, Q6-P, Q6-E. Mutual exclusivity is not necessary for the valid disjunctive syllogism; no wording edits were requested.",
+        "For Q1/Q4, abduction can use general background knowledge; classify the explanatory inference rather than the mere presence of observations or background generalizations."
+      ]
+    },
+    "q6-e": {
+      "item_id": "q6-e",
+      "source_item_id": "Q6-E",
+      "sources": [
+        {
+          "tag": "S1",
+          "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+          "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+        }
+      ],
+      "provenance": {
+        "author": "Codex (AI)",
+        "human_authored": false,
+        "authorship_exception_batch": "critical-thinking-c1-reviewed-2026-10-09"
+      },
+      "review": {
+        "reviewer_name": "Karl Andrei",
+        "review_date": "2026-10-09",
+        "status": "approved",
+        "approved": true,
+        "source_section_verified": true,
+        "evidence": "Reviewer details and item approval reported by user; owner subsequently confirmed human review and independent peer approval",
+        "required_wording_edits": []
+      },
+      "owner_approval": {
+        "role": "project owner",
+        "approved": true,
+        "peer_reviewed": true,
+        "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+        "confirmation_date": "2026-10-10",
+        "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+      },
+      "content_sha256": "eeb49ba1c70d59fc556615c09189a8babd7e1f31c93133a7c9f2640536862485",
+      "review_notes": [
+        "Preserve exhaustive-alternative premises in Q6, Q6-P, Q6-E. Mutual exclusivity is not necessary for the valid disjunctive syllogism; no wording edits were requested.",
+        "For Q1/Q4, abduction can use general background knowledge; classify the explanatory inference rather than the mere presence of observations or background generalizations."
+      ]
+    }
+  },
+  "evaluation_review": {
+    "synthetic": true,
+    "author": "Codex (AI)",
+    "reviewer_name": "Karl Andrei",
+    "review_date": "2026-10-09",
+    "approved": true,
+    "owner_approval": {
+      "role": "project owner",
+      "approved": true,
+      "peer_reviewed": true,
+      "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+      "confirmation_date": "2026-10-10",
+      "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+    },
+    "count": 15,
+    "source_item_ids": [
+      "T01",
+      "T02",
+      "T03",
+      "T04",
+      "T05",
+      "T06",
+      "T07",
+      "T08",
+      "T09",
+      "T10",
+      "T11",
+      "T12",
+      "T13",
+      "T14",
+      "T15"
+    ],
+    "source_mapping": {
+      "T01": [
+        "S2"
+      ],
+      "T02": [
+        "S1",
+        "S2"
+      ],
+      "T03": [
+        "S1"
+      ],
+      "T04": [
+        "S2"
+      ],
+      "T05": [
+        "S1"
+      ],
+      "T06": [
+        "S1"
+      ],
+      "T07": [
+        "S2"
+      ],
+      "T08": [
+        "S1"
+      ],
+      "T09": [
+        "S1"
+      ],
+      "T10": [
+        "S2"
+      ],
+      "T11": [
+        "S1"
+      ],
+      "T12": [
+        "S1"
+      ],
+      "T13": [
+        "S2"
+      ],
+      "T14": [
+        "S1"
+      ],
+      "T15": [
+        "S1"
+      ]
+    },
+    "status": "Human and owner approval reported; F3 formatting and model evaluation remain unimplemented"
+  },
+  "review_notes": [
+    "Preserve exhaustive-alternative premises in Q6, Q6-P, Q6-E. Mutual exclusivity is not necessary for the valid disjunctive syllogism; no wording edits were requested.",
+    "For Q1/Q4, abduction can use general background knowledge; classify the explanatory inference rather than the mere presence of observations or background generalizations."
+  ]
+}

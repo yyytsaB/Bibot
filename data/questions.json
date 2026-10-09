@@ -1,0 +1,176 @@
+[
+  {
+    "id": "q1",
+    "subject_id": "critical-thinking",
+    "text": "Mika sees a puddle beside a tipped-over water bottle in a classroom. The nearby window is closed, and there is no visible ceiling leak. Mika concludes that water spilling from the bottle is the most plausible explanation for the wet floor, while allowing that another cause is possible.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "C",
+    "concept_ids": [
+      "induction",
+      "abduction"
+    ],
+    "verified_explanation": "Mika proposes a cause for this puddle rather than a pattern across many floors.",
+    "follow_up_ids": [
+      "q1-p",
+      "q1-e"
+    ]
+  },
+  {
+    "id": "q2",
+    "subject_id": "critical-thinking",
+    "text": "On nine of ten weekday visits at noon, Jo found the study room full. Using this pattern, Jo predicts that the room will probably be full at noon next Monday.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "A",
+    "concept_ids": [
+      "induction",
+      "abduction"
+    ],
+    "verified_explanation": "Jo extends a recorded pattern to a future visit.",
+    "follow_up_ids": [
+      "q2-p",
+      "q2-e"
+    ]
+  },
+  {
+    "id": "q3",
+    "subject_id": "critical-thinking",
+    "text": "Assume these statements are true: Every member of the robotics club has a blue badge. Bea is a member of the robotics club. Therefore, Bea has a blue badge.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "B",
+    "concept_ids": [
+      "deduction",
+      "induction"
+    ],
+    "verified_explanation": "The stated membership rule includes Bea.",
+    "follow_up_ids": [
+      "q3-p",
+      "q3-e"
+    ]
+  },
+  {
+    "id": "q4",
+    "subject_id": "critical-thinking",
+    "text": "A ticket printer stops feeding paper and displays a paper-jam warning. A folded sheet is visible in the paper path. Lin concludes that the trapped sheet is the best explanation for the interruption, but further inspection could reveal an additional problem.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "C",
+    "concept_ids": [
+      "abduction",
+      "deduction"
+    ],
+    "verified_explanation": "Lin selects an explanation without claiming it is logically forced.",
+    "follow_up_ids": [
+      "q4-p",
+      "q4-e"
+    ]
+  },
+  {
+    "id": "q5",
+    "subject_id": "critical-thinking",
+    "text": "On twelve recorded school days, a shuttle arrived before 7:30 a.m. Ren predicts that it will probably arrive before 7:30 a.m. tomorrow as well, without claiming that this is guaranteed.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "A",
+    "concept_ids": [
+      "induction",
+      "deduction"
+    ],
+    "verified_explanation": "Past arrivals support a prediction, not a guarantee.",
+    "follow_up_ids": [
+      "q5-p",
+      "q5-e"
+    ]
+  },
+  {
+    "id": "q6",
+    "subject_id": "critical-thinking",
+    "text": "Assume the archive key is either in Drawer A or Drawer B, and there are no other possibilities. The key is not in Drawer A. Therefore, it is in Drawer B.\n\nWhich type of reasoning is used?",
+    "choices": [
+      {
+        "id": "A",
+        "text": "Inductive"
+      },
+      {
+        "id": "B",
+        "text": "Deductive"
+      },
+      {
+        "id": "C",
+        "text": "Abductive"
+      }
+    ],
+    "correct_choice_id": "B",
+    "concept_ids": [
+      "deduction",
+      "abduction"
+    ],
+    "verified_explanation": "Eliminating A leaves B under the stated exhaustive alternatives.",
+    "follow_up_ids": [
+      "q6-p",
+      "q6-e"
+    ]
+  }
+]

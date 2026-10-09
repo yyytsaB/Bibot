@@ -4,14 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "validate:content": "tsx scripts/validate-content.ts",
+    "test:content": "tsx --test test/validate-content.test.ts",
+    "test": "npm run test:content"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "express": "^5.3.0"
+    "express": "^5.3.0",
+    "shared": "file:../shared"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

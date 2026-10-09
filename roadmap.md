@@ -18,6 +18,7 @@
 ## Tasks
 
 ### C1 — Content authoring
+- Approved batch exception: the owner-approved `critical-thinking-c1-reviewed-2026-10-09` batch follows docs/DECISIONS.md, Content, including truthful AI authorship and human/owner review. All other C1 content remains human-authored.
 - Priority: P1.
 - Owner: humans only.
 - Timing: hours 0-4; deliver reviewed batches as available.
@@ -52,6 +53,7 @@
   - Keep fixture content outside reviewed practice unless approved through C1.
 
 ### F2 — Format and validate prepared content
+- Formatting may include the specific approved batch exception in docs/DECISIONS.md, Content; this does not permit new AI authorship or content rewriting.
 - Priority: P1.
 - Owner: dev.
 - Dependencies: F1, reviewed C1 batches.

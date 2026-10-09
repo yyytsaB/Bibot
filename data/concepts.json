@@ -1,0 +1,17 @@
+[
+  {
+    "id": "induction",
+    "name": "Inductive Reasoning",
+    "definition": "Uses observed patterns or sampled cases to support a broader conclusion or prediction. The evidence may support the conclusion strongly, but does not logically guarantee it."
+  },
+  {
+    "id": "deduction",
+    "name": "Deductive Reasoning",
+    "definition": "Presents a conclusion as following necessarily from premises. A valid deduction cannot have true premises and a false conclusion; an invalid deduction fails that guarantee. Validity alone does not establish that the premises are true."
+  },
+  {
+    "id": "abduction",
+    "name": "Abductive Reasoning",
+    "definition": "Proposes a plausible best explanation for observations. The explanation can be revised when new evidence appears; it is not guaranteed simply because it fits the observations."
+  }
+]

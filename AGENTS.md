@@ -59,6 +59,7 @@
 - Keep explanations within verified definitions.
 - Use only human-authored, independently reviewed practice content.
 - Coding agents only format and validate human-written content.
+- For the owner-approved batch `critical-thinking-c1-reviewed-2026-10-09` only, follow the explicit authorship exception in docs/DECISIONS.md, Content. Preserve Codex (AI) authorship, Karl Andrei review, and owner peer approval; future content remains subject to the human-authored rule.
 - Show "Local AI Ready" only from the readiness signal defined in docs/DECISIONS.md.
 - Keep all content, extracted text, and learning state local.
 - Never label an upload processed before extraction succeeds.

@@ -26,6 +26,7 @@
   next-question reset, and termination after diagnosis.
 - Check concise feedback grounded in verified definitions and uncertainty for weak evidence.
 - Check human content authorship, independent source review, and formatting-only agent work.
+- For `critical-thinking-c1-reviewed-2026-10-09` only, apply docs/DECISIONS.md's owner-approved batch exception. Check Codex (AI) provenance, Karl Andrei's 2026-10-09 source review, owner peer approval, item-level mappings, and retained notes. The exception does not extend to future content; T01-T15 remain synthetic even after human review.
 - Check F1a fixtures and fixture-first F9/F11/F13/F14 work before real integration.
 - Check model comparison around hours 2-6 and F7 tuning after F5.
 - Check all evaluation thresholds in docs/DECISIONS.md.
