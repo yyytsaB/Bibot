@@ -1,5 +1,6 @@
 import { PracticeController } from "./controller.ts";
 import { getReviewedContentStore } from "./load-reviewed-content.ts";
+import { LearningMapStore, connectLearningMap } from "./learning-map.ts";
 
 /**
  * Verification entry ensuring that PracticeController, PracticeContentStore,
@@ -10,5 +11,8 @@ export function verifyStateBundle(): boolean {
   const store = getReviewedContentStore();
   const controller = new PracticeController({ contentStore: store });
   const state = controller.getState();
-  return state.status === "question_answering";
+  const map = new LearningMapStore(store);
+  const disconnect = connectLearningMap(controller, map);
+  disconnect();
+  return state.status === "question_answering" && map.getSnapshot().nodes.length === 3;
 }
