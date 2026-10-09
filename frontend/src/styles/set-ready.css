@@ -1,0 +1,21 @@
+/* Screen 8 sample summary is presentation only; no generated set is asserted. */
+.ready-set-page { min-height: calc(100svh - 38px); display: flex; flex-direction: column; padding: 0 2px; text-align: center; }
+.ready-set-header { display: flex; justify-content: space-between; height: 44px; flex-shrink: 0; margin: 0 -10px; }
+.ready-set-header .icon-button { color: #504668; }
+.ready-set-duck { display: block; align-self: center; height: 205px; width: auto; max-width: 80%; aspect-ratio: 798 / 938; margin-top: 34px; }
+.ready-set-page h1 { margin-top: 25px; font-size: 29px; font-weight: 650; line-height: 1.15; letter-spacing: -.4px; }
+.ready-set-description { margin: 5px 0 0; color: #978ab0; font-size: 17px; font-weight: 700; line-height: 1.3; }
+.ready-set-summary { display: grid; gap: 11px; margin: 18px 0 0; padding: 18px 20px; border: 2px solid #eee8fb; border-radius: 23px; background: linear-gradient(135deg, #fcfaff, #f9f7fd); text-align: left; }
+.ready-set-summary > div { display: flex; align-items: center; gap: 18px; min-height: 42px; }
+.ready-summary-icon { width: 38px; height: 38px; flex-shrink: 0; display: grid; place-items: center; border-radius: 50%; background: #edf0ff; }
+.ready-summary-icon.name { background: #e2faf1; }
+.ready-summary-icon.difficulty { background: #fff4e1; }
+.ready-summary-icon svg { width: 25px; height: 25px; filter: drop-shadow(0 1px 1px #b3bbff50); }
+.ready-set-summary dt { margin: 0; color: #988ab2; font-size: 14px; font-weight: 800; line-height: 1.2; }
+.ready-set-summary dd { margin: 3px 0 0; color: #514463; font-size: 17px; font-weight: 800; line-height: 1.25; }
+.ready-set-actions { margin-top: auto; padding-top: 12px; }
+.ready-set-page .ready-set-start { min-height: 52px; padding: 12px 18px; font-size: 18px; font-weight: 800; gap: 13px; border-radius: 28px; background: linear-gradient(180deg, #2c1b3a, #1c1029); box-shadow: inset 0 1px 2px #ffffff25; }
+.ready-set-start .icon { width: 23px; stroke-width: 1.8; }
+.ready-set-edit { width: 100%; min-height: 48px; margin-top: 10px; border-radius: 27px; background: linear-gradient(120deg, #f1ecfc, #f0ebfb); color: #57466f; font-size: 17px; font-weight: 850; }
+.mobile-shell:has(> .page-content > .ready-set-page) .page-content { padding-bottom: 16px; }
+@media (max-width: 350px) { .ready-set-duck { height: 190px; margin-top: 26px; }.ready-set-page h1 { font-size: 25px; }.ready-set-description { font-size: 16px; }.ready-set-summary { padding: 16px; gap: 10px; }.ready-set-summary > div { gap: 13px; }.ready-set-summary dd { font-size: 16px; } }

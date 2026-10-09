@@ -1,122 +1,42 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import { useEffect, useState } from 'react'
+import { PreviewApp } from './components/previews/PreviewApp'
 import './App.css'
+import './styles/connected-navigation.css'
+
+// Presentation routes only. Learning state and backend integration belong to the developer.
+const screenRoutes = ['welcome', 'home', 'paste-text', 'upload-file', 'subjects', 'set-details', 'generating', 'set-ready', 'library', 'question', 'reasoning', 'feedback', 'follow-up', 'answer-result', 'completed', 'empty-map', 'map', 'concept-map', 'map-details'] as const
+function currentScreen(): number {
+  const route = window.location.hash.replace(/^#\/?/, '')
+  if (route.startsWith('design-preview/')) {
+    const number = Number(route.split('/')[1])
+    return Number.isInteger(number) && number >= 1 && number <= 19 ? number : 2
+  }
+  if (route === 'prepared-practice') return 10
+  const index = screenRoutes.findIndex(name => name === route)
+  return index >= 0 ? index + 1 : route ? 2 : 1
+}
+const parents: Record<number, number> = { 2: 1, 3: 2, 4: 2, 5: 2, 6: 9, 7: 6, 8: 9, 9: 5, 10: 9, 11: 10, 12: 11, 13: 12, 14: 13, 15: 9, 16: 2, 17: 2, 18: 17, 19: 18 }
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+  const [screen, setScreen] = useState(currentScreen)
+  useEffect(() => {
+    const update = () => setScreen(currentScreen())
+    window.addEventListener('hashchange', update)
+    window.addEventListener('popstate', update)
+    return () => { window.removeEventListener('hashchange', update); window.removeEventListener('popstate', update) }
+  }, [])
+  useEffect(() => { window.scrollTo(0, 0) }, [screen])
+  const navigate = (next: number) => {
+    const route = screenRoutes[next - 1]
+    if (!route || next === screen) return
+    window.history.pushState({ bibotNavigation: true }, '', `#/${route}`)
+    setScreen(next)
+  }
+  const back = () => {
+    if (window.history.state?.bibotNavigation === true) window.history.back()
+    else navigate(parents[screen] ?? 2)
+  }
+  return <div className="connected-frontend"><PreviewApp screen={screen} connected onNavigate={navigate} onBack={back} /><p className="frontend-demo-notice" role="note">Frontend demo · sample content<br />AI unavailable · no saved progress</p></div>
 }
 
 export default App

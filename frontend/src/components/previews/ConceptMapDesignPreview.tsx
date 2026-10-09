@@ -1,0 +1,21 @@
+import { useState } from 'react'
+import { fixtureInitialMapSnapshot, fixtureProgressingMapSnapshot } from '../../../../shared/src/fixtures'
+import { MobileShell } from '../layout/MobileShell'
+import { Icon } from '../layout/Icon'
+import { MapDiagramPreview } from './MapDiagramPreview'
+import '../../styles/map-design-previews.css'
+import '../../styles/empty-map-design-preview.css'
+import '../../styles/concept-map-design-preview.css'
+
+type Props = {onNavigate:(screen:number)=>void;onBack:()=>void}
+export function ConceptMapDesignPreview({onNavigate,onBack}:Props) {
+ const [panelOpen,setPanelOpen]=useState(true)
+ const [fixture,setFixture]=useState<'mockup'|'initial'|'progressing'>('mockup')
+ return <><div className="practice-preview-controls"><span>Illustrative concept map · no diagnosis or saved learning evidence</span><label>Map data <select value={fixture} onChange={event=>{const value=event.target.value;if(value==='mockup'||value==='initial'||value==='progressing')setFixture(value)}}><option value="mockup">Mockup illustration</option><option value="initial">F1a initial fixture</option><option value="progressing">F1a progressing fixture</option></select></label></div><MobileShell onNavigate={tab=>onNavigate(tab==='home'?2:tab==='practice'?9:17)}><section className="concept-map-design">
+ <header className="concept-map-header"><button type="button" className="icon-button" aria-label="Go back" onClick={onBack}><Icon name="back" /></button><div className="concept-map-subject">Critical Thinking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></div></header>
+ <div className="concept-map-tabs"><button type="button" aria-pressed="true" onClick={()=>onNavigate(18)}>Map</button><button type="button" aria-pressed="false" onClick={()=>onNavigate(19)}>Details</button></div>
+ <MapDiagramPreview snapshot={fixture==='initial'?fixtureInitialMapSnapshot:fixture==='progressing'?fixtureProgressingMapSnapshot:undefined} onSelect={()=>setPanelOpen(true)} />
+ {panelOpen && fixture!=='initial' && <section className="concept-map-sheet"><span className="concept-map-handle" aria-hidden="true" /><button className="concept-map-close" type="button" aria-label="Close review panel" onClick={()=>setPanelOpen(false)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button><div className="concept-map-review"><span className="concept-map-alert" aria-hidden="true"><svg viewBox="0 0 40 40"><defs><linearGradient id="concept-alert" x1="0" y1="0" x2="40" y2="40"><stop stopColor="#ff547e" /><stop offset="1" stopColor="#ff174f" /></linearGradient></defs><circle cx="20" cy="20" r="18" fill="url(#concept-alert)" /><path d="M20 10v12M20 29h0" stroke="white" strokeWidth="3.6" strokeLinecap="round" /></svg></span><div><h1>Induction vs Abduction</h1><span className="concept-map-status">Needs Review</span><p>{fixture==='mockup'?'You seem to be unclear about the difference between induction and abduction.':'Fixture confused-pair preview only; no diagnosis is available.'}</p></div></div><button className="primary-button concept-map-review-now" type="button" onClick={()=>onNavigate(10)}>Review Now</button><button className="primary-button concept-map-later" type="button" onClick={()=>setPanelOpen(false)}>Maybe Later</button></section>}
+    <nav className="empty-map-nav" aria-label="Main navigation">{(['home','practice','map'] as const).map(tab => <button type="button" key={tab} aria-current={tab === 'map' ? 'page' : undefined} onClick={() => onNavigate(tab === 'home' ? 2 : tab === 'practice' ? 9 : 17)}>{tab === 'map' ? <svg className="icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m9 23 8-17 9 8-5 10-12-1M17 6l4 18" /><circle cx="9" cy="23" r="4.2" fill="#faf9ff" /><circle cx="17" cy="6" r="4.2" fill="#faf9ff" /><circle cx="26" cy="14" r="4.2" fill="#faf9ff" /><circle cx="21" cy="24" r="4.2" fill="#faf9ff" /></svg> : <Icon name={tab} />}<span>{tab === 'home' ? 'Home' : tab === 'practice' ? 'Practice' : 'My Map'}</span></button>)}</nav>
+ </section></MobileShell></>
+}

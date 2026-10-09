@@ -1,0 +1,70 @@
+/* Screen 1: measured against the interior of the 415 × 865 reference export.
+   SVG image viewBoxes remove transparent canvas margins without editing assets. */
+.mobile-shell.splash-shell .page-content { padding: 0; }
+.bibot-splash {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 480px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 56% 33%, #f5f5fd 0%, transparent 67%),
+    linear-gradient(145deg, #f5f4fd 0%, #f2f1fc 53%, #f1edfc 100%);
+}
+.splash-background { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.splash-wordmark {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: min(36.92%, 17.73svh);
+  aspect-ratio: 144 / 45;
+  transform: translateX(-50%);
+}
+.splash-mascot {
+  position: absolute;
+  top: 37.32%;
+  left: 50%;
+  width: min(85.13%, 40.89svh);
+  aspect-ratio: 332 / 237;
+  transform: translateX(-50%);
+}
+.splash-ground-shadow {
+  position: absolute;
+  top: 65.5%;
+  left: 50%;
+  width: min(53%, 25.46svh);
+  height: 4.2%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse, #9c79d42c 0%, #a78bd519 35%, transparent 70%);
+  pointer-events: none;
+}
+.splash-next {
+  position: absolute;
+  top: calc(71.18% - 13px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(57.95%, 27.84svh);
+  height: 44px;
+  padding: 0;
+  display: grid;
+  align-items: center;
+  border-radius: 22px;
+  background: transparent;
+}
+.splash-track {
+  display: block;
+  height: clamp(12px, 2.08svh, 18px);
+  width: 100%;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e2d8fa;
+}
+.splash-fill {
+  display: block;
+  height: 100%;
+  width: 61.5%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #8650ff 0%, #7c43fd 65%, #8954ff 100%);
+}
+.splash-next:not(:disabled):hover { box-shadow: none; }

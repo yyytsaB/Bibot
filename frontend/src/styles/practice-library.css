@@ -1,0 +1,32 @@
+/* Screen 9 styling; sample sets remain confined to the design gallery. */
+.practice-library-header { display: flex; justify-content: space-between; align-items: center; height: 44px; margin-inline: -8px; }
+.library-menu-decoration { display: grid; place-items: center; width: 44px; height: 44px; color: #733aff; }
+.library-menu-decoration svg { width: 23px; height: 23px; }
+.practice-library-heading { position: relative; height: 114px; padding-top: 30px; }
+.practice-library-heading h1 { position: relative; z-index: 1; max-width: calc(100% - 105px); font-size: clamp(22px, 6.4vw, 27px); font-weight: 650; letter-spacing: -.4px; line-height: 1.15; }
+.library-portrait { position: absolute; right: -4px; bottom: 0; width: 124px; height: 101px; mix-blend-mode: multiply; }
+.library-tabs { display: flex; padding: 3px; background: #f4f0fd; border-radius: 25px; gap: 4px; }
+.library-tabs button { flex: 1; min-height: 42px; padding: 9px 5px; background: transparent; border-radius: 24px; color: #9687b0; font-size: 16px; font-weight: 850; }
+.library-tabs button[aria-pressed=true] { background: linear-gradient(120deg, #e8dcff, #ece3ff); color: #8246fb; }
+.library-filters { display: flex; gap: 6px; margin: 15px 0 17px; }
+.library-filters button { flex: 1.5; min-height: 43px; padding: 9px 4px; border-radius: 24px; font-size: 14px; font-weight: 850; color: #998daf; background: #f1edfc; }
+.library-filters button:first-child { flex: .85; }
+.library-filters button[aria-pressed=true] { background: linear-gradient(180deg, #b388ff, #9864ff); color: white; box-shadow: inset 0 1px 2px #fff6; }
+.library-set-list { display: grid; gap: 6px; }
+.library-set-card { display: flex; align-items: center; gap: 16px; width: 100%; min-height: 70px; padding: 5px 10px; background: linear-gradient(135deg, #fcfbff, #f9f7fe); border: 2px solid #efebfa; border-radius: 20px; text-align: left; color: #29203c; }
+.library-set-card.with-sample-progress { min-height: 84px; }
+.library-set-icon { width: 58px; height: 57px; flex-shrink: 0; border-radius: 17px; display: grid; place-items: center; }
+.library-set-icon.foundations { background: #defff2; }.library-set-icon.reasoning { background: #e3f0ff; }.library-set-icon.fallacies { background: #eee2ff; }.library-set-icon.scenarios { background: #ffe6f2; }.library-set-icon.notes { background: #e7eaff; }.library-set-icon.article { background: #fff0e6; }
+.library-set-art { width: 39px; height: 41px; filter: drop-shadow(0 1px 1px #b3b0d530); }
+.library-set-text { flex: 1; min-width: 0; }
+.library-set-text strong { display: block; font-size: 16px; font-weight: 900; letter-spacing: -.3px; line-height: 1.2; }
+.library-set-text small { display: block; margin-top: 5px; color: #9e90b8; font-size: 14px; font-weight: 650; line-height: 1.3; }
+.library-sample-progress { display: flex; align-items: center; gap: 9px; margin-top: 5px; color: #a291c3; font-size: 14px; font-weight: 750; line-height: 1.2; }
+.library-progress-track { flex: 1; height: 8px; background: #e9e1fb; border-radius: 6px; }
+.library-progress-track i { display: block; height: 100%; width: 60%; background: linear-gradient(90deg, #9565ff, #aa7bff); border-radius: inherit; }
+.library-play-decoration { width: 40px; height: 40px; display: grid; place-items: center; flex-shrink: 0; color: #8150ff; border-radius: 15px; background: #eee5ff; }
+.library-play-decoration .icon { width: 23px; height: 23px; fill: currentColor; stroke-width: 1; }
+.library-upload-chevron { width: 40px; text-align: center; color: #9a89bb; font-size: 29px; line-height: 1; }
+.mobile-shell:has(> .page-content > .practice-library-page) .page-content { padding-bottom: calc(88px + env(safe-area-inset-bottom)); }
+@media (max-width: 350px) { .practice-library-heading { height: 104px; }.practice-library-heading h1 { max-width: calc(100% - 93px); }.library-portrait { width: 105px; height: 86px; }.library-set-card { gap: 10px; padding-inline: 9px; }.library-set-icon { width: 49px; }.library-set-text strong { font-size: 14px; }.library-set-text small { font-size: 12px; }.library-tabs button { font-size: 14px; }.library-filters button { font-size: 12px; } }
+

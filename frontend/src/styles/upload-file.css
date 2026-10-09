@@ -1,0 +1,19 @@
+/* Screen 4 is an upload illustration; the panel remains disabled. */
+.upload-page { min-height: calc(100svh - 52px); display: flex; flex-direction: column; padding: 0 2px; }
+.upload-page .upload-back { margin: 0 0 10px -10px; color: #5e537c; }
+.upload-page h1 { font-size: 30px; font-weight: 650; line-height: 1.15; letter-spacing: -.5px; }
+.upload-panel { width: 100%; flex-shrink: 0; height: 294px; margin: 41px 0 0; padding: 0 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #dfd2ff; border-radius: 22px; background: linear-gradient(135deg, #f3edff, #f5f1fc); color: #17132d; font-family: 'Nunito', sans-serif; opacity: 1; cursor: not-allowed; }
+.upload-document { width: 59px; height: 66px; margin-bottom: 18px; filter: drop-shadow(0 1px 1px #b79af530); }
+.upload-panel strong { font-size: 18px; font-weight: 900; line-height: 1.4; }
+.upload-formats { margin-top: 8px; color: #8c80aa; font-size: 16px; font-weight: 650; line-height: 1.4; }
+.upload-drag { margin-top: 16px; color: #988bb7; font-size: 16px; font-weight: 650; line-height: 1.4; }
+.upload-sample { margin-top: 18px; padding: 12px 20px; min-height: 75px; display: flex; align-items: center; gap: 22px; border: 2px solid #efe9fb; border-radius: 22px; background: linear-gradient(135deg, #fcfbff, #f8f6ff); }
+.upload-pdf { width: 38px; height: 47px; flex-shrink: 0; filter: drop-shadow(0 2px 2px #fd3a5820); }
+.upload-file-details { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.upload-file-details strong { font-size: 16px; font-weight: 850; overflow-wrap: anywhere; line-height: 1.35; }
+.upload-file-details small { font-size: 16px; font-weight: 700; color: #9388b2; line-height: 1.3; }
+.upload-sample-close { margin-left: auto; color: #9585be; font-size: 29px; line-height: 1; font-weight: 500; }
+.upload-page .upload-continue { margin-top: auto; margin-bottom: 23px; min-height: 59px; border-radius: 31px; font-size: 20px; font-weight: 800; gap: 16px; background: linear-gradient(180deg, #a175ff 0%, #8a58ff 45%, #7948f8 100%); box-shadow: inset 0 1px 2px #ffffff50, 0 1px 2px #8a5eee15; }
+.upload-page .upload-continue .icon { width: 24px; stroke-width: 1.8; }
+@media (max-width: 350px) { .upload-page h1 { font-size: 27px; }.upload-panel { height: 275px; margin-top: 30px; }.upload-panel strong { font-size: 16px; }.upload-formats, .upload-drag { font-size: 14px; }.upload-sample { padding: 12px; gap: 12px; }.upload-file-details strong, .upload-file-details small { font-size: 14px; } }
+@media (max-height: 700px) { .upload-page .upload-continue { margin-top: 30px; } }

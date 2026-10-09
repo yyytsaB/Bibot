@@ -1,0 +1,27 @@
+/* Isolated gallery styling; kind guards prevent a fallback/clarification diagnosis. */
+.feedback-design-page { min-height: calc(100svh - 52px); display: flex; flex-direction: column; }
+.feedback-design-cards { display: grid; gap: 14px; margin-top: 24px; }
+.feedback-design-card { display: flex; align-items: flex-start; gap: 20px; padding: 21px 17px; border-radius: 22px; }
+.feedback-design-card > div { min-width: 0; }
+.feedback-design-card.diagnosis { background: linear-gradient(125deg, #fff4e9, #fff0e9); }
+.feedback-design-card.explanation { background: linear-gradient(125deg, #f2ecff, #f0ecfc); }
+.feedback-design-card.followup { background: linear-gradient(125deg, #fff1e5, #fff0e4); gap: 16px; }
+.feedback-design-card.clarify { background: #fff6df; }
+.feedback-design-card h1, .feedback-design-card h2 { margin: 0; font-family: 'Nunito', sans-serif; font-size: 19px; font-weight: 900; line-height: 1.25; letter-spacing: -.35px; color: #ff486e; }
+.feedback-design-card.explanation h2 { color: #8b4bfa; }
+.feedback-design-card.followup h2 { color: #ff563e; }
+.feedback-design-card.clarify h1 { color: #ad7b24; }
+.feedback-design-card p { margin: 7px 0 0; color: #9785b0; font-size: 17px; font-weight: 650; line-height: 1.35; overflow-wrap: anywhere; }
+.feedback-design-icon { display: block; width: 43px; height: 46px; flex-shrink: 0; filter: drop-shadow(0 1px 2px #ddc0b930); }
+.feedback-design-icon.book { width: 40px; height: 43px; }
+.feedback-design-target { display: grid; place-items: center; width: 56px; height: 56px; flex-shrink: 0; border-radius: 17px; background: #ffe4d3; }
+.feedback-design-target .feedback-design-icon { width: 42px; height: 44px; }
+.feedback-design-page .feedback-design-next { margin-top: 17px; min-height: 59px; font-size: 18px; font-weight: 850; gap: 16px; background: linear-gradient(160deg, #2c193e, #190e29); box-shadow: inset 0 1px 2px #fff3; }
+.feedback-design-next .icon { width: 24px; stroke-width: 1.8; }
+.feedback-design-card .feedback-design-uncertainty { font-size: 14px; }
+.feedback-design-question-mark { width: 43px; flex-shrink: 0; text-align: center; color: #e0a326; font-size: 38px; font-weight: 850; }
+.feedback-design-reasoning { position: relative; }
+.feedback-design-reasoning label { display: block; font-size: 20px; font-weight: 750; margin-bottom: 12px; }
+.feedback-design-reasoning textarea { width: 100%; min-height: 210px; padding: 16px 17px 38px; border: 2px solid #eee7fb; border-radius: 20px; background: #fcfaff; resize: vertical; color: #6d5a83; }
+.feedback-design-reasoning > span { position: absolute; right: 18px; bottom: 16px; color: #a895c5; font-size: 15px; }
+@media (max-width: 350px) { .feedback-design-card { padding: 18px 13px; gap: 13px; }.feedback-design-card h1, .feedback-design-card h2 { font-size: 17px; }.feedback-design-card p { font-size: 15px; }.feedback-design-icon { width: 35px; height: 40px; }.feedback-design-icon.book { width: 35px; height: 38px; }.feedback-design-target { width: 44px; height: 48px; }.feedback-design-target .feedback-design-icon { width: 35px; }.feedback-design-card.followup { gap: 12px; } }

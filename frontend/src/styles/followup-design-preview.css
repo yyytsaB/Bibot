@@ -1,0 +1,10 @@
+/* Screen 13 design gallery: presentation and local choice selection only. */
+.followup-design-page { min-height: calc(100svh - 52px); display: flex; flex-direction: column; }
+.followup-design-page .question-design-progress > span { width: 100%; }
+.followup-design-page .question-design-menu { color: #5e497b; }
+.followup-design-page .followup-design-text { margin: 38px 0 23px; font-family: 'Nunito', sans-serif; font-size: 23px; font-weight: 750; color: #514269; line-height: 1.3; letter-spacing: -.2px; }
+.followup-design-page .question-design-choice { min-height: 53px; font-size: 17px; gap: 26px; }
+.followup-design-page .question-design-choices { gap: 7px; }
+.followup-design-page .followup-design-check { margin-top: 48px; min-height: 63px; font-size: 19px; font-weight: 850; gap: 17px; background: linear-gradient(160deg, #2c193e, #190e29); box-shadow: inset 0 1px 2px #fff3; }
+.followup-design-check .icon { width: 25px; stroke-width: 1.8; }
+@media (max-width: 350px) { .followup-design-page .followup-design-text { font-size: 20px; margin-top: 30px; }.followup-design-page .question-design-choice { font-size: 14px; gap: 16px; }.followup-design-page .followup-design-check { font-size: 17px; margin-top: 38px; } }

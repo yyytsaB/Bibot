@@ -1,0 +1,45 @@
+/* Screen 2 refinement: scoped so subject/library and splash layouts stay intact. */
+.mobile-shell.home-shell { background: linear-gradient(135deg, #fcfbff, #f9f8ff 58%, #faf9ff); }
+.mobile-shell.home-shell .page-content { padding: max(20px, env(safe-area-inset-top)) 29px calc(98px + env(safe-area-inset-bottom)); }
+.home-page .home-brand { height: 54px; }
+.home-wordmark { width: 106px; height: 32px; }
+.home-page .profile-decoration { width: 51px; height: 51px; background: radial-gradient(circle at 30% 20%, #f0eaff, #e9e0fd); }
+.home-page .profile-decoration .icon { width: 30px; height: 30px; stroke-width: 1.8; }
+.home-page .welcome { padding-top: 20px; height: clamp(270px, calc(55vw + 41.75px), 306px); }
+.home-page .welcome h1 { font-size: 40px; font-weight: 650; line-height: 1.05; letter-spacing: -.7px; }
+.home-page .welcome p { font-size: 20px; font-weight: 650; line-height: 1.25; color: #8d86a7; margin-top: 5px; }
+.home-mascot { position: absolute; right: -16px; top: 58px; width: min(82.9%, 316px); aspect-ratio: 1413 / 979; height: auto; pointer-events: none; }
+.home-page .entry-cards { gap: 16px; margin-bottom: 17px; }
+.home-page .entry-card { min-height: 104px; padding: 14px 15px; gap: 18px; border-radius: 24px; box-shadow: inset 0 1px 2px #ffffff50; }
+.home-page .purple-card { background: linear-gradient(125deg, #f0e9ff, #f1ebfc); }
+.home-page .yellow-card { background: linear-gradient(130deg, #fff6df, #fff5d7); }
+.home-page .entry-card:disabled { opacity: 1; }
+.home-page .entry-card strong { font-size: 19.5px; font-weight: 900; color: #17152d; letter-spacing: -.3px; }
+.home-page .entry-card small { color: #8b84a1; font-size: 16px; font-weight: 650; line-height: 1.35; margin-top: 5px; }
+.home-page .card-icon { width: 68px; height: 70px; border-radius: 18px; }
+.home-page .card-icon.purple { background: linear-gradient(135deg, #e9ddff, #e2d5fe); }
+.home-page .card-icon.yellow { background: linear-gradient(135deg, #fff0c0, #ffeeb0); }
+.home-entry-icon { width: 46px; height: 49px; filter: drop-shadow(0 2px 2px #9163e025); }
+.home-page .yellow .home-entry-icon { filter: drop-shadow(0 2px 2px #f8b51740); }
+.home-page .chevron { font-size: 31px; font-weight: 700; width: 12px; flex-shrink: 0; color: #8250ff; }
+.home-page .yellow-card .chevron { color: #8c819e; }
+.home-page .primary-button.dark { min-height: 62px; font-size: 20px; font-weight: 800; gap: 20px; border-radius: 32px; background: linear-gradient(145deg, #281837, #1c102b 65%); box-shadow: inset 0 1px 2px #ffffff30; }
+.home-page .primary-button .icon { width: 24px; stroke-width: 1.8; }
+.mobile-shell.home-shell .bottom-nav { padding-top: 12px; padding-bottom: calc(9px + env(safe-area-inset-bottom)); background: #fbfaffed; border-color: #e8e1f6; }
+.mobile-shell.home-shell .bottom-nav button { font-size: 14px; font-weight: 750; min-height: 55px; gap: 5px; color: #8b829e; }
+.mobile-shell.home-shell .bottom-nav .icon { width: 27px; height: 27px; stroke-width: 2; }
+.mobile-shell.home-shell .bottom-nav button[aria-current] { color: #8e58ff; }
+.mobile-shell.home-shell .bottom-nav button[aria-current] .icon { fill: #c5a9ff; stroke: #8951ff; filter: drop-shadow(0 2px 2px #cdb8ff); }
+@media (max-width: 374px) {
+  .mobile-shell.home-shell .page-content { padding-inline: 22px; }
+  .home-page .welcome { height: 260px; padding-top: 18px; }
+  .home-page .welcome h1 { font-size: 33px; }
+  .home-page .welcome p { font-size: 17px; }
+  .home-mascot { top: 65px; width: 85%; right: -13px; }
+  .home-page .entry-card { gap: 12px; padding: 13px 12px; min-height: 95px; }
+  .home-page .card-icon { width: 56px; height: 61px; }
+  .home-entry-icon { width: 40px; height: 43px; }
+  .home-page .entry-card strong { font-size: 16px; }
+  .home-page .entry-card small { font-size: 13.5px; }
+  .home-page .primary-button.dark { min-height: 57px; font-size: 18px; }
+}

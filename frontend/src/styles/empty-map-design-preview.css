@@ -1,0 +1,19 @@
+/* Dedicated screen16 gallery styling; other map screens remain untouched. */
+.mobile-shell:has(.empty-map-design) .page-content {padding:22px 26px calc(115px + env(safe-area-inset-bottom));}
+.empty-map-brand {display:flex;justify-content:space-between;align-items:center;height:60px;}
+.empty-map-brand>svg {width:103px;height:33px;}
+.empty-map-profile {display:grid;place-items:center;width:55px;height:55px;border-radius:50%;background:linear-gradient(140deg,#f0eaff,#eae4fc);color:#16102f;}
+.empty-map-profile .icon {width:32px;height:32px;stroke-width:1.9;}
+.empty-map-design h1 {font-family:'Fredoka',sans-serif;font-size:35px;font-weight:650;line-height:1.15;letter-spacing:-.5px;margin:37px 0 8px;}
+.empty-map-intro {margin:0;color:#8574b4;font-size:21px;font-weight:650;line-height:1.25;}
+.empty-map-duck {display:block;width:205px;height:auto;aspect-ratio:900/984;margin:29px auto 25px;}
+.empty-map-benefits {display:grid;gap:21px;padding:28px 17px;border-radius:21px;background:linear-gradient(140deg,#f0ebfe,#ede8ff);}
+.empty-map-benefits p {display:flex;align-items:center;gap:14px;margin:0;color:#8c7bb5;font-size:16px;font-weight:650;line-height:1.35;}
+.empty-map-benefits p>span {display:grid;place-items:center;flex-shrink:0;width:26px;height:26px;border-radius:50%;background:linear-gradient(145deg,#ddd0ff,#bda5ff);}
+.empty-map-benefits svg {width:23px;height:23px;}
+.empty-map-nav {position:fixed;z-index:5;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,480px);display:flex;padding:10px 17px calc(8px + env(safe-area-inset-bottom));border:1px solid #e6dfff;border-bottom:0;border-radius:25px 25px 0 0;background:#faf9fff2;backdrop-filter:blur(14px);}
+.empty-map-nav button {display:flex;flex:1;flex-direction:column;align-items:center;gap:5px;min-height:56px;padding:3px 8px;background:transparent;color:#75649e;font-size:16px;font-weight:650;}
+.empty-map-nav .icon {width:29px;height:29px;stroke-width:2.2;}
+.empty-map-nav button[aria-current] {color:#6930ff;}
+.empty-map-nav button[aria-current] .icon {width:34px;height:32px;stroke-width:2.8;}
+@media(max-width:350px){.mobile-shell:has(.empty-map-design) .page-content{padding-inline:18px;}.empty-map-design h1{font-size:30px;}.empty-map-intro{font-size:18px;}.empty-map-duck{width:185px;}.empty-map-benefits{padding:24px 12px;gap:20px;}.empty-map-benefits p{font-size:14px;gap:10px;}.empty-map-nav button{font-size:14px;}}

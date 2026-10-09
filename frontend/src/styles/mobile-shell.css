@@ -1,0 +1,19 @@
+.mobile-shell { max-width: 480px; min-height: 100svh; margin-inline: auto; background: radial-gradient(ellipse at 25% 10%, #fff 0, transparent 50%), var(--surface); position: relative; }
+.page-content { padding: max(22px, env(safe-area-inset-top)) 26px 30px; }
+.with-nav .page-content { padding-bottom: calc(115px + env(safe-area-inset-bottom)); }
+.bottom-nav { position: fixed; z-index: 5; bottom: 0; left: 50%; transform: translateX(-50%); width: min(100%, 480px); display: flex; padding: 9px 20px calc(8px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: #faf9ffed; backdrop-filter: blur(14px); }
+.bottom-nav button { background: transparent; color: var(--muted); display: flex; flex: 1; align-items: center; flex-direction: column; gap: 5px; min-height: 56px; font-size: 13px; font-weight: 800; }
+.bottom-nav button[aria-current] { color: var(--purple); }
+.bottom-nav button[aria-current] .icon { filter: drop-shadow(0 2px 4px #c5b1ff); }
+.primary-button { background: linear-gradient(180deg, #9865ff, #7646ff); border-radius: 30px; width: 100%; min-height: 58px; color: white; display: flex; justify-content: center; align-items: center; gap: 18px; font-size: 18px; font-weight: 800; padding: 14px 20px; }
+.primary-button.dark { background: linear-gradient(160deg, #291538, #190d2d); }
+.primary-button:disabled { opacity: .65; }
+.page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.icon-button { width: 44px; height: 44px; padding: 10px; color: #51496f; background: transparent; border-radius: 50%; }
+.profile-decoration { display: grid; place-items: center; background: #eae2ff; color: #514294; width: 46px; height: 46px; border-radius: 50%; }
+.profile-decoration .icon { width: 28px; height: 28px; }
+.subtitle { color: var(--muted); margin: 7px 0 16px; font-size: 16px; }
+.integration-placeholder { padding-top: 15vh; text-align: center; }
+.integration-placeholder p { color: var(--muted); margin: 25px 0; }
+@media (max-width: 350px) { .page-content { padding-inline: 18px; } .primary-button { font-size: 16px; } }
+@media (prefers-reduced-motion: no-preference) { button:not(:disabled) { transition: background .15s, box-shadow .15s; } button:not(:disabled):hover { box-shadow: 0 3px 12px #8a61df20; } }

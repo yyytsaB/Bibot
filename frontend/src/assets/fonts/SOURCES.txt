@@ -1,0 +1,3 @@
+Fredoka: https://github.com/google/fonts/tree/main/ofl/fredoka
+Nunito: https://github.com/google/fonts/tree/main/ofl/nunito
+Downloaded 2026-10-10. Unmodified variable TTFs, self-hosted; original SIL OFL licenses retained.

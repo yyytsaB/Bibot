@@ -1,0 +1,4 @@
+const previewLabels = ['Welcome', 'Home', 'Paste Text', 'Upload File', 'Subjects', 'Set Details', 'Generating', 'Set Ready', 'Practice Library', 'Question', 'Reasoning', 'Feedback', 'Follow-up', 'Correct Answer', 'Completed', 'Empty Maps', 'My Maps', 'Concept Map', 'Map Details']
+export function PreviewNavigator({ screen, onSelect }: { screen: number; onSelect: (screen: number) => void }) {
+  return <aside className="preview-toolbar"><strong>Design gallery · sample data only</strong><label>Screen <select value={screen} onChange={e => onSelect(Number(e.target.value))}>{previewLabels.map((label, i) => <option key={label} value={i + 1}>{i + 1}. {label}</option>)}</select></label><a href="#/home">Exit gallery</a><p>Navigation illustrates designs. No uploads, question generation, AI analysis or saved learning evidence.</p></aside>
+}

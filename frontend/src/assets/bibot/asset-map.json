@@ -1,0 +1,68 @@
+{
+  "source_archive": "drive-download-20261009T183017Z-1-001.zip",
+  "unchanged_assets": [
+    {
+      "original": "1#.png",
+      "asset": "duck-welcome.png",
+      "sha256": "ee3f5668aaf1337fccf8de990290aed6e6ba4e1b78a89f9c93a7330ae0d250a9"
+    },
+    {
+      "original": "2#.png",
+      "asset": "duck-laptop.png",
+      "sha256": "c615eff8139b2da24893c8864ffe78a043dfb1aebee4c2aa015c611dea446022"
+    },
+    {
+      "original": "7#.png",
+      "asset": "duck-reading-stars.png",
+      "sha256": "a085e7808849e28de0e2a4f50107c8d1a92d6b904b950d751cdcd5b182507d8d"
+    },
+    {
+      "original": "8#.png",
+      "asset": "duck-ready.png",
+      "sha256": "27f390896b4b8c0a86480a7c5db3bc7790c875dafa7906f47770f46277b96634"
+    },
+    {
+      "original": "9#.png",
+      "asset": "duck-portrait.png",
+      "sha256": "ab0a1bbc252f648ac6593b8e0309db5911cdef33c6c029c2049cb767387fcd60"
+    },
+    {
+      "original": "10#.png",
+      "asset": "duck-thinking.png",
+      "sha256": "9c86e826d7551ecfec39f6459294e088ae1e42bc8689b847acc43c26f6ec960a"
+    },
+    {
+      "original": "14#.png",
+      "asset": "duck-correct.png",
+      "sha256": "10cb7197beeb470bdf2810432a3021a91b2d789340b87508b37687568f9bdb4e"
+    },
+    {
+      "original": "15#.png",
+      "asset": "duck-celebrating.png",
+      "sha256": "aa49bcea58435dde496b98672a5ef0e1434f5da3152fa7bf5d655f60b3a62df1"
+    },
+    {
+      "original": "16#_.png",
+      "asset": "duck-reading.png",
+      "sha256": "e581fa0f3a2099a642783b8bcf54acaa9e47708397e7c26cceea874c05927289"
+    },
+    {
+      "original": "19#.png",
+      "asset": "duck-map.png",
+      "sha256": "97986c84ac4c8a41adabfe7962bb29a36957619f52fab7e9066fb0044dc5db7f"
+    },
+    {
+      "original": "BIBOT TITLE.png",
+      "asset": "wordmark.png",
+      "sha256": "2ddef920f872d748b4bf5ea4406b6aa59a65b69219c08b9479a6b4f66a19e221"
+    },
+    {
+      "original": "BIBOTTT.png",
+      "asset": "app-icon.png",
+      "sha256": "85d89a1987709166566b898046b96a2a3a1f7c50af64a643c05f20993e2ee365"
+    }
+  ],
+  "duplicate_omitted": {
+    "17#.png": "16#_.png"
+  }
+}
