@@ -1,0 +1,845 @@
+{
+  "run_id": "f7-live-2026-10-09T22-40-14-185Z",
+  "created_at": "2026-10-09T22:40:14.186Z",
+  "feature": "F7 — Vague-answer handling and tuning",
+  "model": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "hardware": {
+    "platform": "win32 10.0.19045 (x64)",
+    "cpu_model": "AMD Ryzen 5 3400G with Radeon Vega Graphics    ",
+    "cpu_cores": 8,
+    "total_memory_gb": "15.93 GB"
+  },
+  "warmup": {
+    "status": "FAILED: Ollama request timed out after 15000ms",
+    "latency_ms": 15019
+  },
+  "runtime_settings": {
+    "temperature": 0.1,
+    "stream": false,
+    "timeout_ms": 15000,
+    "endpoint": "http://127.0.0.1:11434/api/chat"
+  },
+  "prompt_version": "2026-10-10-f7-tuned-strict-clarity",
+  "sequences": {
+    "sequence_1": {
+      "sequence_id": "SEQ-01",
+      "description": "Two consecutive unclear responses on q1 leading to verified fallback",
+      "status": "PASSED",
+      "halted_early": false,
+      "notes": "Successfully transitioned from clarification to verified fallback on second unclear response.",
+      "turns": [
+        {
+          "test_name": "Sequence 1 - Turn 1 (First Unclear)",
+          "test_type": "multi_turn_sequence",
+          "turn": 1,
+          "input": {
+            "question_id": "q1",
+            "student_choice_id": "A",
+            "student_reasoning": "I guessed.",
+            "clarification_attempt_count": 0
+          },
+          "expected_feedback_kind": "clarification",
+          "telemetry": {
+            "decision": "safeguard_clarification",
+            "reason": "guessing_or_uncertainty",
+            "model_called": false,
+            "attempts": 0,
+            "error": null
+          },
+          "model_attempts": [],
+          "safeguard_assessment": {
+            "isUnclear": true,
+            "reason": "guessing_or_uncertainty",
+            "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+          },
+          "safeguard_intervened": true,
+          "final_result": {
+            "kind": "clarification",
+            "clarification_prompt": "Could you describe what led you to choose this answer over the others?"
+          },
+          "total_latency_ms": 0,
+          "validation_ok": true,
+          "outcome_matched": true
+        },
+        {
+          "test_name": "Sequence 1 - Turn 2 (Second Unclear -> Fallback)",
+          "test_type": "multi_turn_sequence",
+          "turn": 2,
+          "input": {
+            "question_id": "q1",
+            "student_choice_id": "A",
+            "student_reasoning": "Maybe that one? I don't know.",
+            "clarification_attempt_count": 1
+          },
+          "expected_feedback_kind": "fallback",
+          "telemetry": {
+            "decision": "second_unclear_fallback",
+            "reason": "guessing_or_uncertainty",
+            "model_called": false,
+            "attempts": 0,
+            "error": null
+          },
+          "model_attempts": [],
+          "safeguard_assessment": {
+            "isUnclear": true,
+            "reason": "guessing_or_uncertainty",
+            "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+          },
+          "safeguard_intervened": true,
+          "final_result": {
+            "kind": "fallback",
+            "verified_explanation": "Mika proposes a cause for this puddle rather than a pattern across many floors.",
+            "follow_up_id": "q1-p"
+          },
+          "total_latency_ms": 0,
+          "validation_ok": true,
+          "outcome_matched": true
+        }
+      ]
+    },
+    "sequence_2": {
+      "sequence_id": "SEQ-02",
+      "description": "First unclear response followed by substantive explanation leading to genuine diagnosis",
+      "status": "PASSED",
+      "halted_early": false,
+      "notes": "Successfully transitioned from clarification to genuine accepted diagnosis.",
+      "turns": [
+        {
+          "test_name": "Sequence 2 - Turn 1 (First Unclear)",
+          "test_type": "multi_turn_sequence",
+          "turn": 1,
+          "input": {
+            "question_id": "q1",
+            "student_choice_id": "A",
+            "student_reasoning": "I guessed.",
+            "clarification_attempt_count": 0
+          },
+          "expected_feedback_kind": "clarification",
+          "telemetry": {
+            "decision": "safeguard_clarification",
+            "reason": "guessing_or_uncertainty",
+            "model_called": false,
+            "attempts": 0,
+            "error": null
+          },
+          "model_attempts": [],
+          "safeguard_assessment": {
+            "isUnclear": true,
+            "reason": "guessing_or_uncertainty",
+            "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+          },
+          "safeguard_intervened": true,
+          "final_result": {
+            "kind": "clarification",
+            "clarification_prompt": "Could you describe what led you to choose this answer over the others?"
+          },
+          "total_latency_ms": 0,
+          "validation_ok": true,
+          "outcome_matched": true
+        },
+        {
+          "test_name": "Sequence 2 - Turn 2 (Substantive Resubmission -> Diagnosis)",
+          "test_type": "multi_turn_sequence",
+          "turn": 2,
+          "input": {
+            "question_id": "q1",
+            "student_choice_id": "A",
+            "student_reasoning": "They observed water and made a conclusion. Any conclusion from an observation is induction.",
+            "clarification_attempt_count": 1
+          },
+          "expected_feedback_kind": "diagnosis",
+          "telemetry": {
+            "decision": "accepted_diagnosis",
+            "reason": "substantive_diagnosis_accepted",
+            "model_called": true,
+            "attempts": 1,
+            "error": null
+          },
+          "model_attempts": [
+            {
+              "attempt_number": 1,
+              "latency_ms": 6969.6,
+              "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applies the definition of induction to their own conclusion.\",\n  \"explanation\": \"The student's conclusion is abductive because it proposes a plausible explanation for the observed phenomenon (the wet floor) without assuming it is a universal rule or making a logical deduction from premises. Induction would require a broader conclusion or prediction based on the observed pattern, which is not the case here.\",\n  \"concept_ids\": [\"abduction\", \"induction\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+              "error": null
+            }
+          ],
+          "safeguard_assessment": {
+            "isUnclear": false,
+            "reason": null,
+            "notes": null
+          },
+          "safeguard_intervened": false,
+          "final_result": {
+            "kind": "diagnosis",
+            "possible_misconception": "The student incorrectly applies the definition of induction to their own conclusion.",
+            "explanation": "The student's conclusion is abductive because it proposes a plausible explanation for the observed phenomenon (the wet floor) without assuming it is a universal rule or making a logical deduction from premises. Induction would require a broader conclusion or prediction based on the observed pattern, which is not the case here.",
+            "concept_ids": [
+              "abduction",
+              "induction"
+            ],
+            "follow_up_id": "q1-p",
+            "confidence": "low"
+          },
+          "total_latency_ms": 6970,
+          "validation_ok": true,
+          "outcome_matched": true
+        }
+      ]
+    }
+  },
+  "total_records": 18,
+  "records": [
+    {
+      "test_name": "Reviewed Case T07",
+      "test_type": "reviewed_case",
+      "case_id": "T07",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "I guessed.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "clarification",
+      "telemetry": {
+        "decision": "safeguard_clarification",
+        "reason": "guessing_or_uncertainty",
+        "model_called": false,
+        "attempts": 0,
+        "error": null
+      },
+      "model_attempts": [],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "guessing_or_uncertainty",
+        "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "clarification",
+        "clarification_prompt": "Could you describe what led you to choose this answer over the others?"
+      },
+      "total_latency_ms": 6,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Reviewed Case T08",
+      "test_type": "reviewed_case",
+      "case_id": "T08",
+      "input": {
+        "question_id": "q2",
+        "student_choice_id": "B",
+        "student_reasoning": "It just seemed right.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "clarification",
+      "telemetry": {
+        "decision": "safeguard_clarification",
+        "reason": "guessing_or_uncertainty",
+        "model_called": false,
+        "attempts": 0,
+        "error": null
+      },
+      "model_attempts": [],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "guessing_or_uncertainty",
+        "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "clarification",
+        "clarification_prompt": "Could you describe what led you to choose this answer over the others?"
+      },
+      "total_latency_ms": 1,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Reviewed Case T09",
+      "test_type": "reviewed_case",
+      "case_id": "T09",
+      "input": {
+        "question_id": "q3",
+        "student_choice_id": "C",
+        "student_reasoning": "I'm not sure how to explain it.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "clarification",
+      "telemetry": {
+        "decision": "safeguard_clarification",
+        "reason": "guessing_or_uncertainty",
+        "model_called": false,
+        "attempts": 0,
+        "error": null
+      },
+      "model_attempts": [],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "guessing_or_uncertainty",
+        "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "clarification",
+        "clarification_prompt": "Could you describe what led you to choose this answer over the others?"
+      },
+      "total_latency_ms": 0,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Reviewed Case T10",
+      "test_type": "reviewed_case",
+      "case_id": "T10",
+      "input": {
+        "question_id": "q4",
+        "student_choice_id": "A",
+        "student_reasoning": "Because of the situation.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "clarification",
+      "telemetry": {
+        "decision": "safeguard_clarification",
+        "reason": "vague_situational",
+        "model_called": false,
+        "attempts": 0,
+        "error": null
+      },
+      "model_attempts": [],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "vague_situational",
+        "notes": "Student referenced the scenario or restated an observation without identifying any inferential connection."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "clarification",
+        "clarification_prompt": "Which specific detail or feature in the scenario led you to that conclusion?"
+      },
+      "total_latency_ms": 0,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Reviewed Case T11",
+      "test_type": "reviewed_case",
+      "case_id": "T11",
+      "input": {
+        "question_id": "q5",
+        "student_choice_id": "C",
+        "student_reasoning": "Maybe that one? I don't know.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "clarification",
+      "telemetry": {
+        "decision": "safeguard_clarification",
+        "reason": "guessing_or_uncertainty",
+        "model_called": false,
+        "attempts": 0,
+        "error": null
+      },
+      "model_attempts": [],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "guessing_or_uncertainty",
+        "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "clarification",
+        "clarification_prompt": "Could you describe what led you to choose this answer over the others?"
+      },
+      "total_latency_ms": 1,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Reviewed Case T14",
+      "test_type": "reviewed_case",
+      "case_id": "T14",
+      "input": {
+        "question_id": "q2",
+        "student_choice_id": "C",
+        "student_reasoning": "Our classroom curtains are green.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "clarification",
+      "telemetry": {
+        "decision": "safeguard_clarification",
+        "reason": "unrelated_statement",
+        "model_called": false,
+        "attempts": 0,
+        "error": null
+      },
+      "model_attempts": [],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "unrelated_statement",
+        "notes": "Student statement has no in-context connection to the scenario or inference concepts."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "clarification",
+        "clarification_prompt": "Please explain your reasoning regarding the scenario and the inference types in the question."
+      },
+      "total_latency_ms": 1,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Reviewed Case T15",
+      "test_type": "reviewed_case",
+      "case_id": "T15",
+      "input": {
+        "question_id": "q3",
+        "student_choice_id": "A",
+        "student_reasoning": "I meant that Bea must have the badge if both statements are true, but I may have clicked the wrong label.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "clarification",
+      "telemetry": {
+        "decision": "safeguard_clarification",
+        "reason": "selection_mismatch",
+        "model_called": false,
+        "attempts": 0,
+        "error": null
+      },
+      "model_attempts": [],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "selection_mismatch",
+        "notes": "Student articulated a selection slip / misclick rather than a conceptual misconception."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "clarification",
+        "clarification_prompt": "Your explanation appears to describe a different choice than the one selected. Could you clarify which answer you intended to choose and why?"
+      },
+      "total_latency_ms": 0,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Reviewed Case T01",
+      "test_type": "reviewed_case",
+      "case_id": "T01",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "They observed water and made a conclusion. Any conclusion from an observation is induction.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "diagnosis",
+      "telemetry": {
+        "decision": "accepted_diagnosis",
+        "reason": "substantive_diagnosis_accepted",
+        "model_called": true,
+        "attempts": 1,
+        "error": null
+      },
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 9954.3,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applies the definition of inductive reasoning to abductive reasoning.\",\n  \"explanation\": \"Abductive reasoning involves proposing a plausible explanation for observations, whereas inductive reasoning involves drawing a broader conclusion from observed patterns or sampled cases. The student's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor is an example of abductive reasoning, as it proposes a specific explanation for the observed phenomenon.\",\n  \"concept_ids\": [\"abduction\", \"induction\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": false,
+        "reason": null,
+        "notes": null
+      },
+      "safeguard_intervened": false,
+      "final_result": {
+        "kind": "diagnosis",
+        "possible_misconception": "The student incorrectly applies the definition of inductive reasoning to abductive reasoning.",
+        "explanation": "Abductive reasoning involves proposing a plausible explanation for observations, whereas inductive reasoning involves drawing a broader conclusion from observed patterns or sampled cases. The student's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor is an example of abductive reasoning, as it proposes a specific explanation for the observed phenomenon.",
+        "concept_ids": [
+          "abduction",
+          "induction"
+        ],
+        "follow_up_id": "q1-p",
+        "confidence": "low"
+      },
+      "total_latency_ms": 9959,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Developer Test: Pure uncertainty",
+      "test_type": "developer_counterexample",
+      "case_id": "DEV-01",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "I just thought so.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "clarification",
+      "telemetry": {
+        "decision": "safeguard_clarification",
+        "reason": "guessing_or_uncertainty",
+        "model_called": false,
+        "attempts": 0,
+        "error": null
+      },
+      "model_attempts": [],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "guessing_or_uncertainty",
+        "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "clarification",
+        "clarification_prompt": "Could you describe what led you to choose this answer over the others?"
+      },
+      "total_latency_ms": 0,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Developer Test: Guessing with concept keyword",
+      "test_type": "developer_counterexample",
+      "case_id": "DEV-02",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "I guessed induction.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "clarification",
+      "telemetry": {
+        "decision": "safeguard_clarification",
+        "reason": "guessing_or_uncertainty",
+        "model_called": false,
+        "attempts": 0,
+        "error": null
+      },
+      "model_attempts": [],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "guessing_or_uncertainty",
+        "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "clarification",
+        "clarification_prompt": "Could you describe what led you to choose this answer over the others?"
+      },
+      "total_latency_ms": 0,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Developer Test: Empirical premise preservation",
+      "test_type": "developer_counterexample",
+      "case_id": "DEV-03",
+      "input": {
+        "question_id": "q5",
+        "student_choice_id": "B",
+        "student_reasoning": "I guessed because nine of ten visits were full.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "diagnosis",
+      "telemetry": {
+        "decision": "accepted_diagnosis",
+        "reason": "substantive_diagnosis_accepted",
+        "model_called": true,
+        "attempts": 1,
+        "error": null
+      },
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 6516.4,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applies deductive reasoning to a situation where inductive reasoning is more appropriate.\",\n  \"explanation\": \"Ren's prediction is based on observed patterns (nine of ten visits were full), but it does not logically guarantee that the shuttle will arrive before 7:30 a.m. tomorrow.\",\n  \"concept_ids\": [\"induction\", \"deduction\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": false,
+        "reason": null,
+        "notes": null
+      },
+      "safeguard_intervened": false,
+      "final_result": {
+        "kind": "diagnosis",
+        "possible_misconception": "The student incorrectly applies deductive reasoning to a situation where inductive reasoning is more appropriate.",
+        "explanation": "Ren's prediction is based on observed patterns (nine of ten visits were full), but it does not logically guarantee that the shuttle will arrive before 7:30 a.m. tomorrow.",
+        "concept_ids": [
+          "induction",
+          "deduction"
+        ],
+        "follow_up_id": "q5-p",
+        "confidence": "low"
+      },
+      "total_latency_ms": 6517,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Developer Test: Circular restatement",
+      "test_type": "developer_counterexample",
+      "case_id": "DEV-04",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "Because it is inductive reasoning.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "clarification",
+      "telemetry": {
+        "decision": "safeguard_clarification",
+        "reason": "circular_restatement",
+        "model_called": false,
+        "attempts": 0,
+        "error": null
+      },
+      "model_attempts": [],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "circular_restatement",
+        "notes": "Student merely repeated the choice label without supporting reasoning."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "clarification",
+        "clarification_prompt": "Could you explain what specific features of this scenario make it that type of inference?"
+      },
+      "total_latency_ms": 0,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Developer Test: Contextual analogy",
+      "test_type": "developer_counterexample",
+      "case_id": "DEV-05",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "Deduction is like Sherlock Holmes solving a mystery.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "clarification",
+      "telemetry": {
+        "decision": "technical_fallback",
+        "reason": "retries_exhausted: Unverified concept reference 'inductive reasoning' in model response",
+        "model_called": true,
+        "attempts": 2,
+        "error": "Unverified concept reference 'inductive reasoning' in model response"
+      },
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 6887,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applies the concept of deduction to abductive reasoning.\",\n  \"explanation\": \"The student mistakenly equates abductive reasoning with deduction, which is a different type of reasoning that involves drawing a conclusion from premises. Abductive reasoning, on the other hand, involves proposing a plausible explanation for observations.\",\n  \"concept_ids\": [\"abduction\", \"deduction\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        },
+        {
+          "attempt_number": 2,
+          "latency_ms": 6002.7,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applies deductive reasoning to an inductive scenario.\",\n  \"explanation\": \"The student mistakenly equates inductive reasoning with deductive reasoning, which is used to draw conclusions from premises, whereas inductive reasoning involves making generalizations from specific observations.\",\n  \"concept_ids\": [\"inductive reasoning\", \"deductive reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": false,
+        "reason": null,
+        "notes": null
+      },
+      "safeguard_intervened": false,
+      "final_result": {
+        "kind": "fallback",
+        "verified_explanation": "Mika proposes a cause for this puddle rather than a pattern across many floors.",
+        "follow_up_id": "q1-p"
+      },
+      "total_latency_ms": 12891,
+      "validation_ok": true,
+      "outcome_matched": false
+    },
+    {
+      "test_name": "Developer Test: Selection mismatch on q1",
+      "test_type": "developer_counterexample",
+      "case_id": "DEV-06",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "I accidentally clicked Inductive when I meant Abductive because Mika is making an educated guess.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "clarification",
+      "telemetry": {
+        "decision": "safeguard_clarification",
+        "reason": "selection_mismatch",
+        "model_called": false,
+        "attempts": 0,
+        "error": null
+      },
+      "model_attempts": [],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "selection_mismatch",
+        "notes": "Student articulated a selection slip / misclick rather than a conceptual misconception."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "clarification",
+        "clarification_prompt": "Your explanation appears to describe a different choice than the one selected. Could you clarify which answer you intended to choose and why?"
+      },
+      "total_latency_ms": 0,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Sequence 1 - Turn 1 (First Unclear)",
+      "test_type": "multi_turn_sequence",
+      "turn": 1,
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "I guessed.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "clarification",
+      "telemetry": {
+        "decision": "safeguard_clarification",
+        "reason": "guessing_or_uncertainty",
+        "model_called": false,
+        "attempts": 0,
+        "error": null
+      },
+      "model_attempts": [],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "guessing_or_uncertainty",
+        "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "clarification",
+        "clarification_prompt": "Could you describe what led you to choose this answer over the others?"
+      },
+      "total_latency_ms": 0,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Sequence 1 - Turn 2 (Second Unclear -> Fallback)",
+      "test_type": "multi_turn_sequence",
+      "turn": 2,
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "Maybe that one? I don't know.",
+        "clarification_attempt_count": 1
+      },
+      "expected_feedback_kind": "fallback",
+      "telemetry": {
+        "decision": "second_unclear_fallback",
+        "reason": "guessing_or_uncertainty",
+        "model_called": false,
+        "attempts": 0,
+        "error": null
+      },
+      "model_attempts": [],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "guessing_or_uncertainty",
+        "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "fallback",
+        "verified_explanation": "Mika proposes a cause for this puddle rather than a pattern across many floors.",
+        "follow_up_id": "q1-p"
+      },
+      "total_latency_ms": 0,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Sequence 2 - Turn 1 (First Unclear)",
+      "test_type": "multi_turn_sequence",
+      "turn": 1,
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "I guessed.",
+        "clarification_attempt_count": 0
+      },
+      "expected_feedback_kind": "clarification",
+      "telemetry": {
+        "decision": "safeguard_clarification",
+        "reason": "guessing_or_uncertainty",
+        "model_called": false,
+        "attempts": 0,
+        "error": null
+      },
+      "model_attempts": [],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "guessing_or_uncertainty",
+        "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "clarification",
+        "clarification_prompt": "Could you describe what led you to choose this answer over the others?"
+      },
+      "total_latency_ms": 0,
+      "validation_ok": true,
+      "outcome_matched": true
+    },
+    {
+      "test_name": "Sequence 2 - Turn 2 (Substantive Resubmission -> Diagnosis)",
+      "test_type": "multi_turn_sequence",
+      "turn": 2,
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "They observed water and made a conclusion. Any conclusion from an observation is induction.",
+        "clarification_attempt_count": 1
+      },
+      "expected_feedback_kind": "diagnosis",
+      "telemetry": {
+        "decision": "accepted_diagnosis",
+        "reason": "substantive_diagnosis_accepted",
+        "model_called": true,
+        "attempts": 1,
+        "error": null
+      },
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 6969.6,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applies the definition of induction to their own conclusion.\",\n  \"explanation\": \"The student's conclusion is abductive because it proposes a plausible explanation for the observed phenomenon (the wet floor) without assuming it is a universal rule or making a logical deduction from premises. Induction would require a broader conclusion or prediction based on the observed pattern, which is not the case here.\",\n  \"concept_ids\": [\"abduction\", \"induction\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": false,
+        "reason": null,
+        "notes": null
+      },
+      "safeguard_intervened": false,
+      "final_result": {
+        "kind": "diagnosis",
+        "possible_misconception": "The student incorrectly applies the definition of induction to their own conclusion.",
+        "explanation": "The student's conclusion is abductive because it proposes a plausible explanation for the observed phenomenon (the wet floor) without assuming it is a universal rule or making a logical deduction from premises. Induction would require a broader conclusion or prediction based on the observed pattern, which is not the case here.",
+        "concept_ids": [
+          "abduction",
+          "induction"
+        ],
+        "follow_up_id": "q1-p",
+        "confidence": "low"
+      },
+      "total_latency_ms": 6970,
+      "validation_ok": true,
+      "outcome_matched": true
+    }
+  ]
+}

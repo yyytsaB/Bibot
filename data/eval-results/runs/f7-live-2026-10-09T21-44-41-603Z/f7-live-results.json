@@ -1,0 +1,482 @@
+{
+  "run_id": "f7-live-2026-10-09T21-44-41-603Z",
+  "created_at": "2026-10-09T21:44:41.604Z",
+  "feature": "F7 — Vague-answer handling and tuning",
+  "model": "llama3.2:latest",
+  "model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+  "hardware": {
+    "platform": "win32 10.0.19045 (x64)",
+    "cpu_model": "AMD Ryzen 5 3400G with Radeon Vega Graphics    ",
+    "cpu_cores": 8,
+    "total_memory_gb": "15.93 GB"
+  },
+  "warmup": {
+    "status": "SUCCESS",
+    "latency_ms": 13473
+  },
+  "runtime_settings": {
+    "temperature": 0.1,
+    "stream": false,
+    "timeout_ms": 15000,
+    "endpoint": "http://127.0.0.1:11434/api/chat"
+  },
+  "prompt_version": "2026-10-10-f7-tuned-strict-clarity",
+  "total_records": 12,
+  "records": [
+    {
+      "test_name": "Single Case T07",
+      "case_id": "T07",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "I guessed.",
+        "clarification_attempt_count": 0
+      },
+      "model_called": true,
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 10372.7,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Mika mistakenly applies inductive reasoning to a scenario where abductive reasoning is more appropriate.\",\n  \"explanation\": \"Mika's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor, while allowing for another cause, is an example of abductive reasoning. Abductive reasoning proposes a plausible explanation for observations, rather than using observed patterns to support a broader conclusion. In contrast, inductive reasoning would require more evidence to support the conclusion that water spilling from the bottle is the most plausible explanation.\",\n  \"concept_ids\": [\"abductive_reasoning\", \"inductive_reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        },
+        {
+          "attempt_number": 2,
+          "latency_ms": 7041.1,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Mika incorrectly applies inductive reasoning to a scenario that requires abductive reasoning.\",\n  \"explanation\": \"Mika's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor, while allowing for another cause, is an example of abductive reasoning. However, she mistakenly labels it as inductive reasoning.\",\n  \"concept_ids\": [\"abductive_reasoning\", \"inductive_reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "guessing_or_uncertainty",
+        "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "fallback",
+        "verified_explanation": "Mika proposes a cause for this puddle rather than a pattern across many floors.",
+        "follow_up_id": "q1-p"
+      },
+      "total_latency_ms": 17419,
+      "validation_ok": true
+    },
+    {
+      "test_name": "Single Case T08",
+      "case_id": "T08",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "Because it is inductive reasoning.",
+        "clarification_attempt_count": 0
+      },
+      "model_called": true,
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 7509,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applied inductive reasoning to a scenario that requires abductive reasoning.\",\n  \"explanation\": \"Mika's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor, while allowing for another cause, is an example of abductive reasoning. Inductive reasoning would require strong evidence from multiple cases to support a broader conclusion, which is not the case here.\",\n  \"concept_ids\": [\"abduction\", \"inductive reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        },
+        {
+          "attempt_number": 2,
+          "latency_ms": 7220.3,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Student incorrectly applied inductive reasoning to a scenario that requires abductive reasoning.\",\n  \"explanation\": \"Mika's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor, while allowing for another cause, is an example of abductive reasoning. Inductive reasoning would require strong evidence from multiple cases to support a broader conclusion, which is not the case here.\",\n  \"concept_ids\": [\"abductive_reasoning\", \"inductive_reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "circular_restatement",
+        "notes": "Student merely repeated the choice label without supporting reasoning."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "fallback",
+        "verified_explanation": "Mika proposes a cause for this puddle rather than a pattern across many floors.",
+        "follow_up_id": "q1-p"
+      },
+      "total_latency_ms": 14730,
+      "validation_ok": true
+    },
+    {
+      "test_name": "Single Case T09",
+      "case_id": "T09",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "I think Choice A makes the most sense here.",
+        "clarification_attempt_count": 0
+      },
+      "model_called": true,
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 6613.5,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applies inductive reasoning to a scenario that requires abductive reasoning.\",\n  \"explanation\": \"The student's conclusion that Choice A is the most plausible explanation for the wet floor, while allowing for another cause, is an example of abductive reasoning. However, the student mistakenly labels this process as inductive reasoning.\",\n  \"concept_ids\": [\"abduction\", \"inductive reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        },
+        {
+          "attempt_number": 2,
+          "latency_ms": 6915.6,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Student incorrectly applies inductive reasoning to a scenario that requires abductive reasoning.\",\n  \"explanation\": \"The student mistakenly applies inductive reasoning, which involves drawing broad conclusions from specific observations, to a scenario where an explanation is needed to propose a plausible cause. Abductive reasoning is more suitable here, as Mika is trying to identify the most plausible explanation for the wet floor.\",\n  \"concept_ids\": [\"abductive_reasoning\", \"inductive_reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": false,
+        "reason": null,
+        "notes": null
+      },
+      "safeguard_intervened": false,
+      "final_result": {
+        "kind": "fallback",
+        "verified_explanation": "Mika proposes a cause for this puddle rather than a pattern across many floors.",
+        "follow_up_id": "q1-p"
+      },
+      "total_latency_ms": 13530,
+      "validation_ok": true
+    },
+    {
+      "test_name": "Single Case T10",
+      "case_id": "T10",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "Water was on the floor and Mika noticed it.",
+        "clarification_attempt_count": 0
+      },
+      "model_called": true,
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 7031.2,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applies inductive reasoning to a scenario that requires abductive reasoning.\",\n  \"explanation\": \"The student's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor, while allowing for another cause, is an example of abductive reasoning. However, the student's reasoning text only states the observed fact without providing any explanation or reasoning for this conclusion.\",\n  \"concept_ids\": [\"abduction\", \"inductive reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        },
+        {
+          "attempt_number": 2,
+          "latency_ms": 6450.6,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Student incorrectly applies inductive reasoning to a scenario that requires abductive reasoning.\",\n  \"explanation\": \"The student's reasoning is based on observed patterns (water on the floor) without considering alternative explanations (e.g., a ceiling leak). Abductive reasoning involves proposing a plausible explanation for observations, rather than drawing conclusions from patterns.\",\n  \"concept_ids\": [\"abductive_reasoning\", \"inductive_reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": false,
+        "reason": null,
+        "notes": null
+      },
+      "safeguard_intervened": false,
+      "final_result": {
+        "kind": "fallback",
+        "verified_explanation": "Mika proposes a cause for this puddle rather than a pattern across many floors.",
+        "follow_up_id": "q1-p"
+      },
+      "total_latency_ms": 13482,
+      "validation_ok": true
+    },
+    {
+      "test_name": "Single Case T11",
+      "case_id": "T11",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "I don't know the difference between the choices.",
+        "clarification_attempt_count": 0
+      },
+      "model_called": true,
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 7641,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Student incorrectly applied inductive reasoning to a scenario that requires abductive reasoning.\",\n  \"explanation\": \"The student's reasoning is not inductive because it does not use observed patterns or sampled cases to support a broader conclusion. Instead, it proposes a plausible explanation for the observed phenomenon (the wet floor). The student's conclusion that water spilling from the bottle is the most plausible explanation is an example of abductive reasoning, which proposes a best explanation for observations.\",\n  \"concept_ids\": [\"abduction\", \"inductive reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        },
+        {
+          "attempt_number": 2,
+          "latency_ms": 6975.3,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Student incorrectly applied inductive reasoning to a scenario that requires abductive reasoning.\",\n  \"explanation\": \"Mika's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor, while allowing for another cause, is an example of abductive reasoning. However, the student's selection of inductive reasoning suggests a misunderstanding of the distinction between these two types of reasoning.\",\n  \"concept_ids\": [\"abductive_reasoning\", \"inductive_reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "guessing_or_uncertainty",
+        "notes": "Student explanation consists of guessing/uncertainty elaboration without substantive premises."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "fallback",
+        "verified_explanation": "Mika proposes a cause for this puddle rather than a pattern across many floors.",
+        "follow_up_id": "q1-p"
+      },
+      "total_latency_ms": 14617,
+      "validation_ok": true
+    },
+    {
+      "test_name": "Single Case T14",
+      "case_id": "T14",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "Deduction is like Sherlock Holmes solving a mystery.",
+        "clarification_attempt_count": 0
+      },
+      "model_called": true,
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 6378.9,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applies the concept of deduction to abductive reasoning.\",\n  \"explanation\": \"The student mistakenly equates abductive reasoning with deduction, which is a different type of reasoning that involves drawing a conclusion from premises. Abductive reasoning involves proposing a plausible explanation for observations, whereas deduction involves presenting a conclusion as necessarily following from premises.\",\n  \"concept_ids\": [\"abduction\", \"deduction\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        },
+        {
+          "attempt_number": 2,
+          "latency_ms": 6008.9,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applies the concept of deduction to abductive reasoning.\",\n  \"explanation\": \"The student mistakenly equates abductive reasoning with deductive reasoning, which presents a conclusion as following necessarily from premises. Abductive reasoning, on the other hand, proposes a plausible best explanation for observations.\",\n  \"concept_ids\": [\"abduction\", \"deduction\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": false,
+        "reason": null,
+        "notes": null
+      },
+      "safeguard_intervened": false,
+      "final_result": {
+        "kind": "fallback",
+        "verified_explanation": "Mika proposes a cause for this puddle rather than a pattern across many floors.",
+        "follow_up_id": "q1-p"
+      },
+      "total_latency_ms": 12389,
+      "validation_ok": true
+    },
+    {
+      "test_name": "Single Case T15",
+      "case_id": "T15",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "I accidentally clicked Inductive when I meant Abductive because Mika is making an educated guess.",
+        "clarification_attempt_count": 0
+      },
+      "model_called": true,
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 6952,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Mika incorrectly applies inductive reasoning to a scenario that requires abductive reasoning.\",\n  \"explanation\": \"Mika mistakenly uses inductive reasoning, which relies on observed patterns or sampled cases, to explain the wet floor. However, in this scenario, Mika is making an educated guess about the cause of the wet floor, which is a characteristic of abductive reasoning.\",\n  \"concept_ids\": [\"inductive\", \"abductive\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        },
+        {
+          "attempt_number": 2,
+          "latency_ms": 8108.6,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Mika mistakenly identified the type of reasoning used in her conclusion as Inductive, when in fact she employed Abductive reasoning.\",\n  \"explanation\": \"Abductive reasoning involves proposing a plausible explanation for observations, whereas Inductive reasoning involves using observed patterns or sampled cases to support a broader conclusion. Mika's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor, while allowing for another cause, aligns with the definition of Abductive reasoning.\",\n  \"concept_ids\": [\"abductive\", \"inductive\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "selection_mismatch",
+        "notes": "Student articulated a selection slip / misclick rather than a conceptual misconception."
+      },
+      "safeguard_intervened": true,
+      "final_result": {
+        "kind": "fallback",
+        "verified_explanation": "Mika proposes a cause for this puddle rather than a pattern across many floors.",
+        "follow_up_id": "q1-p"
+      },
+      "total_latency_ms": 15061,
+      "validation_ok": true
+    },
+    {
+      "test_name": "Single Case T01",
+      "case_id": "T01",
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "They observed water and made a conclusion. Any conclusion from an observation is induction.",
+        "clarification_attempt_count": 0
+      },
+      "model_called": true,
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 7540.2,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applies the definition of inductive reasoning to abductive reasoning.\",\n  \"explanation\": \"The student's reasoning is abductive because it proposes a plausible explanation (water spilling from the bottle) for the observed phenomenon (wet floor), rather than using observed patterns or sampled cases to support a broader conclusion. The student's conclusion is not guaranteed by the evidence, but it is a plausible explanation.\",\n  \"concept_ids\": [\"abduction\", \"induction\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": false,
+        "reason": null,
+        "notes": null
+      },
+      "safeguard_intervened": false,
+      "final_result": {
+        "kind": "diagnosis",
+        "possible_misconception": "The student incorrectly applies the definition of inductive reasoning to abductive reasoning.",
+        "explanation": "The student's reasoning is abductive because it proposes a plausible explanation (water spilling from the bottle) for the observed phenomenon (wet floor), rather than using observed patterns or sampled cases to support a broader conclusion. The student's conclusion is not guaranteed by the evidence, but it is a plausible explanation.",
+        "concept_ids": [
+          "abduction",
+          "induction"
+        ],
+        "follow_up_id": "q1-p",
+        "confidence": "low"
+      },
+      "total_latency_ms": 7542,
+      "validation_ok": true
+    },
+    {
+      "test_name": "Sequence 1 - Turn 1 (First Unclear)",
+      "turn": 1,
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "I guessed.",
+        "clarification_attempt_count": 0
+      },
+      "model_called": true,
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 7418.9,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"believes water spilling from the bottle is the most plausible explanation, but does not rule out other causes\",\n  \"explanation\": \"Mika's conclusion is abductive because it proposes a plausible explanation (water spilling from the bottle) based on observed evidence (the puddle beside the tipped-over bottle), but does not logically guarantee that this is the only cause of the wet floor.\",\n  \"concept_ids\": [\"abduction\", \"plausible-explanation\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        },
+        {
+          "attempt_number": 2,
+          "latency_ms": 7408.6,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Mika mistakenly applies inductive reasoning to a scenario that requires abductive reasoning.\",\n  \"explanation\": \"Mika's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor, while allowing for another cause, is an example of abductive reasoning. However, the student's response of 'I guessed' suggests they may be confusing abductive reasoning with inductive reasoning.\",\n  \"concept_ids\": [\"abduction\", \"induction\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "guessing_or_uncertainty",
+        "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+      },
+      "safeguard_intervened": false,
+      "final_result": {
+        "kind": "clarification",
+        "clarification_prompt": "Could you describe what led you to choose this answer over the others?"
+      },
+      "total_latency_ms": 14828,
+      "validation_ok": true
+    },
+    {
+      "test_name": "Sequence 1 - Turn 2 (Second Unclear -> Fallback)",
+      "turn": 2,
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "I don't know the difference between the choices.",
+        "clarification_attempt_count": 1
+      },
+      "model_called": true,
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 7786,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Mika mistakenly applies inductive reasoning to a scenario where abductive reasoning is more appropriate.\",\n  \"explanation\": \"Mika's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor, while allowing for another cause, is an example of abductive reasoning. Abductive reasoning involves proposing a plausible explanation for observations, rather than using inductive reasoning to make a generalization based on specific cases.\",\n  \"concept_ids\": [\"abduction\", \"inductive reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        },
+        {
+          "attempt_number": 2,
+          "latency_ms": 7416.4,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Student incorrectly applied inductive reasoning to a scenario that requires abductive reasoning.\",\n  \"explanation\": \"Mika's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor, while allowing for another cause, is an example of abductive reasoning. However, the student's selection of inductive reasoning suggests a misunderstanding of the type of reasoning required in this scenario.\",\n  \"concept_ids\": [\"abductive reasoning\", \"inductive reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "guessing_or_uncertainty",
+        "notes": "Student explanation consists of guessing/uncertainty elaboration without substantive premises."
+      },
+      "safeguard_intervened": false,
+      "final_result": {
+        "kind": "fallback",
+        "verified_explanation": "Mika proposes a cause for this puddle rather than a pattern across many floors.",
+        "follow_up_id": "q1-p"
+      },
+      "total_latency_ms": 15203,
+      "validation_ok": true
+    },
+    {
+      "test_name": "Sequence 2 - Turn 1 (First Unclear)",
+      "turn": 1,
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "I guessed.",
+        "clarification_attempt_count": 0
+      },
+      "model_called": true,
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 8522.3,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applies inductive reasoning to a scenario that requires abductive reasoning.\",\n  \"explanation\": \"The student's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor, while allowing for another cause, is an example of abductive reasoning. However, the student's response of 'I guessed' suggests that they may not fully understand the nature of abductive reasoning, which involves proposing a plausible explanation based on observations, rather than relying on observed patterns or sampled cases.\",\n  \"concept_ids\": [\"abduction\", \"inductive reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        },
+        {
+          "attempt_number": 2,
+          "latency_ms": 7045,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Mika incorrectly applies inductive reasoning to a scenario that requires abductive reasoning.\",\n  \"explanation\": \"Mika's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor, while allowing for another cause, is an example of abductive reasoning. However, the student incorrectly labels this as inductive reasoning.\",\n  \"concept_ids\": [\"abductive_reasoning\", \"inductive_reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": true,
+        "reason": "guessing_or_uncertainty",
+        "notes": "Student declared a pure guess or inability to explain without conceptual basis."
+      },
+      "safeguard_intervened": false,
+      "final_result": {
+        "kind": "fallback",
+        "verified_explanation": "Mika proposes a cause for this puddle rather than a pattern across many floors.",
+        "follow_up_id": "q1-p"
+      },
+      "total_latency_ms": 15568,
+      "validation_ok": true
+    },
+    {
+      "test_name": "Sequence 2 - Turn 2 (Substantive Resubmission -> Diagnosis)",
+      "turn": 2,
+      "input": {
+        "question_id": "q1",
+        "student_choice_id": "A",
+        "student_reasoning": "They observed water and made a conclusion. Any conclusion from an observation is induction.",
+        "clarification_attempt_count": 1
+      },
+      "model_called": true,
+      "model_attempts": [
+        {
+          "attempt_number": 1,
+          "latency_ms": 9198.3,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applies the definition of inductive reasoning to abductive reasoning.\",\n  \"explanation\": \"The student mistakenly applies the definition of inductive reasoning to abductive reasoning. Abductive reasoning proposes a plausible explanation for observations, whereas inductive reasoning uses observed patterns or sampled cases to support a broader conclusion or prediction. In this case, Mika's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor is an example of abductive reasoning, as it proposes a plausible explanation for the observation.\",\n  \"concept_ids\": [\"abductive_reasoning\", \"inductive_reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        },
+        {
+          "attempt_number": 2,
+          "latency_ms": 7898.7,
+          "raw_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student incorrectly applies the definition of inductive reasoning to abductive reasoning.\",\n  \"explanation\": \"Abductive reasoning involves proposing a plausible explanation for observations, whereas inductive reasoning involves drawing a broader conclusion from observed patterns or sampled cases. The student's conclusion that water spilling from the bottle is the most plausible explanation for the wet floor is an example of abductive reasoning, as it proposes a specific explanation for the observed phenomenon.\",\n  \"concept_ids\": [\"abductive_reasoning\", \"inductive_reasoning\"],\n  \"follow_up_id\": null,\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"low\"\n}",
+          "error": null
+        }
+      ],
+      "safeguard_assessment": {
+        "isUnclear": false,
+        "reason": null,
+        "notes": null
+      },
+      "safeguard_intervened": false,
+      "final_result": {
+        "kind": "fallback",
+        "verified_explanation": "Mika proposes a cause for this puddle rather than a pattern across many floors.",
+        "follow_up_id": "q1-p"
+      },
+      "total_latency_ms": 17097,
+      "validation_ok": true
+    }
+  ]
+}

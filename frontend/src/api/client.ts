@@ -7,6 +7,7 @@ export interface FeedbackApiRequest {
   question_id: string;
   student_choice_id: string;
   student_reasoning: string;
+  clarification_attempt_count?: number;
 }
 
 export type FeedbackApiResponse =
@@ -34,16 +35,21 @@ export class HttpFeedbackApiClient implements IFeedbackApiClient {
     options?: { signal?: AbortSignal }
   ): Promise<FeedbackApiResponse> {
     try {
+      const bodyPayload: Record<string, unknown> = {
+        question_id: request.question_id,
+        student_choice_id: request.student_choice_id,
+        student_reasoning: request.student_reasoning,
+      };
+      if (request.clarification_attempt_count !== undefined) {
+        bodyPayload.clarification_attempt_count = request.clarification_attempt_count;
+      }
+
       const response = await this.fetchFn(this.endpointUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          question_id: request.question_id,
-          student_choice_id: request.student_choice_id,
-          student_reasoning: request.student_reasoning,
-        }),
+        body: JSON.stringify(bodyPayload),
         signal: options?.signal,
       });
 

@@ -24,10 +24,12 @@ export function createApp(pipeline?: FeedbackPipeline): Express {
         return;
       }
 
-      const { question_id, student_choice_id, student_reasoning } = body as Record<
-        string,
-        unknown
-      >;
+      const {
+        question_id,
+        student_choice_id,
+        student_reasoning,
+        clarification_attempt_count,
+      } = body as Record<string, unknown>;
 
       const isValidField = (val: unknown): val is string =>
         typeof val === "string" && val.trim().length > 0;
@@ -44,10 +46,27 @@ export function createApp(pipeline?: FeedbackPipeline): Express {
         return;
       }
 
+      let parsedCount: number | undefined = undefined;
+      if (clarification_attempt_count !== undefined) {
+        if (
+          typeof clarification_attempt_count !== "number" ||
+          !Number.isInteger(clarification_attempt_count) ||
+          clarification_attempt_count < 0
+        ) {
+          res.status(400).json({
+            error:
+              "Field 'clarification_attempt_count' must be a non-negative integer when provided",
+          });
+          return;
+        }
+        parsedCount = clarification_attempt_count;
+      }
+
       const result = await activePipeline.processFeedback({
         question_id,
         student_choice_id,
         student_reasoning,
+        ...(parsedCount !== undefined ? { clarification_attempt_count: parsedCount } : {}),
       });
 
       res.status(200).json(result);

@@ -265,3 +265,69 @@ test("HttpFeedbackApiClient covers HTTP 400, 404, 500, non-JSON error bodies, an
     assert.equal(resNetwork.error, "Failed to fetch");
   }
 });
+
+test("HttpFeedbackApiClient serializes clarification_attempt_count when provided and omits it when undefined", async () => {
+  let capturedBodyWithCount: string | undefined;
+  let capturedBodyWithoutCount: string | undefined;
+
+  const mockResponse: FeedbackResult = {
+    kind: "clarification",
+    clarification_prompt: "Please elaborate.",
+  };
+
+  const client = new HttpFeedbackApiClient({
+    fetchFn: async (_url, init) => {
+      const body = init?.body as string;
+      const parsed = JSON.parse(body);
+      if ("clarification_attempt_count" in parsed) {
+        capturedBodyWithCount = body;
+      } else {
+        capturedBodyWithoutCount = body;
+      }
+      return new Response(JSON.stringify(mockResponse), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
+    },
+  });
+
+  // 1. Without clarification_attempt_count: strictly 3 fields
+  await client.submitFeedback({
+    question_id: "q1",
+    student_choice_id: "A",
+    student_reasoning: "Reasoning text",
+  });
+  const parsedWithout = JSON.parse(capturedBodyWithoutCount!);
+  assert.deepEqual(parsedWithout, {
+    question_id: "q1",
+    student_choice_id: "A",
+    student_reasoning: "Reasoning text",
+  });
+  assert.equal("clarification_attempt_count" in parsedWithout, false);
+
+  // 2. With clarification_attempt_count: 0
+  await client.submitFeedback({
+    question_id: "q1",
+    student_choice_id: "A",
+    student_reasoning: "Reasoning text",
+    clarification_attempt_count: 0,
+  });
+  const parsedWithZero = JSON.parse(capturedBodyWithCount!);
+  assert.deepEqual(parsedWithZero, {
+    question_id: "q1",
+    student_choice_id: "A",
+    student_reasoning: "Reasoning text",
+    clarification_attempt_count: 0,
+  });
+
+  // 3. With clarification_attempt_count: 1
+  await client.submitFeedback({
+    question_id: "q1",
+    student_choice_id: "A",
+    student_reasoning: "Reasoning text",
+    clarification_attempt_count: 1,
+  });
+  const parsedWithOne = JSON.parse(capturedBodyWithCount!);
+  assert.equal(parsedWithOne.clarification_attempt_count, 1);
+});
+

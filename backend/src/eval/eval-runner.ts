@@ -128,7 +128,10 @@ export async function runModelEvaluation(
           student_choice_id: c.student_choice_id,
           student_reasoning: c.student_explanation,
         },
-        options.signal ? { signal: options.signal } : undefined
+        {
+          ...(options.signal ? { signal: options.signal } : {}),
+          evaluateModelDirectly: true,
+        }
       );
     } catch (err: unknown) {
       pipelineError = err instanceof Error ? err.message : String(err);

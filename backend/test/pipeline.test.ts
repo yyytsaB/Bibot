@@ -161,7 +161,7 @@ test("FeedbackPipeline produces clarification on valid needs_clarification respo
   const result = await pipeline.processFeedback({
     question_id: "q1",
     student_choice_id: "B",
-    student_reasoning: "I guessed.",
+    student_reasoning: "The observation could be interpreted as multiple kinds of reasoning.",
   });
 
   assert.equal(result.kind, "clarification");
@@ -216,7 +216,7 @@ test("FeedbackPipeline repairs singleton concept_ids to matching distinction and
   const result = await pipeline.processFeedback({
     question_id: "q1",
     student_choice_id: "A",
-    student_reasoning: "It's abduction.",
+    student_reasoning: "Mika is seeking the best explanation for the wet floor, which is abduction.",
   });
 
   assert.equal(result.kind, "diagnosis");
@@ -356,7 +356,7 @@ test("FeedbackPipeline retries when model returns unverified concept in clarific
   const result = await pipeline.processFeedback({
     question_id: "q1",
     student_choice_id: "B",
-    student_reasoning: "Vague guess.",
+    student_reasoning: "The situation could mean several things depending on context.",
   });
 
   assert.equal(result.kind, "clarification");

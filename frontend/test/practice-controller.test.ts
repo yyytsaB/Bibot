@@ -171,12 +171,13 @@ test("PracticeController: submits exact fields, prevents duplicates, handles cla
   // Submit reasoning
   await controller.submitReasoning();
 
-  // Verify exact fields submitted to API
+  // Verify exact fields submitted to API (attempt 0)
   assert.equal(mockApi.callCount, 1);
   assert.deepEqual(mockApi.lastRequest, {
     question_id: "q1",
     student_choice_id: "A",
     student_reasoning: "I thought this was inductive reasoning.",
+    clarification_attempt_count: 0,
   });
 
   // Verify clarification state reached
@@ -207,6 +208,12 @@ test("PracticeController: submits exact fields, prevents duplicates, handles cla
   await controller.submitReasoning();
 
   assert.equal(mockApi.callCount, 2);
+  assert.deepEqual(mockApi.lastRequest, {
+    question_id: "q1",
+    student_choice_id: "A",
+    student_reasoning: "I thought it was inductive because Mika made a hypothesis about what happened.",
+    clarification_attempt_count: 1,
+  });
   const diagState = controller.getState();
   assert.equal(diagState.status, "diagnosis");
   if (diagState.status === "diagnosis") {
@@ -712,3 +719,95 @@ test("PracticeController: clarification count resets on question advancement", a
   assert.equal(controller.getState().status, "clarification");
   assert.equal(policy.getClarificationCount("q2"), 1);
 });
+
+test("PracticeController: second unclear returns verified fallback, closing clarification loop", async () => {
+  const content = createMockContent();
+  const store = new PracticeContentStore(content);
+  const mockClient = new MockApiClient();
+  const policy = new DefaultClarificationPolicy();
+  const controller = new PracticeController({
+    contentStore: store,
+    apiClient: mockClient,
+    clarificationPolicy: policy,
+  });
+
+  // Select wrong choice A
+  controller.selectChoice("A");
+  controller.checkAnswer();
+  controller.setReasoning("I guessed.");
+
+  // Attempt 1: First unclear -> Clarification response
+  mockClient.queueResponse({
+    ok: true,
+    data: { kind: "clarification", clarification_prompt: "Could you elaborate on your thinking?" },
+  });
+  await controller.submitReasoning();
+
+  assert.equal(controller.getState().status, "clarification");
+  assert.equal(policy.getClarificationCount("q1"), 1);
+  assert.equal(mockClient.lastRequest?.clarification_attempt_count, 0);
+
+  // Attempt 2: Still unclear -> Backend fallback response
+  controller.editReasoning();
+  controller.setReasoning("Still guessing.");
+  mockClient.queueResponse({
+    ok: true,
+    data: {
+      kind: "fallback",
+      verified_explanation: "Verified explanation for Q1.",
+      follow_up_id: "q1-p",
+    },
+  });
+  await controller.submitReasoning();
+
+  // Reaches fallback state, closing clarification loop!
+  const finalState = controller.getState();
+  assert.equal(finalState.status, "fallback");
+  assert.equal(mockClient.lastRequest?.clarification_attempt_count, 1);
+  if (finalState.status === "fallback") {
+    assert.equal(finalState.fallback.follow_up_id, "q1-p");
+  }
+
+  // Can start follow-up directly from fallback
+  controller.startFollowUp();
+  assert.equal(controller.getState().status, "follow_up_answering");
+});
+
+test("PracticeController: network/API error preserves clarification count without penalizing student", async () => {
+  const content = createMockContent();
+  const store = new PracticeContentStore(content);
+  const mockClient = new MockApiClient();
+  const policy = new DefaultClarificationPolicy();
+  const controller = new PracticeController({
+    contentStore: store,
+    apiClient: mockClient,
+    clarificationPolicy: policy,
+  });
+
+  controller.selectChoice("A");
+  controller.checkAnswer();
+  controller.setReasoning("Initial reasoning.");
+
+  // Queue network failure
+  mockClient.queueResponse({ ok: false, error: "Network connection lost" });
+  await controller.submitReasoning();
+
+  assert.equal(controller.getState().status, "recoverable_error");
+  // Counter must remain 0! Errors do not increment student clarification count.
+  assert.equal(policy.getClarificationCount("q1"), 0);
+
+  // Student edits reasoning and retries
+  controller.editReasoning();
+  assert.equal(controller.getState().status, "reasoning");
+  mockClient.queueResponse({
+    ok: true,
+    data: { kind: "clarification", clarification_prompt: "Specific prompt" },
+  });
+  await controller.submitReasoning();
+
+  // Retry submitted with clarification_attempt_count: 0
+  assert.equal(mockClient.lastRequest?.clarification_attempt_count, 0);
+  assert.equal(controller.getState().status, "clarification");
+  assert.equal(policy.getClarificationCount("q1"), 1);
+});
+

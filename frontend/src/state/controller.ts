@@ -111,6 +111,7 @@ export class PracticeController {
     const sId = stateAfterPrep.sessionId;
     const choiceId = stateAfterPrep.selectedChoiceId;
     const reasoningText = stateAfterPrep.studentReasoning;
+    const clarificationCount = stateAfterPrep.clarificationAttemptCount;
 
     this.activeSubmissionId = subId;
     this.activeQuestionId = qId;
@@ -130,6 +131,7 @@ export class PracticeController {
           question_id: qId,
           student_choice_id: choiceId,
           student_reasoning: reasoningText,
+          clarification_attempt_count: clarificationCount,
         },
         { signal: this.abortController.signal }
       );
