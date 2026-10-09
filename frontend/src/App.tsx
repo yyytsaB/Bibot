@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { PreviewApp } from './components/previews/PreviewApp'
 import { LivePractice } from './components/practice/LivePractice'
+import { LocalAiReadiness } from './components/readiness/LocalAiReadiness'
 import { createPracticeSession } from './state/practice-session'
 import './App.css'
 import './styles/connected-navigation.css'
@@ -44,7 +45,9 @@ function App() {
     else navigate(parents[screen] ?? 2)
   }
   const livePractice = !designPreview && screen >= 10 && screen <= 15
-  return <div className="connected-frontend">{livePractice
+  return <div className="connected-frontend">
+    {!designPreview && <div style={{ maxWidth: 480, marginInline: 'auto', padding: '12px 18px' }}><LocalAiReadiness /></div>}
+    {livePractice
     ? <LivePractice session={practiceSession} onLeave={() => navigate(9)} />
     : <><PreviewApp screen={screen} connected onNavigate={navigate} onBack={back} /><p className="frontend-demo-notice" role="note">{designPreview ? 'Design preview · illustrative content only' : 'Interface preview · sample Home and map'}<br />Prepared practice uses reviewed questions</p></>}
   </div>
