@@ -1,0 +1,9 @@
+.bibot-readiness{display:flex;align-items:flex-start;gap:10px;width:100%;min-width:0;padding:12px 14px;border:1px solid #e5dcf4;border-radius:16px;background:#f4efff;color:#665381;font-family:'Nunito',system-ui,sans-serif;box-sizing:border-box;}
+.bibot-readiness__icon{display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;border-radius:50%;background:#e8dfff;}
+.bibot-readiness__icon svg{width:22px;height:22px;}
+.bibot-readiness__text{display:flex;flex-direction:column;min-width:0;gap:3px;overflow-wrap:anywhere;}
+.bibot-readiness__text strong{font-size:14px;line-height:1.4;font-weight:800;}
+.bibot-readiness__detail{font-size:12px;line-height:1.45;}
+.bibot-readiness--ready{background:#ecfaf3;border-color:#cfeedd;color:#176443;}.bibot-readiness--ready .bibot-readiness__icon{background:#d5f2e2;}
+.bibot-readiness--unavailable{background:#fff8ec;border-color:#f1e2c6;color:#79603c;}.bibot-readiness--unavailable .bibot-readiness__icon{background:#f7ebd5;}
+@media(max-width:350px){.bibot-readiness{padding:11px 12px;gap:8px;}}
