@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import { PreviewApp } from './components/previews/PreviewApp'
+import { LivePractice } from './components/practice/LivePractice'
+import { createPracticeSession } from './state/practice-session'
 import './App.css'
 import './styles/connected-navigation.css'
 
-// Presentation routes only. Learning state and backend integration belong to the developer.
+// Explicit design-preview routes remain illustrative; practice routes use reviewed content.
 const screenRoutes = ['welcome', 'home', 'paste-text', 'upload-file', 'subjects', 'set-details', 'generating', 'set-ready', 'library', 'question', 'reasoning', 'feedback', 'follow-up', 'answer-result', 'completed', 'empty-map', 'map', 'concept-map', 'map-details'] as const
 function currentScreen(): number {
   const route = window.location.hash.replace(/^#\/?/, '')
@@ -19,8 +21,13 @@ const parents: Record<number, number> = { 2: 1, 3: 2, 4: 2, 5: 2, 6: 9, 7: 6, 8:
 
 function App() {
   const [screen, setScreen] = useState(currentScreen)
+  const [designPreview, setDesignPreview] = useState(() => window.location.hash.startsWith('#/design-preview/'))
+  const [practiceSession] = useState(() => createPracticeSession())
   useEffect(() => {
-    const update = () => setScreen(currentScreen())
+    const update = () => {
+      setScreen(currentScreen())
+      setDesignPreview(window.location.hash.startsWith('#/design-preview/'))
+    }
     window.addEventListener('hashchange', update)
     window.addEventListener('popstate', update)
     return () => { window.removeEventListener('hashchange', update); window.removeEventListener('popstate', update) }
@@ -29,14 +36,18 @@ function App() {
   const navigate = (next: number) => {
     const route = screenRoutes[next - 1]
     if (!route || next === screen) return
-    window.history.pushState({ bibotNavigation: true }, '', `#/${route}`)
+    window.history.pushState({ bibotNavigation: true }, '', designPreview ? `#/design-preview/${next}` : `#/${route}`)
     setScreen(next)
   }
   const back = () => {
     if (window.history.state?.bibotNavigation === true) window.history.back()
     else navigate(parents[screen] ?? 2)
   }
-  return <div className="connected-frontend"><PreviewApp screen={screen} connected onNavigate={navigate} onBack={back} /><p className="frontend-demo-notice" role="note">Frontend demo · sample content<br />AI unavailable · no saved progress</p></div>
+  const livePractice = !designPreview && screen >= 10 && screen <= 15
+  return <div className="connected-frontend">{livePractice
+    ? <LivePractice session={practiceSession} onLeave={() => navigate(9)} />
+    : <><PreviewApp screen={screen} connected onNavigate={navigate} onBack={back} /><p className="frontend-demo-notice" role="note">{designPreview ? 'Design preview · illustrative content only' : 'Interface preview · sample Home and map'}<br />Prepared practice uses reviewed questions</p></>}
+  </div>
 }
 
 export default App
