@@ -1,0 +1,366 @@
+{
+  "model_id": null,
+  "evaluation_date": null,
+  "evaluation_environment": {
+    "temperature": 0.1,
+    "stream": false,
+    "format": "json_schema"
+  },
+  "evaluation_thresholds": {
+    "min_first_try_schema_validity": 0.95,
+    "vague_needs_clarification_rate": 1.00,
+    "max_vague_invented_misconceptions": 0,
+    "min_clear_case_human_agreement": 0.80,
+    "target_typical_latency_seconds": 10.0
+  },
+  "latency_measurement_definitions": {
+    "first_attempt_latency_ms": "First Ollama dispatch through full response-body receipt.",
+    "total_pipeline_latency_ms": "Pipeline entry through final FeedbackResult/error, including prompt assembly, retries, repair, and conversion."
+  },
+  "results": [
+    {
+      "id": "T01",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T02",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T03",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T04",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T05",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T06",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T07",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": null
+    },
+    {
+      "id": "T08",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": null
+    },
+    {
+      "id": "T09",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": null
+    },
+    {
+      "id": "T10",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": null
+    },
+    {
+      "id": "T11",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": null
+    },
+    {
+      "id": "T12",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T13",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T14",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": null
+    },
+    {
+      "id": "T15",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "raw_first_response": null,
+      "first_attempt_schema_valid": null,
+      "expected_status_match": null,
+      "invented_misconception": null,
+      "final_pipeline_outcome": null,
+      "retry_occurred": null,
+      "repair_occurred": null,
+      "retry_details": null,
+      "first_attempt_latency_ms": null,
+      "total_pipeline_latency_ms": null,
+      "human_judgments": null
+    }
+  ]
+}

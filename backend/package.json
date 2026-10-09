@@ -8,9 +8,11 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "validate:content": "tsx scripts/validate-content.ts",
+    "validate:eval": "tsx scripts/validate-eval-cases.ts",
     "test:content": "tsx --test test/validate-content.test.ts",
     "test:f4": "tsx --test test/transport.test.ts test/pipeline.test.ts",
-    "test": "npm run test:content && npm run test:f4"
+    "test:eval": "tsx --test test/validate-eval-cases.test.ts",
+    "test": "npm run test:content && npm run test:f4 && npm run test:eval"
   },
   "keywords": [],
   "author": "",
