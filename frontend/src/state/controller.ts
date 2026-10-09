@@ -4,6 +4,8 @@ import type {
 import type { PracticeState } from "./types.ts";
 import { PracticeStateMachine } from "./machine.ts";
 import { PracticeContentStore } from "./content-store.ts";
+import { restorePracticeCheckpoint } from "./persistence.ts";
+import type { LearningEvidenceEvent } from "./types.ts";
 import {
   type ClarificationPolicy,
   DefaultClarificationPolicy,
@@ -19,6 +21,7 @@ export interface PracticeControllerOptions {
   clarificationPolicy?: ClarificationPolicy;
   questions?: Question[];
   sessionId?: string;
+  restored?: { checkpoint: unknown; evidence: readonly LearningEvidenceEvent[] };
 }
 
 export type StateListener = (state: PracticeState) => void;
@@ -41,6 +44,9 @@ export class PracticeController {
       questions,
       contentStore: options.contentStore,
       clarificationPolicy: policy,
+      restoredState: options.restored
+        ? restorePracticeCheckpoint(options.restored.checkpoint, options.restored.evidence, options.contentStore, questions)
+        : undefined,
     });
 
     this.apiClient = options.apiClient ?? new HttpFeedbackApiClient();

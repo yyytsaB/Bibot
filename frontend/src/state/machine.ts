@@ -26,6 +26,7 @@ export interface StateMachineInitOptions {
   questions: Question[];
   contentStore: PracticeContentStore;
   clarificationPolicy: ClarificationPolicy;
+  restoredState?: PracticeState;
 }
 
 export class PracticeStateMachine {
@@ -46,6 +47,15 @@ export class PracticeStateMachine {
 
     const sessionId = options.sessionId ?? this.generateSessionId();
     this.state = this.createInitialQuestionState(sessionId, 0, []);
+    if (options.restoredState) {
+      this.state = options.restoredState;
+      this.clarificationPolicy.resetAll();
+      for (const event of this.state.learningEvidence) {
+        this.emittedEvidenceKeys.add(event.kind === "follow_up_result"
+          ? `${event.sessionId}:follow_up:${event.followUpId}`
+          : `${event.sessionId}:initial:${event.questionId}`);
+      }
+    }
   }
 
   private generateSessionId(): string {

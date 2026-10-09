@@ -84,6 +84,7 @@ export class LearningMapStore {
   private readonly confusedPairs = new Map<string, ConfusedConceptPair>();
   private readonly processedEventIds = new Set<string>();
   private readonly processedAnswers = new Set<string>();
+  private readonly evidence: LearningEvidenceEvent[] = [];
 
   constructor(contentStore: PracticeContentStore) {
     this.contentStore = contentStore;
@@ -185,7 +186,13 @@ export class LearningMapStore {
     }
     this.processedEventIds.add(eventKey);
     this.processedAnswers.add(answerKey);
+    this.evidence.push(structuredClone(event));
     return true;
+  }
+
+  /** F8 replays this journal to rebuild counters and deduplication together. */
+  public getEvidence(): LearningEvidenceEvent[] {
+    return structuredClone(this.evidence);
   }
 
   public getSnapshot(): LearningMapSnapshot {
