@@ -1,0 +1,634 @@
+{
+  "model_id": "qwen2.5:7b",
+  "run_id": "run-2026-10-09T19-58-03-929Z",
+  "run_type": "production",
+  "model_digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+  "runtime_settings": {
+    "endpoint": "http://127.0.0.1:11434/api/chat",
+    "timeout_ms": 15000,
+    "temperature": 0.1,
+    "stream": false,
+    "format": "json_schema"
+  },
+  "warmup_outcome": {
+    "status": "FAILED",
+    "latency_ms": null,
+    "error": "Ollama request timed out after 15000ms"
+  },
+  "provenance_evidence": {
+    "dataset_batch_id": "critical-thinking-c1-reviewed-2026-10-09",
+    "cases_count": 15,
+    "pipeline_prompt_version": "F4-v1"
+  },
+  "template": {
+    "model_id": "qwen2.5:7b",
+    "evaluation_date": "2026-10-09",
+    "evaluation_environment": {
+      "temperature": 0.1,
+      "stream": false,
+      "format": "json_schema"
+    },
+    "evaluation_thresholds": {
+      "min_first_try_schema_validity": 0.95,
+      "vague_needs_clarification_rate": 1,
+      "max_vague_invented_misconceptions": 0,
+      "min_clear_case_human_agreement": 0.8,
+      "target_typical_latency_seconds": 10
+    },
+    "latency_measurement_definitions": {
+      "first_attempt_latency_ms": "First Ollama dispatch through full response-body receipt.",
+      "total_pipeline_latency_ms": "Pipeline entry through final FeedbackResult/error, including prompt assembly, retries, repair, and conversion."
+    },
+    "results": [
+      {
+        "id": "T01",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"Mika proposes a cause for this puddle rather than a pattern across many floors.\",\"follow_up_id\":\"q1-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15011.9,
+        "total_pipeline_latency_ms": 30051.2,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15011.9,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15016,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      },
+      {
+        "id": "T02",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"Jo extends a recorded pattern to a future visit.\",\"follow_up_id\":\"q2-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15018.3,
+        "total_pipeline_latency_ms": 30029.4,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15018.3,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15010.9,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      },
+      {
+        "id": "T03",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"The stated membership rule includes Bea.\",\"follow_up_id\":\"q3-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15011,
+        "total_pipeline_latency_ms": 30016.5,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15011,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15005.2,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      },
+      {
+        "id": "T04",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"Lin selects an explanation without claiming it is logically forced.\",\"follow_up_id\":\"q4-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15016.2,
+        "total_pipeline_latency_ms": 30026.8,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15016.2,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15010.2,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      },
+      {
+        "id": "T05",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"Past arrivals support a prediction, not a guarantee.\",\"follow_up_id\":\"q5-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15011.8,
+        "total_pipeline_latency_ms": 30018.7,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15011.8,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15006.5,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      },
+      {
+        "id": "T06",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"Eliminating A leaves B under the stated exhaustive alternatives.\",\"follow_up_id\":\"q6-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15006,
+        "total_pipeline_latency_ms": 30007.7,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15006,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15001.5,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      },
+      {
+        "id": "T07",
+        "expected_model_status": "needs_clarification",
+        "expected_feedback_kind": "clarification",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": null,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"Mika proposes a cause for this puddle rather than a pattern across many floors.\",\"follow_up_id\":\"q1-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15013.8,
+        "total_pipeline_latency_ms": 30024.7,
+        "human_judgments": null,
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15013.8,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15010.6,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      },
+      {
+        "id": "T08",
+        "expected_model_status": "needs_clarification",
+        "expected_feedback_kind": "clarification",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": null,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"Jo extends a recorded pattern to a future visit.\",\"follow_up_id\":\"q2-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15009.4,
+        "total_pipeline_latency_ms": 30016.5,
+        "human_judgments": null,
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15009.4,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15007,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      },
+      {
+        "id": "T09",
+        "expected_model_status": "needs_clarification",
+        "expected_feedback_kind": "clarification",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": null,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"The stated membership rule includes Bea.\",\"follow_up_id\":\"q3-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15002.6,
+        "total_pipeline_latency_ms": 30011.8,
+        "human_judgments": null,
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15002.6,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15009,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      },
+      {
+        "id": "T10",
+        "expected_model_status": "needs_clarification",
+        "expected_feedback_kind": "clarification",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": null,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"Lin selects an explanation without claiming it is logically forced.\",\"follow_up_id\":\"q4-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15002.2,
+        "total_pipeline_latency_ms": 30013.6,
+        "human_judgments": null,
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15002.2,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15011.2,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      },
+      {
+        "id": "T11",
+        "expected_model_status": "needs_clarification",
+        "expected_feedback_kind": "clarification",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": null,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"Past arrivals support a prediction, not a guarantee.\",\"follow_up_id\":\"q5-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15009.4,
+        "total_pipeline_latency_ms": 30016.1,
+        "human_judgments": null,
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15009.4,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15006.6,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      },
+      {
+        "id": "T12",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"Eliminating A leaves B under the stated exhaustive alternatives.\",\"follow_up_id\":\"q6-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15004.1,
+        "total_pipeline_latency_ms": 30006.6,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15004.1,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15002.3,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      },
+      {
+        "id": "T13",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"Mika proposes a cause for this puddle rather than a pattern across many floors.\",\"follow_up_id\":\"q1-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15008,
+        "total_pipeline_latency_ms": 30031.4,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15008,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15023,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      },
+      {
+        "id": "T14",
+        "expected_model_status": "needs_clarification",
+        "expected_feedback_kind": "clarification",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": null,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"Jo extends a recorded pattern to a future visit.\",\"follow_up_id\":\"q2-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15007.5,
+        "total_pipeline_latency_ms": 30018.4,
+        "human_judgments": null,
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15007.5,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15009.4,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      },
+      {
+        "id": "T15",
+        "expected_model_status": "needs_clarification",
+        "expected_feedback_kind": "clarification",
+        "raw_first_response": null,
+        "first_attempt_schema_valid": false,
+        "expected_status_match": false,
+        "invented_misconception": null,
+        "final_pipeline_outcome": "{\"kind\":\"fallback\",\"verified_explanation\":\"The stated membership rule includes Bea.\",\"follow_up_id\":\"q3-p\"}",
+        "retry_occurred": true,
+        "repair_occurred": false,
+        "retry_details": "Ollama request timed out after 15000ms",
+        "first_attempt_latency_ms": 15003.4,
+        "total_pipeline_latency_ms": 30016.2,
+        "human_judgments": null,
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 15003.4,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          },
+          {
+            "attempt_number": 2,
+            "latency_ms": 15012.3,
+            "raw_response": null,
+            "error": "Ollama request timed out after 15000ms"
+          }
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "model_id": "qwen2.5:7b",
+    "total_cases": 15,
+    "expected_cases_count": 15,
+    "all_expected_cases_present": true,
+    "all_expected_clear_cases_present": true,
+    "timings_complete": true,
+    "first_attempt_schema_valid_count": 0,
+    "first_attempt_schema_valid_rate": 0,
+    "schema_validity_target_met": false,
+    "vague_cases_count": 7,
+    "vague_needs_clarification_count": 0,
+    "vague_clarification_rate": 0,
+    "vague_clarification_target_met": false,
+    "invented_misconceptions_count": 0,
+    "unknown_safety_cases_count": 7,
+    "invented_misconceptions_target_met": false,
+    "latencies": {
+      "median_ms": 30016.5,
+      "mean_ms": 30020.4,
+      "p90_ms": 30031.4,
+      "min_ms": 30006.6,
+      "max_ms": 30051.2
+    },
+    "typical_latency_target_met": false,
+    "warmup_latency_ms": null,
+    "retries_count": 15,
+    "repairs_count": 0,
+    "clear_cases_count": 8,
+    "human_agreement_status": "PENDING",
+    "unanimous_approved_cases_count": 0,
+    "unanimous_approval_rate": 0,
+    "all_quantitative_targets_met": false
+  },
+  "warmup_latency_ms": null
+}

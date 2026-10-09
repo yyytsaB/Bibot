@@ -8,8 +8,14 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "validate:content": "tsx scripts/validate-content.ts",
+    "validate:eval": "tsx scripts/validate-eval-cases.ts",
     "test:content": "tsx --test test/validate-content.test.ts",
-    "test": "npm run test:content"
+    "test:f4": "tsx --test test/transport.test.ts test/pipeline.test.ts",
+    "test:eval": "tsx --test test/validate-eval-cases.test.ts",
+    "test:eval-runner": "tsx --test test/eval-runner.test.ts",
+    "test": "npm run test:content && npm run test:f4 && npm run test:eval && npm run test:eval-runner",
+    "smoke:f4": "tsx scripts/smoke-test-f4.ts",
+    "eval:runner": "tsx scripts/run-eval.ts"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +23,8 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.3.0",
-    "shared": "file:../shared"
+    "shared": "file:../shared",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

@@ -1,0 +1,223 @@
+{
+  "batch_id": "critical-thinking-c1-reviewed-2026-10-09",
+  "provenance": {
+    "author": "Codex (AI)",
+    "human_authored": false,
+    "nature": "simulated student utterances, not collected student data",
+    "reviewer": "Karl Andrei",
+    "review_date": "2026-10-09",
+    "owner_approval": {
+      "role": "project owner",
+      "approved": true,
+      "peer_reviewed": true,
+      "confirmed_in": "User message approving F2 implementation and confirming owner peer review",
+      "confirmation_date": "2026-10-10",
+      "scope": "This specific reviewed batch only; no authorization for future AI-authored content"
+    },
+    "extends_to_future_content": false
+  },
+  "sources": {
+    "S1": {
+      "tag": "S1",
+      "citation": "Nathan Smith, OpenStax, Introduction to Philosophy, section 5.4, Types of Inferences",
+      "url": "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences"
+    },
+    "S2": {
+      "tag": "S2",
+      "citation": "Igor Douven, Stanford Encyclopedia of Philosophy, Abduction, section 1.1",
+      "url": "https://plato.stanford.edu/entries/abduction/#DedIndAbd"
+    }
+  },
+  "clarification_sequence_scenario": {
+    "description": "Integration check for multi-attempt clarification and fallback sequence (reserved for F6/F7, not an additional test case)",
+    "steps": [
+      {
+        "step": 1,
+        "question_id": "q1",
+        "reference_case_id": "T07",
+        "description": "Submit T07 for q1 with no prior unclear attempt. Expect clarification and no diagnosis."
+      },
+      {
+        "step": 2,
+        "question_id": "q1",
+        "reference_case_id": "T11",
+        "description": "Submit T11 utterance for the same q1 as its second unclear attempt. Expect backend fallback containing verified explanation and reviewed linked primary follow-up; no diagnosis."
+      },
+      {
+        "step": 3,
+        "description": "Moving to another question resets unclear attempt counter."
+      },
+      {
+        "step": 4,
+        "description": "A supported diagnosis ends that question's clarification loop."
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "T01",
+      "category": "Clear misunderstanding",
+      "question_id": "q1",
+      "student_choice_id": "A",
+      "student_explanation": "They observed water and made a conclusion. Any conclusion from an observation is induction.",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "what_reviewers_should_assess": "Address the overbroad observation criterion.",
+      "sources": ["S2"]
+    },
+    {
+      "id": "T02",
+      "category": "Clear misunderstanding",
+      "question_id": "q2",
+      "student_choice_id": "C",
+      "student_explanation": "A prediction about the room is an explanation, so it has to be abduction.",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "what_reviewers_should_assess": "Distinguish prediction from explaining observed evidence.",
+      "sources": ["S1", "S2"]
+    },
+    {
+      "id": "T03",
+      "category": "Clear misunderstanding",
+      "question_id": "q3",
+      "student_choice_id": "A",
+      "student_explanation": "The rule talks about a whole club, so it must have been formed by induction. Applying it to Bea is induction too.",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "what_reviewers_should_assess": "Classify the presented inference, not an imagined origin of its premise.",
+      "sources": ["S1"]
+    },
+    {
+      "id": "T04",
+      "category": "Clear misunderstanding",
+      "question_id": "q4",
+      "student_choice_id": "B",
+      "student_explanation": "The jam warning and folded sheet prove the cause with absolute certainty, so this is deduction.",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "what_reviewers_should_assess": "Address claimed certainty; do not assert the printer has been repaired.",
+      "sources": ["S2"]
+    },
+    {
+      "id": "T05",
+      "category": "Clear misunderstanding",
+      "question_id": "q5",
+      "student_choice_id": "B",
+      "student_explanation": "Twelve successes turn the pattern into a rule that guarantees tomorrow's arrival.",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "what_reviewers_should_assess": "Address the unsupported guarantee.",
+      "sources": ["S1"]
+    },
+    {
+      "id": "T06",
+      "category": "Clear misunderstanding",
+      "question_id": "q6",
+      "student_choice_id": "C",
+      "student_explanation": "Drawer B is just the best guess even though the question says those are the only two places and A is ruled out.",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "what_reviewers_should_assess": "Use the explicit exhaustive alternatives.",
+      "sources": ["S1"]
+    },
+    {
+      "id": "T07",
+      "category": "Vague",
+      "question_id": "q1",
+      "student_choice_id": "A",
+      "student_explanation": "I guessed.",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "what_reviewers_should_assess": "Ask for reasoning; invent no misconception.",
+      "sources": ["S2"]
+    },
+    {
+      "id": "T08",
+      "category": "Vague",
+      "question_id": "q2",
+      "student_choice_id": "B",
+      "student_explanation": "It just seemed right.",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "what_reviewers_should_assess": "Ask which part supports the chosen category.",
+      "sources": ["S1"]
+    },
+    {
+      "id": "T09",
+      "category": "Vague",
+      "question_id": "q3",
+      "student_choice_id": "C",
+      "student_explanation": "I'm not sure how to explain it.",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "what_reviewers_should_assess": "Seek detail without attributing a belief.",
+      "sources": ["S1"]
+    },
+    {
+      "id": "T10",
+      "category": "Vague",
+      "question_id": "q4",
+      "student_choice_id": "A",
+      "student_explanation": "Because of the situation.",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "what_reviewers_should_assess": "Ask which feature of the inference matters.",
+      "sources": ["S2"]
+    },
+    {
+      "id": "T11",
+      "category": "Vague",
+      "question_id": "q5",
+      "student_choice_id": "C",
+      "student_explanation": "Maybe that one? I don't know.",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "what_reviewers_should_assess": "Request reasoning without diagnosis.",
+      "sources": ["S1"]
+    },
+    {
+      "id": "T12",
+      "category": "Unusual, clear rule error",
+      "question_id": "q6",
+      "student_choice_id": "A",
+      "student_explanation": "Deduction always moves from a general rule to one specific case. This has two locations instead, so it cannot be deduction.",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "what_reviewers_should_assess": "Address the overly narrow definition of deduction.",
+      "sources": ["S1"]
+    },
+    {
+      "id": "T13",
+      "category": "Unusual, explicit category conflation",
+      "question_id": "q1",
+      "student_choice_id": "B",
+      "student_explanation": "The person is acting like a detective. Detective work is always deductive, so choosing the likely cause must be deduction.",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "what_reviewers_should_assess": "Address occupation-based classification; avoid unrelated claims.",
+      "sources": ["S2"]
+    },
+    {
+      "id": "T14",
+      "category": "Unusual, unrelated",
+      "question_id": "q2",
+      "student_choice_id": "C",
+      "student_explanation": "Our classroom curtains are green.",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "what_reviewers_should_assess": "No inference about the learner's conceptual beliefs.",
+      "sources": ["S1"]
+    },
+    {
+      "id": "T15",
+      "category": "Unusual, selection/reasoning mismatch",
+      "question_id": "q3",
+      "student_choice_id": "A",
+      "student_explanation": "I meant that Bea must have the badge if both statements are true, but I may have clicked the wrong label.",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "what_reviewers_should_assess": "Clarify the selection mismatch; do not invent a conceptual error.",
+      "sources": ["S1"]
+    }
+  ]
+}
