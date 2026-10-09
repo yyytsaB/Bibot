@@ -14,7 +14,8 @@
     "test:eval": "tsx --test test/validate-eval-cases.test.ts",
     "test:eval-runner": "tsx --test test/eval-runner.test.ts",
     "test:f7": "tsx --test test/vague-handling.test.ts",
-    "test": "npm run test:content && npm run test:f4 && npm run test:eval && npm run test:eval-runner && npm run test:f7",
+    "test:readiness": "tsx --test test/readiness.test.ts",
+    "test": "npm run test:content && npm run test:f4 && npm run test:eval && npm run test:eval-runner && npm run test:f7 && npm run test:readiness",
     "smoke:f4": "tsx scripts/smoke-test-f4.ts",
     "test:live-f7": "tsx scripts/live-test-f7.ts",
     "eval:runner": "tsx scripts/run-eval.ts"

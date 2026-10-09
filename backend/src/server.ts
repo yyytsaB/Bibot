@@ -6,8 +6,12 @@ import {
 } from "./pipeline.js";
 import { HttpOllamaTransport } from "./transport.js";
 import { loadContent } from "./content.js";
+import { type ReadinessService, type ReadinessResponse } from "./readiness.js";
 
-export function createApp(pipeline?: FeedbackPipeline): Express {
+export function createApp(
+  pipeline?: FeedbackPipeline,
+  readiness?: ReadinessService
+): Express {
   // Ensure content is loaded and validated
   loadContent();
 
@@ -15,6 +19,22 @@ export function createApp(pipeline?: FeedbackPipeline): Express {
   const app: Express = express();
 
   app.use(express.json());
+
+  app.get("/api/readiness", (_req: Request, res: Response) => {
+    if (readiness) {
+      res.status(200).json(readiness.getReadiness());
+      return;
+    }
+
+    const unconfiguredResponse: ReadinessResponse = {
+      isReady: false,
+      statusLabel: "Local AI Unavailable",
+      detail: "Readiness service is not configured or running",
+      model: "unknown",
+      consecutiveFailures: 0,
+    };
+    res.status(200).json(unconfiguredResponse);
+  });
 
   app.post("/api/feedback", async (req: Request, res: Response) => {
     try {

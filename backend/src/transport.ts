@@ -1,5 +1,6 @@
 import { toJSONSchema } from "zod";
 import { ModelResponseSchema } from "shared";
+import { type OllamaConfig, resolveOllamaConfig } from "./readiness.js";
 
 export interface OllamaChatMessage {
   role: "system" | "user" | "assistant";
@@ -17,10 +18,11 @@ export interface OllamaChatPayload {
 }
 
 export interface OllamaTransportOptions {
-  endpoint?: string;
-  model?: string;
-  timeoutMs?: number;
-  fetchFn?: typeof fetch;
+  config?: OllamaConfig | undefined;
+  endpoint?: string | undefined;
+  model?: string | undefined;
+  timeoutMs?: number | undefined;
+  fetchFn?: typeof fetch | undefined;
 }
 
 export interface OllamaTransport {
@@ -35,11 +37,20 @@ export class HttpOllamaTransport implements OllamaTransport {
   private readonly cachedSchema: Record<string, unknown>;
 
   constructor(options: OllamaTransportOptions = {}) {
-    this.endpoint = options.endpoint ?? "http://127.0.0.1:11434/api/chat";
-    this.model = options.model ?? "qwen2.5:7b";
-    this.timeoutMs =
-      options.timeoutMs ??
-      parseInt(process.env["OLLAMA_TIMEOUT_MS"] ?? "15000", 10);
+    if (options.config) {
+      this.endpoint = options.config.chatEndpoint;
+      this.model = options.config.model;
+      this.timeoutMs = options.config.timeoutMs;
+    } else {
+      const resolved = resolveOllamaConfig({
+        chatEndpoint: options.endpoint,
+        model: options.model,
+        timeoutMs: options.timeoutMs,
+      });
+      this.endpoint = resolved.chatEndpoint;
+      this.model = resolved.model;
+      this.timeoutMs = resolved.timeoutMs;
+    }
     this.fetchFn = options.fetchFn ?? globalThis.fetch.bind(globalThis);
     this.cachedSchema = toJSONSchema(ModelResponseSchema) as Record<string, unknown>;
   }
