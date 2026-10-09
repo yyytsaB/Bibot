@@ -1,0 +1,544 @@
+{
+  "model_id": "llama3.2:latest",
+  "run_id": "run-2026-10-09T19-49-28-009Z",
+  "run_type": "dry_run",
+  "model_digest": "offline-dry-run-digest",
+  "runtime_settings": {
+    "endpoint": "http://127.0.0.1:11434/api/chat",
+    "timeout_ms": 15000,
+    "temperature": 0.1,
+    "stream": false,
+    "format": "json_schema"
+  },
+  "warmup_outcome": {
+    "status": "SUCCESS",
+    "latency_ms": 0,
+    "error": null
+  },
+  "provenance_evidence": {
+    "dataset_batch_id": "critical-thinking-c1-reviewed-2026-10-09",
+    "cases_count": 15,
+    "pipeline_prompt_version": "F4-v1"
+  },
+  "template": {
+    "model_id": "llama3.2:latest",
+    "evaluation_date": "2026-10-09",
+    "evaluation_environment": {
+      "temperature": 0.1,
+      "stream": false,
+      "format": "json_schema"
+    },
+    "evaluation_thresholds": {
+      "min_first_try_schema_validity": 0.95,
+      "vague_needs_clarification_rate": 1,
+      "max_vague_invented_misconceptions": 0,
+      "min_clear_case_human_agreement": 0.8,
+      "target_typical_latency_seconds": 10
+    },
+    "latency_measurement_definitions": {
+      "first_attempt_latency_ms": "First Ollama dispatch through full response-body receipt.",
+      "total_pipeline_latency_ms": "Pipeline entry through final FeedbackResult/error, including prompt assembly, retries, repair, and conversion."
+    },
+    "results": [
+      {
+        "id": "T01",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T01\",\"explanation\":\"Explaining the distinction between concepts for T01.\",\"concept_ids\":[\"induction\",\"abduction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T01\",\"explanation\":\"Explaining the distinction between concepts for T01.\",\"concept_ids\":[\"induction\",\"abduction\"],\"follow_up_id\":\"q1-p\",\"confidence\":\"high\"}",
+        "retry_occurred": false,
+        "repair_occurred": true,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0.2,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T01\",\"explanation\":\"Explaining the distinction between concepts for T01.\",\"concept_ids\":[\"induction\",\"abduction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+            "error": null
+          }
+        ]
+      },
+      {
+        "id": "T02",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T02\",\"explanation\":\"Explaining the distinction between concepts for T02.\",\"concept_ids\":[\"induction\",\"abduction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T02\",\"explanation\":\"Explaining the distinction between concepts for T02.\",\"concept_ids\":[\"induction\",\"abduction\"],\"follow_up_id\":\"q2-p\",\"confidence\":\"high\"}",
+        "retry_occurred": false,
+        "repair_occurred": true,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0.2,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T02\",\"explanation\":\"Explaining the distinction between concepts for T02.\",\"concept_ids\":[\"induction\",\"abduction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+            "error": null
+          }
+        ]
+      },
+      {
+        "id": "T03",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T03\",\"explanation\":\"Explaining the distinction between concepts for T03.\",\"concept_ids\":[\"deduction\",\"induction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T03\",\"explanation\":\"Explaining the distinction between concepts for T03.\",\"concept_ids\":[\"deduction\",\"induction\"],\"follow_up_id\":\"q3-p\",\"confidence\":\"high\"}",
+        "retry_occurred": false,
+        "repair_occurred": true,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0.1,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T03\",\"explanation\":\"Explaining the distinction between concepts for T03.\",\"concept_ids\":[\"deduction\",\"induction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+            "error": null
+          }
+        ]
+      },
+      {
+        "id": "T04",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T04\",\"explanation\":\"Explaining the distinction between concepts for T04.\",\"concept_ids\":[\"abduction\",\"deduction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T04\",\"explanation\":\"Explaining the distinction between concepts for T04.\",\"concept_ids\":[\"abduction\",\"deduction\"],\"follow_up_id\":\"q4-p\",\"confidence\":\"high\"}",
+        "retry_occurred": false,
+        "repair_occurred": true,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0.1,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T04\",\"explanation\":\"Explaining the distinction between concepts for T04.\",\"concept_ids\":[\"abduction\",\"deduction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+            "error": null
+          }
+        ]
+      },
+      {
+        "id": "T05",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T05\",\"explanation\":\"Explaining the distinction between concepts for T05.\",\"concept_ids\":[\"induction\",\"deduction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T05\",\"explanation\":\"Explaining the distinction between concepts for T05.\",\"concept_ids\":[\"induction\",\"deduction\"],\"follow_up_id\":\"q5-p\",\"confidence\":\"high\"}",
+        "retry_occurred": false,
+        "repair_occurred": true,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0.1,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T05\",\"explanation\":\"Explaining the distinction between concepts for T05.\",\"concept_ids\":[\"induction\",\"deduction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+            "error": null
+          }
+        ]
+      },
+      {
+        "id": "T06",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T06\",\"explanation\":\"Explaining the distinction between concepts for T06.\",\"concept_ids\":[\"deduction\",\"abduction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T06\",\"explanation\":\"Explaining the distinction between concepts for T06.\",\"concept_ids\":[\"deduction\",\"abduction\"],\"follow_up_id\":\"q6-p\",\"confidence\":\"high\"}",
+        "retry_occurred": false,
+        "repair_occurred": true,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T06\",\"explanation\":\"Explaining the distinction between concepts for T06.\",\"concept_ids\":[\"deduction\",\"abduction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+            "error": null
+          }
+        ]
+      },
+      {
+        "id": "T07",
+        "expected_model_status": "needs_clarification",
+        "expected_feedback_kind": "clarification",
+        "raw_first_response": "{\"status\":\"needs_clarification\",\"possible_misconception\":null,\"explanation\":\"\",\"concept_ids\":[],\"follow_up_id\":null,\"needs_clarification\":true,\"clarification_prompt\":\"Can you explain your reasoning for T07?\",\"confidence\":\"low\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"clarification\",\"clarification_prompt\":\"Can you explain your reasoning for T07?\"}",
+        "retry_occurred": false,
+        "repair_occurred": false,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0,
+        "human_judgments": null,
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"needs_clarification\",\"possible_misconception\":null,\"explanation\":\"\",\"concept_ids\":[],\"follow_up_id\":null,\"needs_clarification\":true,\"clarification_prompt\":\"Can you explain your reasoning for T07?\",\"confidence\":\"low\"}",
+            "error": null
+          }
+        ]
+      },
+      {
+        "id": "T08",
+        "expected_model_status": "needs_clarification",
+        "expected_feedback_kind": "clarification",
+        "raw_first_response": "{\"status\":\"needs_clarification\",\"possible_misconception\":null,\"explanation\":\"\",\"concept_ids\":[],\"follow_up_id\":null,\"needs_clarification\":true,\"clarification_prompt\":\"Can you explain your reasoning for T08?\",\"confidence\":\"low\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"clarification\",\"clarification_prompt\":\"Can you explain your reasoning for T08?\"}",
+        "retry_occurred": false,
+        "repair_occurred": false,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0.1,
+        "human_judgments": null,
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"needs_clarification\",\"possible_misconception\":null,\"explanation\":\"\",\"concept_ids\":[],\"follow_up_id\":null,\"needs_clarification\":true,\"clarification_prompt\":\"Can you explain your reasoning for T08?\",\"confidence\":\"low\"}",
+            "error": null
+          }
+        ]
+      },
+      {
+        "id": "T09",
+        "expected_model_status": "needs_clarification",
+        "expected_feedback_kind": "clarification",
+        "raw_first_response": "{\"status\":\"needs_clarification\",\"possible_misconception\":null,\"explanation\":\"\",\"concept_ids\":[],\"follow_up_id\":null,\"needs_clarification\":true,\"clarification_prompt\":\"Can you explain your reasoning for T09?\",\"confidence\":\"low\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"clarification\",\"clarification_prompt\":\"Can you explain your reasoning for T09?\"}",
+        "retry_occurred": false,
+        "repair_occurred": false,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0.1,
+        "human_judgments": null,
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"needs_clarification\",\"possible_misconception\":null,\"explanation\":\"\",\"concept_ids\":[],\"follow_up_id\":null,\"needs_clarification\":true,\"clarification_prompt\":\"Can you explain your reasoning for T09?\",\"confidence\":\"low\"}",
+            "error": null
+          }
+        ]
+      },
+      {
+        "id": "T10",
+        "expected_model_status": "needs_clarification",
+        "expected_feedback_kind": "clarification",
+        "raw_first_response": "{\"status\":\"needs_clarification\",\"possible_misconception\":null,\"explanation\":\"\",\"concept_ids\":[],\"follow_up_id\":null,\"needs_clarification\":true,\"clarification_prompt\":\"Can you explain your reasoning for T10?\",\"confidence\":\"low\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"clarification\",\"clarification_prompt\":\"Can you explain your reasoning for T10?\"}",
+        "retry_occurred": false,
+        "repair_occurred": false,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0,
+        "human_judgments": null,
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"needs_clarification\",\"possible_misconception\":null,\"explanation\":\"\",\"concept_ids\":[],\"follow_up_id\":null,\"needs_clarification\":true,\"clarification_prompt\":\"Can you explain your reasoning for T10?\",\"confidence\":\"low\"}",
+            "error": null
+          }
+        ]
+      },
+      {
+        "id": "T11",
+        "expected_model_status": "needs_clarification",
+        "expected_feedback_kind": "clarification",
+        "raw_first_response": "{\"status\":\"needs_clarification\",\"possible_misconception\":null,\"explanation\":\"\",\"concept_ids\":[],\"follow_up_id\":null,\"needs_clarification\":true,\"clarification_prompt\":\"Can you explain your reasoning for T11?\",\"confidence\":\"low\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"clarification\",\"clarification_prompt\":\"Can you explain your reasoning for T11?\"}",
+        "retry_occurred": false,
+        "repair_occurred": false,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0,
+        "human_judgments": null,
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"needs_clarification\",\"possible_misconception\":null,\"explanation\":\"\",\"concept_ids\":[],\"follow_up_id\":null,\"needs_clarification\":true,\"clarification_prompt\":\"Can you explain your reasoning for T11?\",\"confidence\":\"low\"}",
+            "error": null
+          }
+        ]
+      },
+      {
+        "id": "T12",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T12\",\"explanation\":\"Explaining the distinction between concepts for T12.\",\"concept_ids\":[\"deduction\",\"abduction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T12\",\"explanation\":\"Explaining the distinction between concepts for T12.\",\"concept_ids\":[\"deduction\",\"abduction\"],\"follow_up_id\":\"q6-p\",\"confidence\":\"high\"}",
+        "retry_occurred": false,
+        "repair_occurred": true,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T12\",\"explanation\":\"Explaining the distinction between concepts for T12.\",\"concept_ids\":[\"deduction\",\"abduction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+            "error": null
+          }
+        ]
+      },
+      {
+        "id": "T13",
+        "expected_model_status": "possible_misconception",
+        "expected_feedback_kind": "diagnosis",
+        "raw_first_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T13\",\"explanation\":\"Explaining the distinction between concepts for T13.\",\"concept_ids\":[\"induction\",\"abduction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T13\",\"explanation\":\"Explaining the distinction between concepts for T13.\",\"concept_ids\":[\"induction\",\"abduction\"],\"follow_up_id\":\"q1-p\",\"confidence\":\"high\"}",
+        "retry_occurred": false,
+        "repair_occurred": true,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0.1,
+        "human_judgments": {
+          "judge_1": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          },
+          "judge_2": {
+            "judge_id": null,
+            "matches_student_words": null,
+            "grounded_in_definitions": null,
+            "notes": null
+          }
+        },
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"possible_misconception\",\"possible_misconception\":\"Misconception identified by llama3.2:latest on T13\",\"explanation\":\"Explaining the distinction between concepts for T13.\",\"concept_ids\":[\"induction\",\"abduction\"],\"follow_up_id\":null,\"needs_clarification\":false,\"clarification_prompt\":null,\"confidence\":\"high\"}",
+            "error": null
+          }
+        ]
+      },
+      {
+        "id": "T14",
+        "expected_model_status": "needs_clarification",
+        "expected_feedback_kind": "clarification",
+        "raw_first_response": "{\"status\":\"needs_clarification\",\"possible_misconception\":null,\"explanation\":\"\",\"concept_ids\":[],\"follow_up_id\":null,\"needs_clarification\":true,\"clarification_prompt\":\"Can you explain your reasoning for T14?\",\"confidence\":\"low\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"clarification\",\"clarification_prompt\":\"Can you explain your reasoning for T14?\"}",
+        "retry_occurred": false,
+        "repair_occurred": false,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0,
+        "human_judgments": null,
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"needs_clarification\",\"possible_misconception\":null,\"explanation\":\"\",\"concept_ids\":[],\"follow_up_id\":null,\"needs_clarification\":true,\"clarification_prompt\":\"Can you explain your reasoning for T14?\",\"confidence\":\"low\"}",
+            "error": null
+          }
+        ]
+      },
+      {
+        "id": "T15",
+        "expected_model_status": "needs_clarification",
+        "expected_feedback_kind": "clarification",
+        "raw_first_response": "{\"status\":\"needs_clarification\",\"possible_misconception\":null,\"explanation\":\"\",\"concept_ids\":[],\"follow_up_id\":null,\"needs_clarification\":true,\"clarification_prompt\":\"Can you explain your reasoning for T15?\",\"confidence\":\"low\"}",
+        "first_attempt_schema_valid": true,
+        "expected_status_match": true,
+        "invented_misconception": false,
+        "final_pipeline_outcome": "{\"kind\":\"clarification\",\"clarification_prompt\":\"Can you explain your reasoning for T15?\"}",
+        "retry_occurred": false,
+        "repair_occurred": false,
+        "retry_details": null,
+        "first_attempt_latency_ms": 0,
+        "total_pipeline_latency_ms": 0,
+        "human_judgments": null,
+        "attempts": [
+          {
+            "attempt_number": 1,
+            "latency_ms": 0,
+            "raw_response": "{\"status\":\"needs_clarification\",\"possible_misconception\":null,\"explanation\":\"\",\"concept_ids\":[],\"follow_up_id\":null,\"needs_clarification\":true,\"clarification_prompt\":\"Can you explain your reasoning for T15?\",\"confidence\":\"low\"}",
+            "error": null
+          }
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "model_id": "llama3.2:latest",
+    "total_cases": 15,
+    "expected_cases_count": 15,
+    "all_expected_cases_present": true,
+    "all_expected_clear_cases_present": true,
+    "timings_complete": true,
+    "first_attempt_schema_valid_count": 15,
+    "first_attempt_schema_valid_rate": 1,
+    "schema_validity_target_met": true,
+    "vague_cases_count": 7,
+    "vague_needs_clarification_count": 7,
+    "vague_clarification_rate": 1,
+    "vague_clarification_target_met": true,
+    "invented_misconceptions_count": 0,
+    "unknown_safety_cases_count": 0,
+    "invented_misconceptions_target_met": true,
+    "latencies": {
+      "median_ms": 0.1,
+      "mean_ms": 0.1,
+      "p90_ms": 0.2,
+      "min_ms": 0,
+      "max_ms": 0.2
+    },
+    "typical_latency_target_met": true,
+    "warmup_latency_ms": 0,
+    "retries_count": 0,
+    "repairs_count": 8,
+    "clear_cases_count": 8,
+    "human_agreement_status": "PENDING",
+    "unanimous_approved_cases_count": 0,
+    "unanimous_approval_rate": 0,
+    "all_quantitative_targets_met": true
+  },
+  "warmup_latency_ms": 0
+}

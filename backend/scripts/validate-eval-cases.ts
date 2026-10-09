@@ -77,6 +77,14 @@ export interface EvalResultItem {
     judge_1: HumanJudgmentSlot;
     judge_2: HumanJudgmentSlot;
   } | null;
+  attempts?: CaseAttemptRecord[];
+}
+
+export interface CaseAttemptRecord {
+  attempt_number: number;
+  latency_ms: number;
+  raw_response: string | null;
+  error: string | null;
 }
 
 export interface EvalTemplate {

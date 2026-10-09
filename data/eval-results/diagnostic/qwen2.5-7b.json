@@ -1,0 +1,366 @@
+{
+  "model_id": "qwen2.5:7b",
+  "evaluation_date": "2026-10-09",
+  "evaluation_environment": {
+    "temperature": 0.1,
+    "stream": false,
+    "format": "json_schema"
+  },
+  "evaluation_thresholds": {
+    "min_first_try_schema_validity": 0.95,
+    "vague_needs_clarification_rate": 1,
+    "max_vague_invented_misconceptions": 0,
+    "min_clear_case_human_agreement": 0.8,
+    "target_typical_latency_seconds": 10
+  },
+  "latency_measurement_definitions": {
+    "first_attempt_latency_ms": "First Ollama dispatch through full response-body receipt.",
+    "total_pipeline_latency_ms": "Pipeline entry through final FeedbackResult/error, including prompt assembly, retries, repair, and conversion."
+  },
+  "results": [
+    {
+      "id": "T01",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Mixing up inductive and abductive reasoning\",\n  \"explanation\": \"Inductive reasoning involves making broad generalizations from specific observations. In this case, observing a puddle and a tipped-over water bottle does not necessarily lead to the conclusion that the bottle caused the puddle. Instead, it is more about proposing the most plausible explanation given the available evidence, which is a hallmark of abductive reasoning.\",\n  \"concept_ids\": [\"abduction\"],\n  \"follow_up_id\": \"q1-p\",\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"medium\"\n}",
+      "first_attempt_schema_valid": true,
+      "expected_status_match": true,
+      "invented_misconception": false,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"Mixing up inductive and abductive reasoning\",\"explanation\":\"Inductive reasoning involves making broad generalizations from specific observations. In this case, observing a puddle and a tipped-over water bottle does not necessarily lead to the conclusion that the bottle caused the puddle. Instead, it is more about proposing the most plausible explanation given the available evidence, which is a hallmark of abductive reasoning.\",\"concept_ids\":[\"abduction\"],\"follow_up_id\":\"q1-p\",\"confidence\":\"medium\"}",
+      "retry_occurred": false,
+      "repair_occurred": false,
+      "retry_details": null,
+      "first_attempt_latency_ms": 22252,
+      "total_pipeline_latency_ms": 22272.8,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T02",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"confusing abduction with inductive reasoning\",\n  \"explanation\": \"Abductive reasoning involves proposing a plausible explanation for observations. While Jo's prediction does involve an explanation, it is not the primary purpose of the reasoning here. Jo is using observed patterns (nine out of ten visits) to make a prediction about future events (the room being full next Monday). This aligns more closely with inductive reasoning, which uses observed patterns to support a broader conclusion or prediction.\",\n  \"concept_ids\": [\"induction\"],\n  \"follow_up_id\": \"q2-p\",\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"high\"\n}",
+      "first_attempt_schema_valid": true,
+      "expected_status_match": true,
+      "invented_misconception": false,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"confusing abduction with inductive reasoning\",\"explanation\":\"Abductive reasoning involves proposing a plausible explanation for observations. While Jo's prediction does involve an explanation, it is not the primary purpose of the reasoning here. Jo is using observed patterns (nine out of ten visits) to make a prediction about future events (the room being full next Monday). This aligns more closely with inductive reasoning, which uses observed patterns to support a broader conclusion or prediction.\",\"concept_ids\":[\"induction\"],\"follow_up_id\":\"q2-p\",\"confidence\":\"high\"}",
+      "retry_occurred": false,
+      "repair_occurred": false,
+      "retry_details": null,
+      "first_attempt_latency_ms": 26900.2,
+      "total_pipeline_latency_ms": 26900.8,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T03",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"confusing induction and deduction\",\n  \"explanation\": \"The student's reasoning is incorrect because the given statements are structured in a way that supports a deductive argument, not an inductive one. Inductive reasoning involves making broad generalizations from specific observations, while deductive reasoning involves drawing specific conclusions from general premises. In this case, the general premise 'Every member of the robotics club has a blue badge' is applied to the specific case 'Bea is a member of the robotics club' to conclude 'Bea has a blue badge.' This is a classic example of deductive reasoning, where the conclusion necessarily follows from the premises.\",\n  \"concept_ids\": [\"deduction\"],\n  \"follow_up_id\": \"q3-p\",\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"high\"\n}",
+      "first_attempt_schema_valid": true,
+      "expected_status_match": true,
+      "invented_misconception": false,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"confusing induction and deduction\",\"explanation\":\"The student's reasoning is incorrect because the given statements are structured in a way that supports a deductive argument, not an inductive one. Inductive reasoning involves making broad generalizations from specific observations, while deductive reasoning involves drawing specific conclusions from general premises. In this case, the general premise 'Every member of the robotics club has a blue badge' is applied to the specific case 'Bea is a member of the robotics club' to conclude 'Bea has a blue badge.' This is a classic example of deductive reasoning, where the conclusion necessarily follows from the premises.\",\"concept_ids\":[\"deduction\"],\"follow_up_id\":\"q3-p\",\"confidence\":\"high\"}",
+      "retry_occurred": false,
+      "repair_occurred": false,
+      "retry_details": null,
+      "first_attempt_latency_ms": 30673.9,
+      "total_pipeline_latency_ms": 30674.1,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T04",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"confusing deduction with abductive reasoning\",\n  \"explanation\": \"Deductive reasoning involves drawing a certain conclusion from premises that are assumed to be true. In this case, the student's statement suggests that the jam warning and the folded sheet are taken as absolute proof of the cause, which aligns more with deductive reasoning. However, the scenario describes Lin proposing the trapped sheet as the best explanation, which is characteristic of abductive reasoning. Abductive reasoning aims to find the most plausible explanation for the observed phenomenon, even if it is not guaranteed to be the only or the true cause.\",\n  \"concept_ids\": [\"abduction\", \"deduction\"],\n  \"follow_up_id\": \"q4-p\",\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"medium\"\n}",
+      "first_attempt_schema_valid": true,
+      "expected_status_match": true,
+      "invented_misconception": false,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"confusing deduction with abductive reasoning\",\"explanation\":\"Deductive reasoning involves drawing a certain conclusion from premises that are assumed to be true. In this case, the student's statement suggests that the jam warning and the folded sheet are taken as absolute proof of the cause, which aligns more with deductive reasoning. However, the scenario describes Lin proposing the trapped sheet as the best explanation, which is characteristic of abductive reasoning. Abductive reasoning aims to find the most plausible explanation for the observed phenomenon, even if it is not guaranteed to be the only or the true cause.\",\"concept_ids\":[\"abduction\",\"deduction\"],\"follow_up_id\":\"q4-p\",\"confidence\":\"medium\"}",
+      "retry_occurred": false,
+      "repair_occurred": false,
+      "retry_details": null,
+      "first_attempt_latency_ms": 28017.4,
+      "total_pipeline_latency_ms": 28017.7,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T05",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"confusing inductive reasoning with deductive reasoning\",\n  \"explanation\": \"The student's reasoning is based on the idea that because the shuttle has arrived before 7:30 a.m. twelve times, it will definitely arrive before 7:30 a.m. tomorrow. This is a misunderstanding of inductive reasoning. Inductive reasoning involves making a probable conclusion based on observed patterns, but it does not guarantee the outcome. Deductive reasoning, on the other hand, would involve starting with a general rule and applying it to a specific case, which is not the scenario here.\",\n  \"concept_ids\": [\"induction\"],\n  \"follow_up_id\": \"q5-p\",\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"high\"\n}",
+      "first_attempt_schema_valid": true,
+      "expected_status_match": true,
+      "invented_misconception": false,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"confusing inductive reasoning with deductive reasoning\",\"explanation\":\"The student's reasoning is based on the idea that because the shuttle has arrived before 7:30 a.m. twelve times, it will definitely arrive before 7:30 a.m. tomorrow. This is a misunderstanding of inductive reasoning. Inductive reasoning involves making a probable conclusion based on observed patterns, but it does not guarantee the outcome. Deductive reasoning, on the other hand, would involve starting with a general rule and applying it to a specific case, which is not the scenario here.\",\"concept_ids\":[\"induction\"],\"follow_up_id\":\"q5-p\",\"confidence\":\"high\"}",
+      "retry_occurred": false,
+      "repair_occurred": false,
+      "retry_details": null,
+      "first_attempt_latency_ms": 28812.1,
+      "total_pipeline_latency_ms": 28812.3,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T06",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"The student confuses abduction with deduction.\",\n  \"explanation\": \"Deductive reasoning involves drawing a certain conclusion based on premises that are assumed to be true. In this case, the premises are that the key is either in Drawer A or Drawer B, and it is not in Drawer A. Therefore, the conclusion that the key is in Drawer B follows necessarily. Abductive reasoning, on the other hand, involves forming a plausible explanation based on the available evidence. The student's statement suggests a guess rather than a necessary conclusion.\",\n  \"concept_ids\": [\"deduction\", \"abduction\"],\n  \"follow_up_id\": \"q6-p\",\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"high\"\n}",
+      "first_attempt_schema_valid": true,
+      "expected_status_match": true,
+      "invented_misconception": false,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"The student confuses abduction with deduction.\",\"explanation\":\"Deductive reasoning involves drawing a certain conclusion based on premises that are assumed to be true. In this case, the premises are that the key is either in Drawer A or Drawer B, and it is not in Drawer A. Therefore, the conclusion that the key is in Drawer B follows necessarily. Abductive reasoning, on the other hand, involves forming a plausible explanation based on the available evidence. The student's statement suggests a guess rather than a necessary conclusion.\",\"concept_ids\":[\"deduction\",\"abduction\"],\"follow_up_id\":\"q6-p\",\"confidence\":\"high\"}",
+      "retry_occurred": false,
+      "repair_occurred": false,
+      "retry_details": null,
+      "first_attempt_latency_ms": 26644.8,
+      "total_pipeline_latency_ms": 26645,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T07",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "raw_first_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"confusing inductive reasoning with abductive reasoning\",\n  \"explanation\": \"Inductive reasoning involves making broad generalizations from specific observations. In this scenario, Mika is not making a generalization but proposing the most plausible explanation for a specific observation. Abductive reasoning, on the other hand, involves forming a hypothesis that best explains the observed facts. Mika's conclusion that the water spilling from the bottle is the most plausible explanation aligns with abductive reasoning, as it is a hypothesis that accounts for the observed puddle.\",\n  \"concept_ids\": [\"abduction\"],\n  \"follow_up_id\": \"q1-p\",\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"high\"\n}",
+      "first_attempt_schema_valid": true,
+      "expected_status_match": false,
+      "invented_misconception": true,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"confusing inductive reasoning with abductive reasoning\",\"explanation\":\"Inductive reasoning involves making broad generalizations from specific observations. In this scenario, Mika is not making a generalization but proposing the most plausible explanation for a specific observation. Abductive reasoning, on the other hand, involves forming a hypothesis that best explains the observed facts. Mika's conclusion that the water spilling from the bottle is the most plausible explanation aligns with abductive reasoning, as it is a hypothesis that accounts for the observed puddle.\",\"concept_ids\":[\"abduction\"],\"follow_up_id\":\"q1-p\",\"confidence\":\"high\"}",
+      "retry_occurred": false,
+      "repair_occurred": false,
+      "retry_details": null,
+      "first_attempt_latency_ms": 26006.8,
+      "total_pipeline_latency_ms": 26006.9,
+      "human_judgments": null
+    },
+    {
+      "id": "T08",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "raw_first_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"confusing inductive reasoning with deductive reasoning\",\n  \"explanation\": \"The student's reasoning is based on a pattern observed over multiple visits and uses this pattern to make a prediction about the future. This aligns with the definition of inductive reasoning, which uses observed patterns to support a broader conclusion. Deductive reasoning, on the other hand, would require premises that logically guarantee the conclusion, which is not the case here. The student's choice of 'Deductive' suggests a misunderstanding of the difference between inductive and deductive reasoning.\",\n  \"concept_ids\": [\"induction\"],\n  \"follow_up_id\": \"q2-p\",\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"medium\"\n}",
+      "first_attempt_schema_valid": true,
+      "expected_status_match": false,
+      "invented_misconception": true,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"confusing inductive reasoning with deductive reasoning\",\"explanation\":\"The student's reasoning is based on a pattern observed over multiple visits and uses this pattern to make a prediction about the future. This aligns with the definition of inductive reasoning, which uses observed patterns to support a broader conclusion. Deductive reasoning, on the other hand, would require premises that logically guarantee the conclusion, which is not the case here. The student's choice of 'Deductive' suggests a misunderstanding of the difference between inductive and deductive reasoning.\",\"concept_ids\":[\"induction\"],\"follow_up_id\":\"q2-p\",\"confidence\":\"medium\"}",
+      "retry_occurred": false,
+      "repair_occurred": false,
+      "retry_details": null,
+      "first_attempt_latency_ms": 27068.7,
+      "total_pipeline_latency_ms": 27068.9,
+      "human_judgments": null
+    },
+    {
+      "id": "T09",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "raw_first_response": "{\n  \"status\": \"needs_clarification\",\n  \"possible_misconception\": null,\n  \"explanation\": \"The student's response is vague and does not provide enough information to diagnose a specific misconception. They are unsure about the reasoning type, which could indicate a lack of clear understanding of the differences between inductive, deductive, and abductive reasoning.\",\n  \"concept_ids\": [\"deduction\", \"induction\", \"abduction\"],\n  \"follow_up_id\": \"q3-p\",\n  \"needs_clarification\": true,\n  \"clarification_prompt\": \"Could you explain why you think abductive reasoning is the correct choice, or provide an example of how you would apply abductive reasoning to this problem? This will help us understand your thought process better and identify any potential misconceptions you might have.\",\n  \"confidence\": \"low\"\n}",
+      "first_attempt_schema_valid": false,
+      "expected_status_match": false,
+      "invented_misconception": true,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"The student may be confusing deductive reasoning with abductive reasoning.\",\"explanation\":\"Deductive reasoning involves drawing a specific conclusion from general premises. In this case, the statement 'Every member of the robotics club has a blue badge' is a general premise, and 'Bea is a member of the robotics club' is another premise. The conclusion 'Bea has a blue badge' follows necessarily from these premises. Abductive reasoning, on the other hand, involves forming a plausible explanation based on observations, which is not applicable here.\",\"concept_ids\":[\"deduction\"],\"follow_up_id\":\"q3-p\",\"confidence\":\"high\"}",
+      "retry_occurred": true,
+      "repair_occurred": false,
+      "retry_details": "First attempt failed schema or reference validation",
+      "first_attempt_latency_ms": 30111.7,
+      "total_pipeline_latency_ms": 57175.3,
+      "human_judgments": null
+    },
+    {
+      "id": "T10",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "raw_first_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"confusing abductive reasoning with inductive reasoning\",\n  \"explanation\": \"Abductive reasoning involves forming a plausible explanation for an observed situation. In this case, Lin proposes that the folded sheet is the best explanation for the paper-jam warning. This aligns with abductive reasoning, as Lin is suggesting a likely cause for the problem. Inductive reasoning, on the other hand, would involve making a broader conclusion based on observed patterns or sampled cases, which is not what Lin is doing here. Lin is directly addressing the specific issue at hand, making abductive reasoning the correct choice.\",\n  \"concept_ids\": [\"abduction\"],\n  \"follow_up_id\": \"q4-p\",\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"high\"\n}",
+      "first_attempt_schema_valid": true,
+      "expected_status_match": false,
+      "invented_misconception": true,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"confusing abductive reasoning with inductive reasoning\",\"explanation\":\"Abductive reasoning involves forming a plausible explanation for an observed situation. In this case, Lin proposes that the folded sheet is the best explanation for the paper-jam warning. This aligns with abductive reasoning, as Lin is suggesting a likely cause for the problem. Inductive reasoning, on the other hand, would involve making a broader conclusion based on observed patterns or sampled cases, which is not what Lin is doing here. Lin is directly addressing the specific issue at hand, making abductive reasoning the correct choice.\",\"concept_ids\":[\"abduction\"],\"follow_up_id\":\"q4-p\",\"confidence\":\"high\"}",
+      "retry_occurred": false,
+      "repair_occurred": false,
+      "retry_details": null,
+      "first_attempt_latency_ms": 27828,
+      "total_pipeline_latency_ms": 27828.2,
+      "human_judgments": null
+    },
+    {
+      "id": "T11",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "raw_first_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"confusing abductive reasoning with inductive reasoning\",\n  \"explanation\": \"The student's reasoning is based on observed patterns (the shuttle arriving before 7:30 a.m. on twelve recorded school days) and predicting a similar outcome in the future. This aligns with inductive reasoning, which uses observed patterns to support a broader conclusion. Abductive reasoning, on the other hand, involves proposing a plausible explanation for observations, which is not the case here. The student's choice of abductive reasoning suggests a misunderstanding of the difference between inductive and abductive reasoning.\",\n  \"concept_ids\": [\"induction\"],\n  \"follow_up_id\": \"q5-p\",\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"medium\"\n}",
+      "first_attempt_schema_valid": true,
+      "expected_status_match": false,
+      "invented_misconception": true,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"confusing abductive reasoning with inductive reasoning\",\"explanation\":\"The student's reasoning is based on observed patterns (the shuttle arriving before 7:30 a.m. on twelve recorded school days) and predicting a similar outcome in the future. This aligns with inductive reasoning, which uses observed patterns to support a broader conclusion. Abductive reasoning, on the other hand, involves proposing a plausible explanation for observations, which is not the case here. The student's choice of abductive reasoning suggests a misunderstanding of the difference between inductive and abductive reasoning.\",\"concept_ids\":[\"induction\"],\"follow_up_id\":\"q5-p\",\"confidence\":\"medium\"}",
+      "retry_occurred": false,
+      "repair_occurred": false,
+      "retry_details": null,
+      "first_attempt_latency_ms": 28305.3,
+      "total_pipeline_latency_ms": 28305.5,
+      "human_judgments": null
+    },
+    {
+      "id": "T12",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"confused the nature of deductive reasoning with its structure\",\n  \"explanation\": \"Deductive reasoning involves drawing a specific conclusion from general premises. In this case, the general premises are that the key is either in Drawer A or Drawer B, and it is not in Drawer A. The specific conclusion is that the key must be in Drawer B. The student's reasoning is that deduction requires a general rule to specific case structure, which is not entirely accurate. Deduction can involve specific premises leading to a specific conclusion, as long as the conclusion logically follows from the premises.\",\n  \"concept_ids\": [\"deduction\"],\n  \"follow_up_id\": \"q6-p\",\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"medium\"\n}",
+      "first_attempt_schema_valid": true,
+      "expected_status_match": true,
+      "invented_misconception": false,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"confused the nature of deductive reasoning with its structure\",\"explanation\":\"Deductive reasoning involves drawing a specific conclusion from general premises. In this case, the general premises are that the key is either in Drawer A or Drawer B, and it is not in Drawer A. The specific conclusion is that the key must be in Drawer B. The student's reasoning is that deduction requires a general rule to specific case structure, which is not entirely accurate. Deduction can involve specific premises leading to a specific conclusion, as long as the conclusion logically follows from the premises.\",\"concept_ids\":[\"deduction\"],\"follow_up_id\":\"q6-p\",\"confidence\":\"medium\"}",
+      "retry_occurred": false,
+      "repair_occurred": false,
+      "retry_details": null,
+      "first_attempt_latency_ms": 27899.3,
+      "total_pipeline_latency_ms": 27899.5,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T13",
+      "expected_model_status": "possible_misconception",
+      "expected_feedback_kind": "diagnosis",
+      "raw_first_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"confusing deduction with abductive reasoning\",\n  \"explanation\": \"Deductive reasoning involves drawing a specific conclusion from general premises. In contrast, abductive reasoning proposes the best explanation for a set of observations. Mika is not concluding with certainty that the water bottle is the only possible cause, but rather suggesting it as the most plausible explanation among the observed facts. This aligns more with abductive reasoning, which aims to find the most likely explanation, not to guarantee it.\",\n  \"concept_ids\": [\"abduction\"],\n  \"follow_up_id\": \"q1-p\",\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"high\"\n}",
+      "first_attempt_schema_valid": true,
+      "expected_status_match": true,
+      "invented_misconception": false,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"confusing deduction with abductive reasoning\",\"explanation\":\"Deductive reasoning involves drawing a specific conclusion from general premises. In contrast, abductive reasoning proposes the best explanation for a set of observations. Mika is not concluding with certainty that the water bottle is the only possible cause, but rather suggesting it as the most plausible explanation among the observed facts. This aligns more with abductive reasoning, which aims to find the most likely explanation, not to guarantee it.\",\"concept_ids\":[\"abduction\"],\"follow_up_id\":\"q1-p\",\"confidence\":\"high\"}",
+      "retry_occurred": false,
+      "repair_occurred": false,
+      "retry_details": null,
+      "first_attempt_latency_ms": 25706.4,
+      "total_pipeline_latency_ms": 25706.5,
+      "human_judgments": {
+        "judge_1": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        },
+        "judge_2": {
+          "judge_id": null,
+          "matches_student_words": null,
+          "grounded_in_definitions": null,
+          "notes": null
+        }
+      }
+    },
+    {
+      "id": "T14",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "raw_first_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"Mixing up inductive and abductive reasoning\",\n  \"explanation\": \"The student's reasoning about the study room being full is based on observed patterns (nine out of ten visits), which aligns with inductive reasoning. Inductive reasoning involves making a broad generalization based on specific observations. Abductive reasoning, on the other hand, involves forming a plausible explanation for an observation. The student's statement about the green curtains does not relate to the reasoning type and seems irrelevant to the question. This suggests a confusion between inductive and abductive reasoning.\",\n  \"concept_ids\": [\"induction\"],\n  \"follow_up_id\": \"q2-p\",\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"medium\"\n}",
+      "first_attempt_schema_valid": true,
+      "expected_status_match": false,
+      "invented_misconception": true,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"Mixing up inductive and abductive reasoning\",\"explanation\":\"The student's reasoning about the study room being full is based on observed patterns (nine out of ten visits), which aligns with inductive reasoning. Inductive reasoning involves making a broad generalization based on specific observations. Abductive reasoning, on the other hand, involves forming a plausible explanation for an observation. The student's statement about the green curtains does not relate to the reasoning type and seems irrelevant to the question. This suggests a confusion between inductive and abductive reasoning.\",\"concept_ids\":[\"induction\"],\"follow_up_id\":\"q2-p\",\"confidence\":\"medium\"}",
+      "retry_occurred": false,
+      "repair_occurred": false,
+      "retry_details": null,
+      "first_attempt_latency_ms": 28030.4,
+      "total_pipeline_latency_ms": 28030.6,
+      "human_judgments": null
+    },
+    {
+      "id": "T15",
+      "expected_model_status": "needs_clarification",
+      "expected_feedback_kind": "clarification",
+      "raw_first_response": "{\n  \"status\": \"possible_misconception\",\n  \"possible_misconception\": \"confused_deduction_with_induction\",\n  \"explanation\": \"The student's reasoning is that Bea must have the badge if both statements are true, which aligns with deductive reasoning. Deductive reasoning starts with general premises and reaches a logically certain conclusion. In this case, the general premise 'Every member of the robotics club has a blue badge' and the specific case 'Bea is a member of the robotics club' lead to the conclusion 'Bea has a blue badge.' Inductive reasoning, on the other hand, would involve making a generalization based on specific observations, which is not the case here.\",\n  \"concept_ids\": [\"deduction\"],\n  \"follow_up_id\": \"q3-p\",\n  \"needs_clarification\": false,\n  \"clarification_prompt\": null,\n  \"confidence\": \"medium\"\n}",
+      "first_attempt_schema_valid": true,
+      "expected_status_match": false,
+      "invented_misconception": true,
+      "final_pipeline_outcome": "{\"kind\":\"diagnosis\",\"possible_misconception\":\"confused_deduction_with_induction\",\"explanation\":\"The student's reasoning is that Bea must have the badge if both statements are true, which aligns with deductive reasoning. Deductive reasoning starts with general premises and reaches a logically certain conclusion. In this case, the general premise 'Every member of the robotics club has a blue badge' and the specific case 'Bea is a member of the robotics club' lead to the conclusion 'Bea has a blue badge.' Inductive reasoning, on the other hand, would involve making a generalization based on specific observations, which is not the case here.\",\"concept_ids\":[\"deduction\"],\"follow_up_id\":\"q3-p\",\"confidence\":\"medium\"}",
+      "retry_occurred": false,
+      "repair_occurred": false,
+      "retry_details": null,
+      "first_attempt_latency_ms": 30401.3,
+      "total_pipeline_latency_ms": 30401.4,
+      "human_judgments": null
+    }
+  ]
+}

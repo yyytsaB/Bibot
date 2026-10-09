@@ -12,7 +12,10 @@
     "test:content": "tsx --test test/validate-content.test.ts",
     "test:f4": "tsx --test test/transport.test.ts test/pipeline.test.ts",
     "test:eval": "tsx --test test/validate-eval-cases.test.ts",
-    "test": "npm run test:content && npm run test:f4 && npm run test:eval"
+    "test:eval-runner": "tsx --test test/eval-runner.test.ts",
+    "test": "npm run test:content && npm run test:f4 && npm run test:eval && npm run test:eval-runner",
+    "smoke:f4": "tsx scripts/smoke-test-f4.ts",
+    "eval:runner": "tsx scripts/run-eval.ts"
   },
   "keywords": [],
   "author": "",
