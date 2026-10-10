@@ -2,8 +2,8 @@ import mascot from '../../assets/bibot/duck-welcome.png'
 import wordmark from '../../assets/bibot/wordmark.png'
 import '../../styles/splash.css'
 
-/** Screen 1 design preview. The bar is a manual advance, not a readiness signal. */
-export function SplashScreen({ onContinue }: { onContinue: () => void }) {
+/** Existing screen 1 artwork: timed startup intro or manual design preview. Never a readiness signal. */
+export function SplashScreen({ onContinue, startup = false }: { onContinue?: () => void; startup?: boolean }) {
   return (
     <section className="bibot-splash" aria-label="Welcome to Bibot">
       <svg className="splash-background" viewBox="0 0 390 812" preserveAspectRatio="none" aria-hidden="true">
@@ -28,9 +28,10 @@ export function SplashScreen({ onContinue }: { onContinue: () => void }) {
       <svg className="splash-mascot" viewBox="354 246 1346 1054" preserveAspectRatio="none" role="img" aria-label="Bibot duck waving, surrounded by purple and yellow stars">
         <image href={mascot} width="2000" height="1500" />
       </svg>
-      <button className="splash-next" type="button" onClick={onContinue} aria-label="Continue to Home" title="Continue to Home">
+      {startup ? <div className="splash-next" role="progressbar" aria-label="Opening Bibot"><span className="splash-track"><span className="splash-fill startup-fill" /></span></div> : <button className="splash-next" type="button" onClick={onContinue} disabled={!onContinue} aria-label="Continue to Home" title="Continue to Home">
         <span className="splash-track" aria-hidden="true"><span className="splash-fill" /></span>
-      </button>
+      </button>}
+      {startup && <p className="splash-startup-label" role="status">Welcome to Bibot</p>}
     </section>
   )
 }

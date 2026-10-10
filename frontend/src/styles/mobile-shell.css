@@ -17,3 +17,11 @@
 .integration-placeholder p { color: var(--muted); margin: 25px 0; }
 @media (max-width: 350px) { .page-content { padding-inline: 18px; } .primary-button { font-size: 16px; } }
 @media (prefers-reduced-motion: no-preference) { button:not(:disabled) { transition: background .15s, box-shadow .15s; } button:not(:disabled):hover { box-shadow: 0 3px 12px #8a61df20; } }
+@media (prefers-reduced-motion: no-preference) {
+  .mobile-shell button:not(:disabled) { transition: background .15s, box-shadow .15s, transform .1s ease-out; }
+  .mobile-shell button:not(:disabled):active { transform: scale(.98); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-shell button { transition: none; }
+  .mobile-shell button:active { transform: none; }
+}

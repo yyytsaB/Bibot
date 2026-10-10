@@ -4,6 +4,7 @@ import { LivePractice } from './components/practice/LivePractice'
 import { LocalAiReadiness } from './components/readiness/LocalAiReadiness'
 import { LiveConceptMap } from './components/map/LiveConceptMap'
 import { LiveHome } from './components/home/LiveHome'
+import { SplashScreen } from './components/previews/SplashScreen'
 import { createPracticeSession } from './state/practice-session'
 import './App.css'
 import './styles/connected-navigation.css'
@@ -26,6 +27,19 @@ function App() {
   const [screen, setScreen] = useState(currentScreen)
   const [designPreview, setDesignPreview] = useState(() => window.location.hash.startsWith('#/design-preview/'))
   const [practiceSession] = useState(() => createPracticeSession())
+  const [startup, setStartup] = useState(() => ['', 'home', 'welcome'].includes(window.location.hash.replace(/^#\/?/, '')))
+  useEffect(() => {
+    if (!startup) return
+    // Brief branding intro, independent of local-AI readiness or practice state.
+    const timer = window.setTimeout(() => {
+      if (currentScreen() === 1) {
+        window.history.replaceState(null, '', '#/home')
+        setScreen(2)
+      }
+      setStartup(false)
+    }, 1100)
+    return () => window.clearTimeout(timer)
+  }, [startup])
   useEffect(() => {
     const update = () => {
       setScreen(currentScreen())
@@ -49,6 +63,7 @@ function App() {
   const livePractice = !designPreview && screen >= 10 && screen <= 15
   const liveMap = !designPreview && screen >= 16 && screen <= 19
   const liveHome = !designPreview && [2, 5, 9].includes(screen)
+  if (startup && !designPreview) return <main className="bibot-startup"><SplashScreen startup /></main>
   return <div className="connected-frontend">
     {!designPreview && <div style={{ maxWidth: 480, marginInline: 'auto', padding: '12px 18px' }}><LocalAiReadiness /></div>}
     {livePractice

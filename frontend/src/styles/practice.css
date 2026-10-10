@@ -47,3 +47,22 @@
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .practice-preview-controls { max-width: 480px; margin: 0 auto; padding: 10px 16px; background: #eee7ff; color: #655080; font-size: 12px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }.practice-preview-controls > span { flex-basis: 100%; }.practice-preview-controls select { margin-left: 8px; padding: 5px; border: 1px solid #cdbcdf; border-radius: 8px; }.practice-preview-controls label { display: flex; align-items: center; gap: 5px; }
 @media (max-width: 350px) { .question-text { font-size: 19px; }.answer-choice { padding-inline: 12px; gap: 10px; font-size: 14px; }.feedback-card { padding: 17px 13px; gap: 10px; }.feedback-card h2 { font-size: 18px; }.feedback-card p { font-size: 15px; }.feedback-symbol { width: 33px; }.feedback-symbol .icon { width: 30px; }.completion-statistics { gap: 6px; }.completion-statistics strong { font-size: 19px; } }
+.practice-progress-block.is-hidden { height: 0; overflow: hidden; visibility: hidden; }
+.practice-progress > span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #8652ff, #b584ff); }
+.analysis-status p { margin: 8px 0 12px; }
+.analysis-loading-bar { height: 9px; margin: 0 0 24px; border-radius: 12px; overflow: hidden; background: #eae0ff; }
+.analysis-loading-bar > span { display: block; width: 35%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #8652ff, #b584ff); }
+.practice-page button:focus-visible, .completion-page button:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
+@media (prefers-reduced-motion: no-preference) {
+  .practice-progress > span { transition: width 240ms ease-out; }
+  .analysis-loading-bar > span { animation: bibot-pending 1.8s ease-in-out infinite; }
+  .feedback-card { animation: bibot-card-in 180ms ease-out; }
+  .correct-art img, .completion-art img { animation: bibot-success-leap 460ms ease-out 1; }
+}
+@keyframes bibot-pending { from { transform: translateX(-110%); } to { transform: translateX(390%); } }
+@keyframes bibot-card-in { from { opacity: .35; } to { opacity: 1; } }
+@keyframes bibot-success-leap { 0%, 100% { transform: translateX(-50%); } 42% { transform: translate(-50%, -8px); } 68% { transform: translate(-50%, 2px); } }
+@media (prefers-reduced-motion: reduce) {
+  .practice-progress > span { transition: none; }
+  .analysis-loading-bar > span, .feedback-card, .correct-art img, .completion-art img { animation: none; }
+}

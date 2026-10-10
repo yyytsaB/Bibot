@@ -60,3 +60,8 @@
 .f14-map-dot.gray { background: #9ca3af; }.f14-map-dot.red { background: #dc5353; }.f14-map-dot.amber { background: #d79d23; }.f14-map-dot.green { background: #399560; }
 .f14-map-open { display: flex; justify-content: center; align-items: center; gap: 10px; width: 100%; min-height: 44px; color: #7344cd; background: #eee5ff; border-radius: 15px; font-weight: 800; }
 .f14-supplied-home button:focus-visible { outline: 3px solid #6c35bd; outline-offset: 3px; }
+/* Production Home has no preview footer: reserve the actual fixed navigation. */
+.connected-frontend .mobile-shell.home-shell:has(.f14-supplied-home) .bottom-nav { bottom: 0; padding-bottom: calc(9px + env(safe-area-inset-bottom)); }
+.connected-frontend .mobile-shell.home-shell:has(.f14-supplied-home) .page-content { padding-bottom: calc(128px + env(safe-area-inset-bottom)); }
+html:has(.f14-supplied-home) { scroll-padding-bottom: calc(104px + env(safe-area-inset-bottom)); }
+.f14-supplied-home .primary-button, .f14-map-open { scroll-margin-bottom: calc(104px + env(safe-area-inset-bottom)); }
