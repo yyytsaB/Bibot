@@ -23,7 +23,7 @@ This is a 24-hour student build project. The application integrates prepared pra
 | Practice and feedback | Correctness checks, preserved wrong-answer reasoning, pending/error recovery, clarification, diagnosis and verified fallback views. |
 | Follow-up practice | A primary and an extra reviewed example per initial question; linked questions test the relevant concept distinction. |
 | Learning map | Predefined React Flow graph for induction, deduction and abduction; actual learning evidence determines statuses and recorded confusions. |
-| Resume | Browser-local persistence restores the current practice checkpoint and learning map. Start/Continue uses the existing session. |
+| Resume | Browser-local persistence restores the current practice checkpoint and learning map. Start/Continue uses the existing session; completed sessions offer View Completion. There is no reset UI. |
 | Readiness | An existing backend signal controls Checking / Ready / Unavailable. A running server alone is insufficient for Ready. |
 | Mobile presentation | Nineteen reference-based screen presentations, narrow-phone spacing, safe-area navigation clearance, bundled Fredoka/Nunito fonts and reduced-motion support. |
 | Opening and pending states | A brief branding intro before Home; a separate indeterminate bar while feedback is pending. Neither displays invented progress estimates. |
@@ -40,7 +40,7 @@ This is a 24-hour student build project. The application integrates prepared pra
    - **Clarification:** a specific prompt for more detail, without a diagnosis.
    - **Fallback:** a verified explanation and reviewed follow-up, **never a diagnosis**.
 5. Answer the reviewed follow-up. An extra prepared example is available when appropriate.
-6. Open **My Map** to see saved learning evidence. Return Home and continue the same practice session.
+6. Open **My Map** to see saved learning evidence. Return Home to continue an unfinished session or view its completion screen.
 
 The first unclear response for a question requests clarification; the second unclear response produces verified fallback. Clarification counts are transient and per question. Backend safeguards also handle invalid model output: validation, one retry, and then a verified fallback with checked references.
 
@@ -85,7 +85,7 @@ Runtime requests go from the browser to the configured backend, then to the conf
 ### Prerequisites
 
 - Git, Node.js with npm, and Ollama installed on the host machine.
-- This project has been exercised with Node.js `24.13.1`; no single supported Node range is declared in the manifests. Use a Node release compatible with the committed toolchain.
+- Use a Node.js release compatible with the locked toolchain. The installed Vite package declares `^20.19.0 || >=22.12.0`; the project manifests do not declare a separate supported Node range.
 - Enough memory and compute capacity to run the selected model. Readiness and latency must be checked on the actual demo machine.
 - Internet access for the initial repository, package and model downloads.
 
@@ -175,7 +175,7 @@ cd backend
 node dist/src/index.js
 ```
 
-Keep the repository's `data/` and shared build available. The backend does not serve the frontend's static build. Production/static deployment must route `/api` to Express; the inspected Vite configuration specifies a development proxy, so do not assume `vite preview` or an arbitrary static host provides that API routing.
+Keep the repository's `data/` and shared build available. The backend does not serve the frontend's static build. For a local build preview, run `npm run preview` from `frontend/` while the backend is running; the installed Vite implementation inherits the configured `/api` proxy for preview. Vite preview is a local verification server, not a production deployment. An arbitrary static host still needs explicit `/api` routing to Express.
 
 ## Runtime configuration
 
@@ -286,7 +286,7 @@ For a manual integration check, exercise **Home → Practice → reasoning/feedb
 | `EADDRINUSE` | The port is occupied, possibly by the backend already running. Identify the existing server before starting another. |
 | Backend runs but Local AI is unavailable | Inspect `/api/readiness`; confirm Ollama is running and `qwen2.5:7b` is installed. Backend reachability and model readiness are distinct. |
 | Model available, startup warm-up failed | Restart the backend to retry once. If it fails again, capture readiness detail immediately after startup; a later poll may replace the original error with the generic restart message. Do not claim readiness or silently change the production timeout. |
-| API requests fail in a static preview | Ensure `/api` is routed to the backend. The configured Vite proxy is for development. |
+| API requests fail in a static preview | Ensure the backend is running and `/api` reaches it. Local Vite development and preview inherit the configured proxy; an arbitrary static host requires explicit routing. |
 | Progress appears different after changing the URL/port | localStorage is origin-specific. Use the same scheme, host and port; `localhost` and `127.0.0.1` are separate origins. |
 | Git pull asks for a branch | Your feature branch may lack an upstream. Inspect branch/remotes; update explicitly from the intended remote/main after preserving local work. |
 
@@ -305,7 +305,7 @@ This discards that origin's saved practice and map evidence. Clarification-attem
 
 The approved batch `critical-thinking-c1-reviewed-2026-10-09` was **authored by Codex (AI)**, reviewed by **Karl Andrei on 2026-10-09**, and independently peer-approved by the project owner with confirmation recorded on **2026-10-10**. It is a specific approved exception; it must not be described as human-authored or extended to future content. The fifteen evaluation explanations are reviewed synthetic examples, not real student responses. Conceptual references and item-level review evidence are in [content metadata](data/content-metadata.json) and [the content draft](content-review-draft.md).
 
-The header uses the supplied **BIBOT TITLE.png** and **BIBOTTT.png**, already preserved as repository `wordmark.png` and `app-icon.png`; hashes match the attached originals. Asset mappings are in [asset-map.json](frontend/src/assets/bibot/asset-map.json). Fredoka and Nunito are bundled with their [source record](frontend/src/assets/fonts/SOURCES.txt) and original SIL Open Font License files.
+The header uses the supplied **BIBOT TITLE.png** and **BIBOTTT.png**, already preserved as repository `wordmark.png` and `app-icon.png`; the asset mapping records the original filenames and SHA-256 hashes. Asset mappings are in [asset-map.json](frontend/src/assets/bibot/asset-map.json). Fredoka and Nunito are bundled with their [source record](frontend/src/assets/fonts/SOURCES.txt) and original SIL Open Font License files.
 
 The owner reports Codex/Gemini coding assistance and image/video generation tools. Exact labels, known contribution boundaries, provenance gaps, internet requirements and pending submission links are disclosed in [SUBMISSION.md](SUBMISSION.md). Artwork licensing/permission and pre-event contribution timing remain to be confirmed; no blanket license for the entire project is asserted here.
 
