@@ -30,3 +30,11 @@
 .mobile-shell:has(> .page-content > .practice-library-page) .page-content { padding-bottom: calc(88px + env(safe-area-inset-bottom)); }
 @media (max-width: 350px) { .practice-library-heading { height: 104px; }.practice-library-heading h1 { max-width: calc(100% - 93px); }.library-portrait { width: 105px; height: 86px; }.library-set-card { gap: 10px; padding-inline: 9px; }.library-set-icon { width: 49px; }.library-set-text strong { font-size: 14px; }.library-set-text small { font-size: 12px; }.library-tabs button { font-size: 14px; }.library-filters button { font-size: 12px; } }
 
+.f14-supplied-library .library-set-card { opacity: 1; }
+.f14-supplied-library .library-set-card:disabled { cursor: default; }
+.f14-supplied-library .library-set-card.with-session-progress { min-height: 105px; }
+.f14-supplied-library .library-set-text strong, .f14-supplied-library .library-set-text small { overflow-wrap: anywhere; }
+.f14-supplied-library .library-set-text em { display: block; margin-top: 5px; color: #8150c1; font-size: 12px; font-style: normal; font-weight: 800; }
+.f14-library-progress { display: flex; align-items: center; gap: 9px; margin-top: 6px; color: #756585; font-size: 12px; }
+.f14-supplied-library .library-tabs button, .f14-supplied-library .library-filters button { min-height: 44px; }
+.f14-supplied-library button:focus-visible { outline: 3px solid #6c35bd; outline-offset: 3px; }

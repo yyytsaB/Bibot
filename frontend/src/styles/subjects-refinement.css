@@ -26,3 +26,7 @@
 .mobile-shell:has(> .page-content > .subjects-page) .page-content { padding-top: max(19px, env(safe-area-inset-top)); padding-bottom: calc(88px + env(safe-area-inset-bottom)); }
 @media (max-width: 350px) { .subjects-page h1 { font-size: 26px; }.subjects-page .subtitle { font-size: 15px; }.subjects-page .subject-card { gap: 11px; }.subjects-page .subject-card .card-icon { width: 49px; height: 55px; }.subjects-page .subject-card strong { font-size: 15px; }.subjects-page .subject-card small { font-size: 13px; }.subjects-page .filter-pills button { font-size: 12px; } }
 
+.f14-supplied-subjects .subject-card em { display: block; margin-top: 5px; color: #77638f; font-size: 12px; font-style: normal; font-weight: 800; overflow-wrap: anywhere; }
+.f14-supplied-subjects .subject-card > span:nth-child(2) { flex: 1; min-width: 0; }
+.f14-supplied-subjects .filter-pills button { min-height: 44px; }
+.f14-supplied-subjects button:focus-visible, .f14-supplied-subjects input:focus-visible { outline: 3px solid #6c35bd; outline-offset: 3px; }
