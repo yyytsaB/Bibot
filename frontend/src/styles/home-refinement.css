@@ -43,3 +43,20 @@
   .home-page .entry-card small { font-size: 13.5px; }
   .home-page .primary-button.dark { min-height: 57px; font-size: 18px; }
 }
+.f14-prepared-note { margin: 12px 0; text-align: center; color: #756585; font-size: 14px; overflow-wrap: anywhere; }
+.f14-home-progress { margin: 14px 0; color: #756585; font-size: 14px; }
+.f14-home-progress p { margin-bottom: 7px; }
+.f14-home-progress [role=progressbar] { height: 8px; border-radius: 8px; background: #ece4fa; overflow: hidden; }
+.f14-home-progress [role=progressbar] span { display: block; height: 100%; background: #9864ff; }
+.f14-map-preview { margin-top: 18px; padding: 16px; border: 2px solid #eee7fa; border-radius: 22px; background: #fcfaff; }
+.f14-map-heading { display: flex; align-items: center; gap: 9px; color: #73509d; }
+.f14-map-heading h2 { margin: 0; font-size: 19px; }
+.f14-map-preview ul { display: grid; gap: 10px; padding: 0; margin: 14px 0; list-style: none; }
+.f14-map-preview li { display: flex; align-items: center; gap: 10px; }
+.f14-map-preview li > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+.f14-map-preview strong, .f14-map-preview small { display: block; }
+.f14-map-preview small, .f14-map-preview p { color: #756585; font-size: 13px; }
+.f14-map-dot { width: 13px; height: 13px; border-radius: 50%; flex-shrink: 0; }
+.f14-map-dot.gray { background: #9ca3af; }.f14-map-dot.red { background: #dc5353; }.f14-map-dot.amber { background: #d79d23; }.f14-map-dot.green { background: #399560; }
+.f14-map-open { display: flex; justify-content: center; align-items: center; gap: 10px; width: 100%; min-height: 44px; color: #7344cd; background: #eee5ff; border-radius: 15px; font-weight: 800; }
+.f14-supplied-home button:focus-visible { outline: 3px solid #6c35bd; outline-offset: 3px; }

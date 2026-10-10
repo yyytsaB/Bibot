@@ -3,6 +3,7 @@ import { PreviewApp } from './components/previews/PreviewApp'
 import { LivePractice } from './components/practice/LivePractice'
 import { LocalAiReadiness } from './components/readiness/LocalAiReadiness'
 import { LiveConceptMap } from './components/map/LiveConceptMap'
+import { LiveHome } from './components/home/LiveHome'
 import { createPracticeSession } from './state/practice-session'
 import './App.css'
 import './styles/connected-navigation.css'
@@ -47,11 +48,13 @@ function App() {
   }
   const livePractice = !designPreview && screen >= 10 && screen <= 15
   const liveMap = !designPreview && screen >= 16 && screen <= 19
+  const liveHome = !designPreview && [2, 5, 9].includes(screen)
   return <div className="connected-frontend">
     {!designPreview && <div style={{ maxWidth: 480, marginInline: 'auto', padding: '12px 18px' }}><LocalAiReadiness /></div>}
     {livePractice
     ? <LivePractice session={practiceSession} onLeave={() => navigate(9)} />
     : liveMap ? <LiveConceptMap session={practiceSession} onNavigate={navigate} />
+    : liveHome ? <LiveHome session={practiceSession} screen={screen === 2 ? 'home' : screen === 5 ? 'subjects' : 'library'} onNavigate={navigate} onBack={back} />
     : <><PreviewApp screen={screen} connected onNavigate={navigate} onBack={back} /><p className="frontend-demo-notice" role="note">{designPreview ? 'Design preview · illustrative content only' : 'Interface preview · sample Home'}<br />Prepared practice uses reviewed questions</p></>}
   </div>
 }
