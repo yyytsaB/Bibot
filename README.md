@@ -323,7 +323,7 @@ The owner reports Codex/Gemini coding assistance and image/video generation tool
 
 Names reproduced as supplied by the owner:
 
-- Bueno, Sebastian, Miguel A.
+- Bueno, Sebastian Miguel A.
 - De Castro, Aldred Laurenze C.
 - Talagtag, Karl Andrei C.
 - Fanoga, Haidie N.
