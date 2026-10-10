@@ -18,7 +18,7 @@ export function LiveHome({ session, screen, onNavigate, onBack }: { session: Pra
   }
   // Both entry actions reopen the same controller; never reset or create a session.
   const props = { presentation, onBack, onExploreSubjects: () => onNavigate(5), onSelectSubject: () => onNavigate(9), onStartPractice: () => onNavigate(10), onResumePractice: () => onNavigate(10), onOpenMap: () => onNavigate(17) }
-  return <MobileShell homeLayout={screen === 'home'} active={screen === 'home' ? 'home' : 'practice'} onNavigate={tab => onNavigate(tab === 'home' ? 2 : tab === 'practice' ? 10 : 17)}>
+  return <MobileShell homeLayout={screen === 'home'} active={screen === 'home' ? 'home' : 'practice'} onNavigate={tab => onNavigate(tab === 'home' ? 2 : tab === 'practice' ? 9 : 17)}>
     {storageNotice && <p role="status">{storageNotice}</p>}
     {screen === 'home' ? <HomeView {...props} /> : screen === 'subjects' ? <SubjectSelectionView {...props} /> : <PreparedPracticeLibrary {...props} />}
   </MobileShell>

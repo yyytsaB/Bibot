@@ -18,7 +18,7 @@ export function LivePractice({ session, onLeave }: { session: PracticeSession; o
       onFollowUp={() => controller.startFollowUp()}
       onContinue={() => controller.advanceToNextQuestion()}
       onExtraExample={() => controller.tryExtraExample()}
-      onBack={onLeave} onLibrary={onLeave}
+      onBack={onLeave} backLabel="Back to Practice Sets" onLibrary={onLeave}
     />
   </MobileShell>
 }

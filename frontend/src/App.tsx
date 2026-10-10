@@ -69,7 +69,7 @@ function App() {
     {livePractice
     ? <LivePractice session={practiceSession} onLeave={() => navigate(9)} />
     : liveMap ? <LiveConceptMap session={practiceSession} onNavigate={navigate} />
-    : liveHome ? <LiveHome session={practiceSession} screen={screen === 2 ? 'home' : screen === 5 ? 'subjects' : 'library'} onNavigate={navigate} onBack={back} />
+    : liveHome ? <LiveHome session={practiceSession} screen={screen === 2 ? 'home' : screen === 5 ? 'subjects' : 'library'} onNavigate={navigate} onBack={() => navigate(screen === 9 ? 5 : 2)} />
     : <><PreviewApp screen={screen} connected onNavigate={navigate} onBack={back} /><p className="frontend-demo-notice" role="note">{designPreview ? 'Design preview · illustrative content only' : 'Interface preview · sample Home'}<br />Prepared practice uses reviewed questions</p></>}
   </div>
 }

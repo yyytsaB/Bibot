@@ -32,3 +32,8 @@
 
 .connected-frontend .concept-map-design .map-design-diagram{height:400px;}
 @media(max-width:390px){.connected-frontend .details19-statistics>div:last-child small{white-space:normal;}.connected-frontend .details19-statistics strong{font-size:12px;}.connected-frontend .details19-statistics>div{gap:4px;padding-inline:4px;}.connected-frontend .details19-statistics .details19-symbol{width:24px;height:24px;}.connected-frontend .details19-statistics .details19-symbol svg{width:24px;height:24px;}}
+
+/* Named destinations keep in-app exit controls distinct from browser history. */
+.destination-back { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 6px 4px; border-radius: 10px; background: transparent; color: #655080; font: 800 14px/1.2 "Nunito", sans-serif; text-align: left; }
+.destination-back .icon { flex: 0 0 20px; width: 20px; height: 20px; }
+.destination-back:focus-visible { outline: 3px solid #6c35bd; outline-offset: 3px; }
