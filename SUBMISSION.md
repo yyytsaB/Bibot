@@ -8,7 +8,7 @@ Repository audit date: 2026-10-10. This document records inspected repository ev
 | --- | --- | --- |
 | Project name | **Bibot (Misconception Mapper)** | Bibot is the UI brand; Misconception Mapper is the project name in the authoritative specification. |
 | Short description | A mobile-first learning app with reviewed Critical Thinking questions. After a wrong answer, students explain their reasoning; a local AI pipeline may identify a possible misconception, request clarification, or return a verified explanation and reviewed follow-up. A concept map reflects saved learning evidence. | [Specification](docs/SPEC.md), [decisions](docs/DECISIONS.md). |
-| Team members | Bueno, Sebastian, Miguel A.; De Castro, Aldred Laurenze C.; Talagtag, Karl Andrei C.; Fanoga, Haidie N. Names are reproduced as supplied by the owner; individual roles remain TBD. Karl Andrei is separately recorded as content reviewer. | [Content review metadata](data/content-metadata.json). Project owner and developer identities must not be inferred from Git authors or account names. |
+| Team members | Bueno, Sebastian, Miguel A.; De Castro, Aldred Laurenze C.; Talagtag, Karl Andrei C.; Fanoga, Haidie N. Names; | [Content review metadata](data/content-metadata.json). Project owner and developer identities must not be inferred from Git authors or account names. |
 | Public GitHub repository | https://github.com/yyytsaB/Bibot | Verified Git remote. **TBD: confirm anonymous/public access before submission.** |
 
 ## Proof and local/internet requirements
