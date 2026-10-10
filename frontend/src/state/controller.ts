@@ -154,7 +154,7 @@ export class PracticeController {
         return;
       }
 
-      if (!response.ok) {
+      if (response.ok === false) {
         this.machine.applySubmissionError(subId, response.error);
         this.notify();
         return;
