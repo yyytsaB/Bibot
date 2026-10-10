@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="frontend/src/assets/bibot/app-icon.png" alt="Bibot duck mascot wearing purple glasses" width="500" />
+  <img src="frontend/src/assets/bibot/app-icon.png" alt="Bibot duck mascot wearing purple glasses" width="400" />
   <br />
   <img src="frontend/src/assets/bibot/wordmark.png" alt="Bibot" width="430" />
 </p>
