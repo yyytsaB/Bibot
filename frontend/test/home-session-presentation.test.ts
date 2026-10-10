@@ -67,3 +67,22 @@ test('continuation without a callback never falls back to a potentially resettin
   const entry=practiceEntry({answeredInitialQuestions:6,totalInitialQuestions:6,canResume:true,isCompleted:false},{onStartPractice:()=>starts++})
   assert.equal(entry.label,'Continue Practice'); assert.equal(entry.action,undefined); assert.equal(starts,0)
 })
+
+test('completed session entry describes reopening completion without starting or resetting practice', () => {
+  const { session, stop, view } = setup()
+  for (const question of questions) {
+    session.controller.selectChoice(question.correct_choice_id)
+    session.controller.checkAnswer()
+    session.controller.advanceToNextQuestion()
+  }
+  assert.equal(session.getSnapshot().state.status, 'session_completed')
+  let opened = 0
+  const action = () => { opened++ }
+  const entry = practiceEntry(view().sessionProgress, { onStartPractice: action })
+  assert.equal(entry.label, 'View Completion')
+  assert.equal(entry.action, action)
+  entry.action?.()
+  assert.equal(opened, 1)
+  assert.equal(session.getSnapshot().state.status, 'session_completed')
+  stop()
+})

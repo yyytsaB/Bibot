@@ -11,6 +11,7 @@ export type HomeNavigation = { onBack?: () => void; onExploreSubjects?: () => vo
 export type HomeViewProps = { presentation: HomePresentationData } & HomeNavigation
 /** A pending follow-up can remain even after every initial question is answered. */
 export function practiceEntry(progress: SessionProgress | undefined, navigation: Pick<HomeNavigation, 'onStartPractice' | 'onResumePractice'>) {
+  if (progress?.isCompleted === true) return { label: 'View Completion', action: navigation.onStartPractice }
   return progress?.canResume
     ? { label: 'Continue Practice', action: navigation.onResumePractice }
     : { label: 'Start Practice', action: navigation.onStartPractice }
